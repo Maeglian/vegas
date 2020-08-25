@@ -1,0 +1,12 @@
+@import "./normalize.css";
+@import "./main.css";
+@import "./variables.pcss";
+@import "./text.pcss";
+@import "./btn.pcss";
+@import "./nav.pcss";
+@import "./banner.pcss";
+@import "./counter.pcss";
+@import "./hero.pcss";
+@import "./games.pcss";
+@import "./winners.pcss";
+@import "./tournaments.pcss";

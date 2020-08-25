@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eed599cf-604e-4026-9552-08771d92f88d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1gajV7gJll64kngd67Z0rYRTyAb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eed599cf-604e-4026-9552-08771d92f88d" name="Default Changelist" comment="" />
+      <created>1598359617995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598359617995</updated>
+      <workItem from="1598359620434" duration="620000" />
+      <workItem from="1598360996330" duration="17945000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="237" y="75" key="SettingsEditor" timestamp="1598364397010">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="237" y="75" key="SettingsEditor/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598364397010" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1598365057140">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598365057140" />
+    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1598387312981">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598387312981" />
+  </component>
+</project>
