@@ -30,7 +30,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598359617995</updated>
       <workItem from="1598359620434" duration="620000" />
-      <workItem from="1598360996330" duration="17945000" />
+      <workItem from="1598360996330" duration="27920000" />
     </task>
     <servers />
   </component>
@@ -42,13 +42,21 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="237" y="75" key="SettingsEditor/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598364397010" />
+    <state x="128" y="123" width="1200" height="626" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598388352853">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="128" y="123" width="1200" height="626" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598388352853" />
+    <state x="435" y="191" width="586" height="490" key="find.popup" timestamp="1598439250925">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="435" y="191" width="586" height="490" key="find.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598439250925" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1598365057140">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598365057140" />
-    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1598387312981">
+    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1598436559788">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598387312981" />
+    <state x="393" y="173" width="670" height="676" key="search.everywhere.popup/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598436559788" />
   </component>
 </project>

@@ -2,11 +2,16 @@
 @import "./main.css";
 @import "./variables.pcss";
 @import "./text.pcss";
+@import "./link.pcss";
 @import "./btn.pcss";
 @import "./nav.pcss";
 @import "./banner.pcss";
 @import "./counter.pcss";
+@import "./search.pcss";
 @import "./hero.pcss";
 @import "./games.pcss";
 @import "./winners.pcss";
 @import "./tournaments.pcss";
+@import "./questions.pcss";
+@import "./partners.pcss";
+@import "./footer.pcss";
