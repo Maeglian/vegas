@@ -5,10 +5,12 @@
 @import "./link.pcss";
 @import "./btn.pcss";
 @import "./nav.pcss";
+@import "./owl.pcss";
 @import "./banner.pcss";
 @import "./counter.pcss";
 @import "./search.pcss";
 @import "./hero.pcss";
+@import "./carousel.pcss";
 @import "./games.pcss";
 @import "./winners.pcss";
 @import "./tournaments.pcss";

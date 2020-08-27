@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eed599cf-604e-4026-9552-08771d92f88d" name="Default Changelist" comment="" />
+    <list default="true" id="eed599cf-604e-4026-9552-08771d92f88d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/owl.pcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/car1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/car2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/car3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/car4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/car5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/prev.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/carousel.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/carousel.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/hero.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/hero.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/tournaments.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/tournaments.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +35,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gajV7gJll64kngd67Z0rYRTyAb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,12 +59,25 @@
       <option name="presentableId" value="Default" />
       <updated>1598359617995</updated>
       <workItem from="1598359620434" duration="620000" />
-      <workItem from="1598360996330" duration="27920000" />
+      <workItem from="1598360996330" duration="31018000" />
+      <workItem from="1598520809995" duration="6000" />
+      <workItem from="1598533746096" duration="3094000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="237" y="75" key="SettingsEditor" timestamp="1598364397010">
