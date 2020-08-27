@@ -11,19 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eed599cf-604e-4026-9552-08771d92f88d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/owl.pcss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/car1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/car2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/car3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/car4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/car5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prev.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/btn.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/btn.pcss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/carousel.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/carousel.pcss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/hero.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/hero.pcss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/tournaments.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/tournaments.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/nav.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/nav.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/normalize.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/owl.pcss" beforeDir="false" afterPath="$PROJECT_DIR$/css/owl.pcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/TOC.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/css.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/extend.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/faq.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/html.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/js.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/misc.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/usage.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/humans.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -61,7 +71,7 @@
       <workItem from="1598359620434" duration="620000" />
       <workItem from="1598360996330" duration="31018000" />
       <workItem from="1598520809995" duration="6000" />
-      <workItem from="1598533746096" duration="3094000" />
+      <workItem from="1598533746096" duration="7169000" />
     </task>
     <servers />
   </component>
@@ -80,6 +90,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="456" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598543358492">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="456" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.826/-241.-1057.1920.1057@0.23.1440.826" timestamp="1598543358492" />
     <state x="237" y="75" key="SettingsEditor" timestamp="1598364397010">
       <screen x="0" y="23" width="1440" height="826" />
     </state>

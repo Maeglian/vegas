@@ -1,17 +1,15 @@
 .Hero {
-  margin-bottom: 17px;
+  margin-top: -160px;
   padding: 18px 16px;
-  background-image: linear-gradient(186.57deg, rgba(16, 19, 58, 0) 8.71%, rgba(16, 19, 58, 0.52) 34.52%, #10133A 94.83%), url(./../img/hero-bg1.png);
-  background-blend-mode: multiply;
-  background-size: cover;
 
-  &-Content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 70px;
+  &-Item {
+    position: relative;
   }
 
   &-Title {
+    position: absolute;
+    top: 180px;
+    left: 0;
     max-width: 40%;
     margin-top: 40px;
     margin-bottom: 157px;
@@ -23,26 +21,5 @@
     font-size: 18px;
     line-height: 27px;
     color: var(--color-text-main);
-  }
-
-  &-Image {
-    margin-right: 68px;
-  }
-
-  &-Jackpot {
-    display: inline-block;
-    margin-left: 40px;
-    margin-right: 20px;
-    color: var(--color-text-main);
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-
-  &-Sum {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--color-main2);
   }
 }

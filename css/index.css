@@ -1,5 +1,5 @@
-@import "./normalize.css";
-@import "./main.css";
+@import "./normalize.pcss";
+@import "./main.pcss";
 @import "./variables.pcss";
 @import "./text.pcss";
 @import "./link.pcss";
