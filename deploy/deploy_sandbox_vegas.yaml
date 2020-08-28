@@ -8,10 +8,6 @@
       - cbrunnkvist.ansistrano-symfony-deploy
 
     vars:
-        # custom
-        node_path: '/home/deployerdev/.nvm/versions/node/v14.9.0/bin/node'
-        npm_path: '/home/deployerdev/.nvm/versions/node/v14.9.0/bin/npm'
-
         # ansistrano
         ansistrano_git_repo: git@github.com:wakeapp/vegas.git
         ansistrano_deploy_via: git

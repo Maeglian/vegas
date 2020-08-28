@@ -2,9 +2,9 @@
 -
     name: Npm install
     shell: chdir={{ansistrano_release_path.stdout}}
-      {{ npm_path }} i
+      npm i
 -
     name: Npm build
     shell: chdir={{ansistrano_release_path.stdout}}
-      {{ npm_path }} run build
+      npm run build
 
