@@ -1,0 +1,15 @@
+---
+all:
+    hosts:
+        sandbox.wake-app.net:
+            ansible_ssh_host: sandbox.wake-app.net
+            ansible_user: deployerdev
+
+    children:
+        empty:
+            hosts: {}
+
+        sandbox_vegas:
+            hosts:
+                sandbox.wake-app.net:
+

@@ -1,0 +1,3 @@
+---
+-   import_tasks: '../task/npm.yaml'
+-   import_tasks: '../task/symlink.yaml'

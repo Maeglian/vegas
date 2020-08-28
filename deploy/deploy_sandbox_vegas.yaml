@@ -1,0 +1,34 @@
+---
+-   name: KeywordSearch deployment script
+    hosts: sandbox_vegas
+    remote_user: deployerdev
+    gather_facts: true
+
+    roles:
+      - cbrunnkvist.ansistrano-symfony-deploy
+
+    vars:
+        # custom
+        node_path: '/home/deployerdev/.nvm/versions/node/v14.9.0/bin/node'
+        npm_path: '/home/deployerdev/.nvm/versions/node/v14.9.0/bin/npm'
+
+        # ansistrano
+        ansistrano_git_repo: git@github.com:wakeapp/vegas.git
+        ansistrano_deploy_via: git
+        ansistrano_current_dir: current
+        ansistrano_allow_anonymous_stats: false
+        ansistrano_deploy_to: /www/vegawinner
+        ansistrano_git_branch: '{{ branch }}'
+        ansistrano_git_refspec: '+refs/heads/*:refs/remotes/origin/*'
+        ansistrano_keep_releases: 1
+
+        # symfony deployer
+        symfony_composer_self_update: false
+        symfony_run_composer: false
+        symfony_run_assetic_dump: false
+        symfony_run_doctrine_migrations: false
+        symfony_run_assets_install: false
+        symfony_run_cache_clear_and_warmup: false
+
+        # hooks
+        ansistrano_before_symlink_shared_tasks_file:    '{{ playbook_dir }}/hook/sandbox/before-symlink-shared-tasks-file.yaml'
