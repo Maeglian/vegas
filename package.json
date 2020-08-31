@@ -1,27 +1,29 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "name": "vegas-winner",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "parcel build --no-minify index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "parcel-bundler": "^1.12.4",
-    "postcss-import": "^12.0.1",
-    "postcss-import-sync2": "^1.1.0",
-    "postcss-modules": "^3.2.2",
-    "postcss-parcel-import": "0.0.2",
-    "precss": "^4.0.0"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "main.css": "^2.1.0",
-    "normalize.css": "^8.0.1"
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-slider": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }
