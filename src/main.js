@@ -1,3 +1,4 @@
+import '@/styles/main.scss';
 import Vue from 'vue';
 import VModal from 'vue-js-modal';
 import App from './App.vue';
