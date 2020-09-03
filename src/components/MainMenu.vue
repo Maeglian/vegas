@@ -70,6 +70,11 @@ export default {
     margin-left: auto;
     margin-right: auto;
     padding: 15px 31px;
+
+    @media(max-width: $screen-xl) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 
   &-Nav {
@@ -86,11 +91,20 @@ export default {
     margin-right: 12px;
     cursor: pointer;
 
+    @media(max-width: $screen-s) {
+      width: 17px;
+      height: 11px;
+    }
+
     span {
       font-size: 0;
       width: 100%;
       height: 2.6px;
       background: var(--color-text-main);
+
+      @media(max-width: $screen-s) {
+        height: 1.6px;
+      }
     }
 
     &:before, &:after {
@@ -100,6 +114,10 @@ export default {
       width: 100%;
       height: 2.6px;
       background: var(--color-text-main);
+
+      @media(max-width: $screen-s) {
+        height: 1.6px;
+      }
     }
 
     &:before {
@@ -108,6 +126,16 @@ export default {
 
     &:after {
       bottom: 0;
+    }
+  }
+
+  &-Logo {
+    @media(max-width: $screen-m) {
+      width: 152px;
+    }
+
+    @media(max-width: $screen-s) {
+      width: 90px;
     }
   }
 

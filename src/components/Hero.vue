@@ -72,6 +72,22 @@ export default {
         items: 1,
         loop: true,
       },
+      slides: [
+        {
+          bg: 'hero-bg.jpg',
+          title: 'Number one place to have fun!',
+          text: `Make first deposit now and get 100%<br/>
+                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'hero-bg.jpg',
+          title: 'Number one place to have fun!',
+          text: `Make first deposit now and get 100%<br/>
+                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
+          btnText: 'Deposit now',
+        },
+      ],
     };
   },
 };
@@ -79,23 +95,79 @@ export default {
 
 <style lang="scss">
 .Hero {
-  margin-top: -160px;
-  padding: 18px 16px;
+  margin-top: -75px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @media(max-width: $screen-l) {
+    margin-bottom: 40px;
+  }
+
+  @media(max-width: $screen-m) {
+    margin-bottom: 30px;
+  }
+
+  @media(max-width: $screen-s) {
+    margin-bottom: 0;
+  }
 
   &-Item {
     position: relative;
   }
 
-  &-Title {
+  &-Image {
     position: absolute;
-    top: 180px;
+    top: 0;
     left: 0;
-    max-width: 40%;
-    margin-top: 40px;
-    margin-bottom: 157px;
+    width: calc(100% + 16px);
+    height: 100%;
 
-    @media(max-width: 768px) {
+    @media(max-width: $screen-l) {
+      object-position: top right;
+    }
+
+    @media(max-width: $screen-s) {
+      width: 100%;
+      height: 85%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top right;
+
+      @media(max-width: $screen-l) {
+        object-position: top right;
+      }
+    }
+  }
+
+  &-Title {
+    position: relative;
+    max-width: 40%;
+    margin-top: 183px;
+    margin-bottom: 174px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+
+    @media(max-width: $screen-l) {
       max-width: 50%;
+      margin-top: 174px;
+    }
+
+    @media(max-width: $screen-m) {
+      max-width: 50%;
+      margin-top: 107px;
+      margin-bottom: 121px;
+    }
+
+    @media(max-width: $screen-s) {
+      max-width: 100%;
+      margin-top: 332px;
+      margin-bottom: 55px;
+      text-align: center;
     }
   }
 
@@ -105,6 +177,21 @@ export default {
     font-size: 18px;
     line-height: 27px;
     color: var(--color-text-main);
+
+    @media(max-width: $screen-l) {
+      margin-top: 20px;
+      margin-bottom: 38px;
+    }
+
+    @media(max-width: $screen-m) {
+      margin-bottom: 28px;
+    }
+
+    @media(max-width: $screen-s) {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 }
 </style>

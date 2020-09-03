@@ -99,11 +99,27 @@ img {
   &--type-h1 {
     font-size: 48px;
     line-height: 118%;
+
+    @media (max-width: $screen-l) {
+      font-size: 38px;
+    }
+
+    @media (max-width: $screen-s) {
+      font-size: 24px;
+    }
   }
 
   &--type-h2 {
     font-size: 40px;
     line-height: 118%;
+
+    @media (max-width: $screen-l) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $screen-s) {
+      font-size: 24px;
+    }
   }
 
   &--type-h3 {
@@ -176,6 +192,15 @@ img {
 
   &--link {
     padding: 13px 29px;
+
+    @media(max-width: $screen-m) {
+      padding: 13px 23px;
+    }
+
+    @media(max-width: $screen-s) {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
   }
 
   &--link:hover {
