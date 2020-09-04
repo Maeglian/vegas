@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MainMenu />
+    <MainNav />
     <Hero />
     <BestGames />
     <Jackpots />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import MainMenu from '@/components/MainMenu.vue';
+import MainNav from '@/components/MainNav.vue';
 import Hero from '@/components/Hero.vue';
 import BestGames from '@/components/BestGames.vue';
 import Jackpots from '@/components/Jackpots.vue';
@@ -24,7 +24,7 @@ import Footer from '@/components/Footer.vue';
 export default {
   name: 'App',
   components: {
-    MainMenu,
+    MainNav,
     Hero,
     BestGames,
     Jackpots,
@@ -46,5 +46,6 @@ export default {
   --color-text-ghost: #9DA3B4;
   --color-border-ghost: #272B5F;
   --color-bg: rgba(39, 43, 95, 0.2);
+  --color-bg-nav: #10133A;
 }
 </style>

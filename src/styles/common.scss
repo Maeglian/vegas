@@ -31,8 +31,30 @@ img {
   max-width: 100%;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .Modal {
   background: transparent;
+}
+
+.Arrow {
+  border: solid var(--color-text-main);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 1.5px;
+  cursor: pointer;
+
+  &--up {
+    transform: rotate(-135deg);
+  }
+
+  &--down {
+    transform: rotate(45deg);
+  }
 }
 
 .v_slider__list {
