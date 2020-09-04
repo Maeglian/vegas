@@ -1,0 +1,10 @@
+---
+-
+    name: Npm install
+    shell: chdir={{ansistrano_release_path.stdout}}
+      npm i
+-
+    name: Npm build
+    shell: chdir={{ansistrano_release_path.stdout}}
+      npm run build
+
