@@ -18,6 +18,10 @@ export default {
   position: relative;
   width: 29%;
 
+  @media(max-width: $screen-s) {
+    width: 100%;
+  }
+
   &-Icon {
     position: absolute;
     top: 16px;
