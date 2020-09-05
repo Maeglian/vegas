@@ -49,15 +49,29 @@ export default {
   &-Item {
     position: relative;
     margin-right: 31px;
+    padding: 10px;
+    text-align: center;
 
     &:last-child {
       margin-right: 0;
     }
 
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(16, 19, 58, 0.7);
+      opacity: 0.7;
+      border-radius: 8px;
+    }
+
     &:after {
       content: ":";
       position: absolute;
-      top: 6px;
+      top: 18px;
       right: -14px;
       font-size: 20px;
       font-weight: 300;
