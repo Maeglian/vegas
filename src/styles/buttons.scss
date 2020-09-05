@@ -18,6 +18,8 @@ button {
   border-radius: 8px;
   cursor: pointer;
 
+
+
   &--tab {
     display: inline-flex;
     align-items: center;
@@ -29,10 +31,26 @@ button {
     color: var(--color-text-ghost);
     border-color: var(--color-border-ghost);
 
+    @media(max-width: $screen-l) {
+      font-size: 14px;
+    }
+
+    @media(max-width: $screen-m) {
+      font-size: 12px;
+    }
+
     .Icon {
       margin-right: 12px;
       stroke: var(--color-text-ghost);
       fill: var(--color-text-ghost);
+
+      @media(max-width: $screen-l) {
+        margin-right: 6px;
+      }
+
+      @media(max-width: $screen-s) {
+        margin-right: 12px;
+      }
     }
 
     &.Btn--active {
