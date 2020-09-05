@@ -269,6 +269,7 @@ export default {
   &-List {
     width: 100%;
     overflow-y: auto;
+    scrollbar-width: thin;
   }
 
   &-CloseBar {
