@@ -2,10 +2,21 @@
   <section class="Jackpots">
     <div class="Jackpots-Header">
       <div class="Title Title--type-h2 Jackpots-Title">
-        Daily jackpots in <span class="Colored">Vegawinner Casino</span>
+        Daily jackpots <br/>
+        in <span class="Colored">Vegawinner Casino</span>
       </div>
-      <div class="Jackpots-Total">
-        Total jackpot € 11,574.600
+      <div class="Jackpots-Jackpot">
+        <svg class="Icon Jackpots-Icon" width="71" height="72">
+          <use xlink:href="@/assets/img/icon-sprite.svg#jackpot-cards"></use>
+        </svg>
+        <div class="Jackpots-Total">
+          <div class="Jackpots-Text">
+            Total jackpot
+          </div>
+          <div class="Jackpots-Sum">
+            €&nbsp;11,574.600
+          </div>
+        </div>
       </div>
     </div>
     <div class="Jackpots-Slider">
@@ -14,7 +25,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car1.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Legacy of Dead
             </div>
@@ -27,7 +38,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car2.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Vikings go Berzerk
             </div>
@@ -40,7 +51,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car3.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Blinged
             </div>
@@ -53,7 +64,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car4.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Wild Streets
             </div>
@@ -66,7 +77,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car5.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Tower Quest
             </div>
@@ -79,7 +90,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car1.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Legacy of Dead
             </div>
@@ -92,7 +103,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car2.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Vikings go Berzerk
             </div>
@@ -105,7 +116,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car3.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Blinged
             </div>
@@ -118,7 +129,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car4.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Wild Streets
             </div>
@@ -131,7 +142,7 @@
           <div class="Jackpots-Image">
             <img src="@/assets/img/car5.jpg" alt="" />
           </div>
-          <div class="Jackpots-Text">
+          <div class="Jackpots-Content">
             <div class="Jackpots-Game">
               Tower Quest
             </div>
@@ -160,6 +171,17 @@ export default {
         loop: true,
         margin: 10,
         nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          460: {
+            items: 2,
+          },
+          768: {
+            items: 5,
+          },
+        },
       },
     };
   },
@@ -178,6 +200,55 @@ export default {
     margin-bottom: 73px;
     padding-left: 16px;
     padding-right: 16px;
+
+    @media(max-width: $screen-s) {
+      display: block;
+      margin-bottom: 33px;
+    }
+  }
+
+  &-Title {
+    @media(max-width: $screen-s) {
+      margin-bottom: 44px;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  &-Jackpot {
+    display: flex;
+    line-height: 1.18;
+  }
+
+  &-Icon {
+    margin-right: 32px;
+
+    @media (max-width: $screen-s) {
+      width: 54px;
+      height: 56px;
+    }
+  }
+
+  &-Text {
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FFA41D;
+
+    @media (max-width: $screen-s) {
+      font-size: 16px;
+    }
+  }
+
+  &-Sum {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--color-text-main);
+
+    @media (max-width: $screen-s) {
+      font-size: 36px;
+    }
   }
 
   &-Slider {
@@ -189,7 +260,7 @@ export default {
 
   &-Item {
     display: inline-block;
-    text-decoration: none;
+    Content-decoration: none;
   }
 
   &-Image {
@@ -212,11 +283,13 @@ export default {
     }
 
     img {
-      object-fit: fill;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
-  &-Text {
+  &-Content {
     display: flex;
     justify-content: center;
     font-size: 14px;
