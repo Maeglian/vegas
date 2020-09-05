@@ -52,8 +52,18 @@ export default {
 .Questions {
   margin-bottom: 87px;
 
+  @media(max-width: $screen-s) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   &-Title {
     margin-bottom: 35px;
+
+    @media(max-width: $screen-s) {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
   }
 
   &-Content {
@@ -67,6 +77,16 @@ export default {
     margin-bottom: 10px;
     padding: 40px 40px 34px;
     background: var(--color-bg);
+
+    @media(max-width: $screen-l) {
+      padding: 30px;
+    }
+
+    @media(max-width: $screen-s) {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 25px 16px;
+    }
   }
 
   &-Question {
