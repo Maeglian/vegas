@@ -7,13 +7,16 @@
       :class="[item.highlighted || (listIsOpen && item.children) ? 'Nav-Item--highlighted' : '' ]"
     >
       <div class="Nav-Name">
-        <svg
-          v-if="item.icon"
-          class="Icon Nav-Icon"
-          :width="item.iconDimensions[0]"
-          :height="item.iconDimensions[1]">
-          <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${item.icon}`"></use>
-        </svg>
+        <div class="Nav-BadgeContainer" v-if="item.badge">
+          <div class="Badge Nav-Badge" v-if="item.badge">6</div>
+          <svg
+            v-if="item.icon"
+            class="Icon Nav-Icon"
+            :width="item.iconDimensions[0]"
+            :height="item.iconDimensions[1]">
+            <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${item.icon}`"></use>
+          </svg>
+        </div>
         {{ item.name }}
         <i
           class="Nav-Arrow Arrow"
@@ -93,6 +96,18 @@ export default {
     position: absolute;
     top: 50%;
     right: 10px;
+  }
+
+  &-BadgeContainer {
+    position: relative;
+  }
+
+  &-Badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    color: #1D2047;
+    background-color: var(--color-main1);
   }
 }
 </style>

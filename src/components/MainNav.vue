@@ -115,6 +115,7 @@ export default {
           icon: 'rewards',
           iconDimensions: [22, 28],
           highlighted: true,
+          badge: true,
         },
         {
           name: 'personal area',
