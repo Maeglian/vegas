@@ -6,6 +6,7 @@
     <Jackpots />
     <Tournaments />
     <Questions />
+    <BottomBanner />
     <Partners />
     <Footer />
   </div>
@@ -18,6 +19,7 @@ import BestGames from '@/components/BestGames.vue';
 import Jackpots from '@/components/Jackpots.vue';
 import Tournaments from '@/components/Tournaments.vue';
 import Questions from '@/components/Questions.vue';
+import BottomBanner from '@/components/BottomBanner.vue';
 import Partners from '@/components/Partners.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -30,6 +32,7 @@ export default {
     Jackpots,
     Tournaments,
     Questions,
+    BottomBanner,
     Partners,
     Footer,
   },
