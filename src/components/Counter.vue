@@ -48,7 +48,7 @@ export default {
 
   &-Item {
     position: relative;
-    margin-right: 31px;
+    margin-right: 18px;
     padding: 10px;
     text-align: center;
 
@@ -71,8 +71,8 @@ export default {
     &:after {
       content: ":";
       position: absolute;
-      top: 18px;
-      right: -14px;
+      top: 22%;
+      right: -11px;
       font-size: 20px;
       font-weight: 300;
       line-height: 1.18;
@@ -85,10 +85,16 @@ export default {
   }
 
   &-Count {
+    position: relative;
     font-size: 34px;
     font-weight: 500;
     line-height: 1.18;
     color: var(--color-text-main);
+    z-index: 1;
+
+    @media(max-width: $screen-s) {
+      font-size: 20px;
+    }
   }
 
   &-Desc {
@@ -96,6 +102,10 @@ export default {
     font-weight: 300;
     line-height: 1.18;
     color: var(--color-faded);
+
+    @media(max-width: $screen-s) {
+      font-size: 9px;
+    }
   }
 }
 </style>
