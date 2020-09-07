@@ -3,19 +3,19 @@
   <section class="Footer">
     <nav class="Nav Footer-Nav">
       <a class="Link Footer-Link" href="#">
-        Payment methods
+        Payment&nbsp;methods
       </a>
       <a class="Link Footer-Link" href="#">
-        Responsible gaming
+        Responsible&nbsp;gaming
       </a>
       <a class="Link Footer-Link" href="#">
-        Terms and conditions
+        Terms&nbsp;and&nbsp;conditions
       </a>
       <a class="Link Footer-Link" href="#">
-        Privacy policy
+        Privacy&nbsp;policy
       </a>
       <a class="Link Footer-Link" href="#">
-        About us
+        About&nbsp;us
       </a>
       <a class="Link Footer-Link" href="#">
         Faq
@@ -62,23 +62,42 @@ export default {
     &:last-child {
       margin-right: 0;
     }
+
+    @media(max-width: $screen-s) {
+      margin-bottom: 16px;
+      font-size: 12px;
+    }
   }
 
   &-Disclaimer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    @media(max-width: $screen-s) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &-Text {
     font-size: 14px;
     line-height: 1.66;
     color: var(--color-more-faded);
+
+    @media(max-width: $screen-s) {
+      order: 1;
+    }
   }
 
   &-Icons {
     display: flex;
     margin-left: 141px;
+
+    @media(max-width: $screen-s) {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &-Icon {
