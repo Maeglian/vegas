@@ -16,7 +16,7 @@
       :key="tab.name"
       class="Btn Btn--tab BestGames-Tab"
       :class="{'Btn--active BestGames-Tab--active': tabActive === tab.name}"
-      @click="tabActive = tab.name"
+      @click="onChooseTab(tab.name)"
     >
       <svg
         class="Icon"
@@ -34,67 +34,25 @@
       ></i>
     </button>
     </div>
-    <div class="BestGames-Thumbs">
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb BestGames-Thumb--wide" href="#">
-        <img src="@/assets/img/game4.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb BestGames-Thumb--wide" href="#">
-        <img src="@/assets/img/game5.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb BestGames-Thumb--wide" href="#">
-        <img src="@/assets/img/game2.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb BestGames-Thumb--wide" href="#">
-        <img src="@/assets/img/game3.png" alt="">
-      </a>
-      <a class="Thumb BestGames-Thumb" href="#">
-        <img src="@/assets/img/game1.png" alt="">
-      </a>
+    <Loader v-if="gamesAreLoading" />
+    <div v-else class="BestGames-Thumbs">
+      <div
+        v-for="(game, i) in games"
+        class="Thumb BestGames-Thumb"
+        :class="{'BestGames-Thumb--wide': [1, 8, 11, 18].includes(i)}"
+        :key="game.internal_game_id"
+      >
+        <img
+          v-if="[1, 8, 11, 18].includes(i)"
+          :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${game.item_title}.jpg`"
+          :alt="`${game.application_name}`
+        ">
+        <img
+          v-else
+          :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
+          :alt="`${game.application_name}`
+        ">
+      </div>
     </div>
     <div class="BestGames-Btn">
       <button class="Btn">
@@ -105,12 +63,15 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 import Search from '@/components/Search.vue';
+import Loader from '@/components/Loader.vue';
 
 export default {
-  name: 'BestBestGames',
+  name: 'BestGames',
   components: {
     Search,
+    Loader,
   },
   data() {
     return {
@@ -148,7 +109,45 @@ export default {
           iconDimensions: [31, 20],
         },
       ],
+      gamesShowed: 20,
     };
+  },
+  computed: {
+    ...mapState(['games', 'gamesAreLoading']),
+  },
+  methods: {
+    ...mapActions(['getGames']),
+    onChooseTab(tabName) {
+      this.tabActive = tabName;
+      this.getGames(this.makeQuery());
+    },
+    makeQuery() {
+      let query = `appName=VegasWinner&lang=en&platform=desktop&limit=${this.gamesShowed}`;
+      switch (this.tabActive) {
+        case 'New games':
+          query += '&is_new=true';
+          break;
+        case 'Roulette':
+          query += '&categories=roulette';
+          break;
+        case 'Card games':
+          query += '&categories=Scratch Cards';
+          break;
+        case 'Live games':
+          query += '&categories=Live Casino';
+          break;
+        case 'Slots':
+          query += '&categories=Slot';
+          break;
+        default:
+          query += '&is_most_popular=true';
+      }
+
+      return query;
+    },
+  },
+  mounted() {
+    this.getGames(this.makeQuery());
   },
 };
 </script>
