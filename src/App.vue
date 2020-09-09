@@ -5,6 +5,7 @@
     <BestGames />
     <Jackpots />
     <Tournaments />
+    <Promotions />
     <Questions />
     <BottomBanner />
     <Partners />
@@ -18,6 +19,7 @@ import Hero from '@/components/Hero.vue';
 import BestGames from '@/components/BestGames.vue';
 import Jackpots from '@/components/Jackpots.vue';
 import Tournaments from '@/components/Tournaments.vue';
+import Promotions from '@/components/Promotions.vue';
 import Questions from '@/components/Questions.vue';
 import BottomBanner from '@/components/BottomBanner.vue';
 import Partners from '@/components/Partners.vue';
@@ -31,6 +33,7 @@ export default {
     BestGames,
     Jackpots,
     Tournaments,
+    Promotions,
     Questions,
     BottomBanner,
     Partners,
