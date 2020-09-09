@@ -4,24 +4,7 @@
       <VueSlider v-bind="options">
         <div class="Hero-Item">
           <div class="Hero-Image">
-            <img src="@/assets/img/hero-bg.jpg" alt="">
-          </div>
-          <div class="Hero-Title">
-            <div class="Title Title--type-h1">
-              Number one place to have fun!
-            </div>
-            <p class="Hero-Text">
-              Make first deposit now and get 100%<br/>
-              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
-            </p>
-            <button class="Btn Btn--color Hero-Btn">
-              Deposit now
-            </button>
-          </div>
-        </div>
-        <div class="Hero-Item">
-          <div class="Hero-Image">
-            <img src="@/assets/img/hero-bg.jpg" alt="">
+            <img src="@/assets/img/hero-bg-joker.jpg" alt="">
           </div>
           <div class="Hero-Title">
             <div class="Title Title--type-h1">
@@ -71,6 +54,7 @@ export default {
       options: {
         items: 1,
         loop: true,
+        dots: true,
       },
       slides: [
         {
