@@ -190,7 +190,7 @@ export default {
 
 <style lang="scss">
 .Jackpots {
-  margin-bottom: 125px;
+  margin-bottom: 89px;
   padding-left: 0;
   padding-right: 0;
 
