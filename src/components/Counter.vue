@@ -49,9 +49,9 @@ export default {
 <style lang="scss">
 .Counter {
   &-Text {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 300;
-    line-height: 1.18;
+    line-height: 1.66;
     color: var(--color-faded);
   }
 
@@ -61,33 +61,20 @@ export default {
 
   &-Item {
     position: relative;
-    margin-right: 18px;
-    padding: 10px;
+    margin-right: 32px;
     text-align: center;
 
     &:last-child {
       margin-right: 0;
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(16, 19, 58, 0.7);
-      opacity: 0.7;
-      border-radius: 8px;
-    }
-
     &:after {
       content: ":";
       position: absolute;
-      top: 22%;
-      right: -11px;
-      font-size: 20px;
-      font-weight: 300;
+      top: -2px;
+      right: -21px;
+      font-size: 24px;
+      font-weight: 700;
       line-height: 1.18;
       color: var(--color-text-main);
     }
@@ -99,14 +86,14 @@ export default {
 
   &-Count {
     position: relative;
-    font-size: 34px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     line-height: 1.18;
     color: var(--color-text-main);
     z-index: 1;
 
-    @media(max-width: $screen-s) {
-      font-size: 20px;
+    @media(max-width: $screen-m) {
+      font-size: 22px;
     }
   }
 
