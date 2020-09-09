@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="BestGames-Btn">
-        <button class="Btn" @click="showAllGames()">
+        <button class="Btn Btn--outline Btn--outline2" @click="showAllGames()">
           View all games
         </button>
       </div>

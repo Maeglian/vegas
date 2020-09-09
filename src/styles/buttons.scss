@@ -12,13 +12,9 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  color: #8C75FA;
   background: none;
-  border: 1px solid #8C75FA;
   border-radius: 8px;
   cursor: pointer;
-
-
 
   &--tab {
     display: inline-flex;
@@ -29,7 +25,7 @@ button {
     line-height: 118%;
     text-transform: uppercase;
     color: var(--color-text-ghost);
-    border-color: var(--color-border-ghost);
+    border: 1px solid var(--color-border-ghost);
 
     @media(max-width: $screen-l) {
       font-size: 14px;
@@ -54,25 +50,12 @@ button {
     }
 
     &.Btn--active {
-      color: var(--color-main2);
+      color: var(--color-main1);
 
       .Icon {
-        stroke: var(--color-main2);
-        fill: var(--color-main2);
+        stroke: var(--color-main1);
+        fill: var(--color-main1);
       }
-    }
-  }
-
-  &--link {
-    padding: 13px 29px;
-
-    @media(max-width: $screen-m) {
-      padding: 13px 23px;
-    }
-
-    @media(max-width: $screen-s) {
-      padding: 8px 12px;
-      font-size: 12px;
     }
   }
 
@@ -84,8 +67,42 @@ button {
   }
 
   &--color {
-    color: #fff;
+    color: var(--color-text-main);
     background: linear-gradient(87.21deg, #FFA41D 1.01%, #FF8F22 48.07%, #FF7B27 99.21%);
     border: none;
+
+    &:hover {
+      background: var(--color-main1);
+    }
+
+    &:active {
+      background: var(--color-main3);
+    }
+  }
+
+  &--outline {
+    border: 1px solid #8C75FA;
+
+    &:hover {
+      color: var(--color-bg-nav);
+    }
+  }
+
+  &--outline1 {
+    color: var(--color-main1);
+    border-color: var(--color-main1);
+
+    &:hover {
+      background: var(--color-main1);
+    }
+  }
+
+  &--outline2 {
+    color: var(--color-main2);
+    border-color: var(--color-main2);
+
+    &:hover {
+      background: var(--color-main2);
+    }
   }
 }

@@ -9,13 +9,13 @@
       </div>
       <div class="MainNav-Login">
         <button
-          class="Btn Btn--link MainNav-Btn"
+          class="Btn Btn--outline Btn--outline1 MainNav-Btn"
           @click="showLoginDialog()"
         >
           Login
         </button>
         <button
-          class="Btn Btn--link MainNav-Btn"
+          class="Btn Btn--outline Btn--outline1 MainNav-Btn"
           @click="showRegistrationDialog()"
         >
           Register

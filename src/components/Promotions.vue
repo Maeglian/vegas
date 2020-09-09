@@ -16,7 +16,7 @@
             {{ promotion.title }}
           </div>
           <div class="Promotions-Text" v-html="promotion.text"></div>
-          <button class="Btn Promotions-Btn">
+          <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
             Read more
           </button>
         </div>
