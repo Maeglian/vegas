@@ -8,14 +8,18 @@
         <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
       </div>
       <div class="MainNav-Login">
-        <a
+        <button
           class="Btn Btn--link MainNav-Btn"
-          href="#"
-          @click="loginModalIsShown ? hideLoginDialog() : showLoginDialog()"
+          @click="showLoginDialog()"
         >
           Login
-        </a>
-        <a class="Btn Btn--link MainNav-Btn" href="#">Register</a>
+        </button>
+        <button
+          class="Btn Btn--link MainNav-Btn"
+          @click="showRegistrationDialog()"
+        >
+          Register
+        </button>
       </div>
     </div>
     <transition name="slide-left">
@@ -29,17 +33,22 @@
     <modal name="login" classes="Modal" :width="380" :height="'auto'" adaptive>
       <LoginDialog @close="hideLoginDialog()" />
     </modal>
+    <modal name="registration" classes="Modal" :width="724" :height="'auto'" adaptive>
+      <RegistrationDialog @close="hideRegistrationDialog()" />
+    </modal>
   </nav>
 </template>
 
 <script>
 import LoginDialog from '@/components/LoginDialog.vue';
+import RegistrationDialog from '@/components/RegistrationDialog.vue';
 import NavItem from '@/components/NavItem.vue';
 
 export default {
   name: 'MainNav',
   components: {
     LoginDialog,
+    RegistrationDialog,
     NavItem,
   },
   data() {
@@ -146,6 +155,12 @@ export default {
     },
     hideLoginDialog() {
       this.$modal.hide('login');
+    },
+    showRegistrationDialog() {
+      this.$modal.show('registration');
+    },
+    hideRegistrationDialog() {
+      this.$modal.hide('registration');
     },
   },
 };

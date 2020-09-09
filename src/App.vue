@@ -43,6 +43,7 @@ export default {
 :root {
   --color-main1: #F68741;
   --color-main2: #8C75FA;
+  --color-main3: #FFA11D;
   --color-faded: rgba(255, 255, 255, 0.5);
   --color-more-faded: rgba(255, 255, 255, 0.2);
   --color-text-main: #fff;
