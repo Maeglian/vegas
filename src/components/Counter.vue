@@ -1,38 +1,42 @@
 <template>
   <div class="Counter">
-    <div class="Counter-Item Counter-Days">
-      <div class="Counter-Count">
-        16
+    <div class="Counter-Text">
+      Time left until finish
+    </div>
+    <div class="Counter-Content">
+      <div class="Counter-Item Counter-Days">
+        <div class="Counter-Count">
+          16
+        </div>
+        <div class="Counter-Desc">
+          Days
+        </div>
       </div>
-      <div class="Counter-Desc">
-        Days
+      <div class="Counter-Item Counter-Hours">
+        <div class="Counter-Count">
+          48
+        </div>
+        <div class="Counter-Desc">
+          Hours
+        </div>
+      </div>
+      <div class="Counter-Item Counter-Minutes">
+        <div class="Counter-Count">
+          36
+        </div>
+        <div class="Counter-Desc">
+          Minutes
+        </div>
+      </div>
+      <div class="Counter-Item Counter-Seconds">
+        <div class="Counter-Count">
+          05
+        </div>
+        <div class="Counter-Desc">
+          Seconds
+        </div>
       </div>
     </div>
-    <div class="Counter-Item Counter-Hours">
-      <div class="Counter-Count">
-        48
-      </div>
-      <div class="Counter-Desc">
-        Hours
-      </div>
-    </div>
-    <div class="Counter-Item Counter-Minutes">
-      <div class="Counter-Count">
-        36
-      </div>
-      <div class="Counter-Desc">
-        Minutes
-      </div>
-    </div>
-    <div class="Counter-Item Counter-Seconds">
-      <div class="Counter-Count">
-        05
-      </div>
-      <div class="Counter-Desc">
-        Seconds
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -44,7 +48,16 @@ export default {
 
 <style lang="scss">
 .Counter {
-  display: flex;
+  &-Text {
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1.18;
+    color: var(--color-faded);
+  }
+
+  &-Content {
+    display: flex;
+  }
 
   &-Item {
     position: relative;
