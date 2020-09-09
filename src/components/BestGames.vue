@@ -34,36 +34,40 @@
       ></i>
     </button>
     </div>
-    <Loader v-if="gamesAreLoading" />
-    <div v-else class="BestGames-Thumbs">
-      <div
-        v-for="(game, i) in games"
-        class="Thumb BestGames-Thumb"
-        :class="{'BestGames-Thumb--wide': [1, 8, 11, 18].includes(i)}"
-        :key="game.internal_game_id"
-      >
-        <img
-          v-if="[1, 8, 11, 18].includes(i)"
-          :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${game.item_title}.jpg`"
-          :alt="`${game.application_name}`
-        ">
-        <img
-          v-else
-          :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
-          :alt="`${game.application_name}`
-        ">
+<!--    <Loader v-if="gamesAreLoading" />-->
+    <Loader/>
+    <template>
+      <div class="BestGames-Thumbs">
+        <div
+          v-for="(game, i) in games"
+          class="Thumb BestGames-Thumb"
+          :class="{'BestGames-Thumb--wide': defineRectImages(i)}"
+          :key="game.internal_game_id"
+        >
+          <img
+            v-if="defineRectImages(i)"
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${game.item_title}.jpg`"
+            :alt="`${game.application_name}`
+          ">
+          <img
+            v-else
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
+            :alt="`${game.application_name}`
+          ">
+        </div>
       </div>
-    </div>
-    <div class="BestGames-Btn">
-      <button class="Btn">
-        View all games
-      </button>
-    </div>
+      <div class="BestGames-Btn">
+        <button class="Btn" @click="showAllGames()">
+          View all games
+        </button>
+      </div>
+    </template>
   </section>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import defineRectImages from '@/utils';
 import Search from '@/components/Search.vue';
 import Loader from '@/components/Loader.vue';
 
@@ -119,10 +123,11 @@ export default {
     ...mapActions(['getGames']),
     onChooseTab(tabName) {
       this.tabActive = tabName;
-      this.getGames(this.makeQuery());
+      this.getGames(this.makeQuery(true));
     },
-    makeQuery() {
-      let query = `appName=VegasWinner&lang=en&platform=desktop&limit=${this.gamesShowed}`;
+    makeQuery(limit = false) {
+      let query = 'appName=VegasWinner&lang=en&platform=desktop';
+      if (limit) query += `&limit=${this.gamesShowed}`;
       switch (this.tabActive) {
         case 'New games':
           query += '&is_new=true';
@@ -145,9 +150,13 @@ export default {
 
       return query;
     },
+    showAllGames() {
+      this.getGames(this.makeQuery(), this.gamesShowed);
+    },
+    defineRectImages,
   },
   mounted() {
-    this.getGames(this.makeQuery());
+    this.getGames(this.makeQuery(true));
   },
 };
 </script>
