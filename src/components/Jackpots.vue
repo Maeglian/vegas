@@ -6,7 +6,7 @@
         in <span class="Colored">Vegawinner Casino</span>
       </div>
       <div class="Jackpots-Jackpot">
-        <svg class="Icon Jackpots-Icon" width="71" height="72">
+        <svg class="Icon Jackpots-Icon" width="70" height="70">
           <use xlink:href="@/assets/img/icon-sprite.svg#jackpot-cards"></use>
         </svg>
         <div class="Jackpots-Total">
