@@ -35,7 +35,6 @@
     </button>
     </div>
 <!--    <Loader v-if="gamesAreLoading" />-->
-    <Loader/>
     <template>
       <div class="BestGames-Thumbs">
         <div
@@ -69,13 +68,13 @@
 import { mapState, mapActions } from 'vuex';
 import defineRectImages from '@/utils';
 import Search from '@/components/Search.vue';
-import Loader from '@/components/Loader.vue';
+// import Loader from '@/components/Loader.vue';
 
 export default {
   name: 'BestGames',
   components: {
     Search,
-    Loader,
+    // Loader,
   },
   data() {
     return {
