@@ -5,9 +5,9 @@
       <VueSlider v-bind="options">
         <div class="Hero-Item">
           <picture class="Hero-Image">
-            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
-            <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
             <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
+            <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
+            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
             <img src="@/assets/img/hero-bg-joker.jpg" alt="">
           </picture>
           <div class="Hero-Content">
