@@ -2,13 +2,12 @@
   <!-- eslint-disable max-len -->
   <section class="BestGames">
     <div class="Title Title--type-h2 BestGames-Title">
-      The best Games in <span class="Colored">Vegawinner Casino</span>
+      The best Games <br/>in <span class="Colored">Vegawinner Casino</span>
     </div>
     <div class="BestGames-Panel">
-      <p class="BestGames-Text">
+      <div class="BestGames-Text">
         We have the latest games from all the top providers, including Microgaming, NetEnt and WMS.
-      </p>
-      <Search />
+      </div>
     </div>
     <div class="BestGames-Tabs">
       <button
@@ -20,8 +19,7 @@
     >
       <svg
         class="Icon"
-        :width="tab.iconDimensions[0]"
-        :height="tab.iconDimensions[1]"
+        :class="`BestGames-Icon--${tab.icon}`"
       >
         <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tab.icon}`"></use>
       </svg>
@@ -33,6 +31,7 @@
         @click="listIsOpen = !listIsOpen"
       ></i>
     </button>
+      <Search class="BestGames-Search" />
     </div>
 <!--    <Loader v-if="gamesAreLoading" />-->
     <template>
@@ -84,32 +83,26 @@ export default {
         {
           name: 'Top games',
           icon: 'top',
-          iconDimensions: [22, 22],
         },
         {
           name: 'New games',
           icon: 'star',
-          iconDimensions: [22, 22],
         },
         {
           name: 'Roulette',
           icon: 'roulette',
-          iconDimensions: [22, 22],
         },
         {
           name: 'Card games',
           icon: 'cards',
-          iconDimensions: [20, 22],
         },
         {
           name: 'Live games',
           icon: 'video',
-          iconDimensions: [26, 20],
         },
         {
           name: 'Slots',
           icon: 'slots',
-          iconDimensions: [31, 20],
         },
       ],
       gamesShowed: 20,
@@ -164,6 +157,10 @@ export default {
 .BestGames {
   margin-bottom: 100px;
 
+  @media(max-width: $screen-l) {
+    margin-bottom: 71px;
+  }
+
   &-Title {
     max-width: 60%;
     margin-bottom: 30px;
@@ -178,6 +175,7 @@ export default {
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 28px;
+    color: var(--color-text-main);
 
     @media(max-width: $screen-m) {
       font-size: 14px;
@@ -205,23 +203,32 @@ export default {
     }
   }
 
+  &-Search {
+    @media(max-width: $screen-s) {
+      order: 0;
+      margin-bottom: 14px;
+    }
+
+  }
+
   &-Tab {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     margin-right: 10px;
-    padding: 20px 36px;
+    padding: 20px 29px;
+    white-space: nowrap;
 
     @media(max-width: $screen-l) {
-      padding: 22px 25px;
+      padding: 20px 15px;
     }
 
     @media(max-width: $screen-m) {
-      padding: 19px 14px;
+      padding: 13px 11px;
     }
 
     @media(max-width: $screen-s) {
-      order: 1;
+      order: 2;
       width: 100%;
     }
 
@@ -234,7 +241,7 @@ export default {
 
       @media(max-width: $screen-s) {
         display: flex;
-        order: 0;
+        order: 1;
       }
 
       .Arrow {
@@ -248,6 +255,98 @@ export default {
         @media(max-width: $screen-s) {
           display: initial;
         }
+      }
+    }
+  }
+
+  &-Icon {
+    &--top {
+      width: 22px;
+      height: 22px;
+
+      @media(max-width: $screen-m) {
+        width: 17px;
+        height: 17px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &--star {
+      width: 20px;
+      height: 18px;
+
+      @media(max-width: $screen-m) {
+        width: 16px;
+        height: 14px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 20px;
+        height: 18px;
+      }
+    }
+
+    &--roulette {
+      width: 20px;
+      height: 20px;
+
+      @media(max-width: $screen-m) {
+        width: 16px;
+        height: 16px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &--cards {
+      width: 19px;
+      height: 20px;
+
+      @media(max-width: $screen-m) {
+        width: 15px;
+        height: 16px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 19px;
+        height: 20px;
+      }
+    }
+
+    &--video {
+      width: 26px;
+      height: 20px;
+
+      @media(max-width: $screen-m) {
+        width: 19px;
+        height: 15px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 26px;
+        height: 20px;
+      }
+    }
+
+    &--slots {
+      width: 31px;
+      height: 20px;
+
+      @media(max-width: $screen-m) {
+        width: 23px;
+        height: 15px;
+      }
+
+      @media(max-width: $screen-s) {
+        width: 31px;
+        height: 20px;
       }
     }
   }

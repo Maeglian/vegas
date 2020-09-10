@@ -16,7 +16,6 @@ export default {
 <style lang="scss">
 .Search {
   position: relative;
-  width: 29%;
 
   @media(max-width: $screen-s) {
     width: 100%;
@@ -24,13 +23,19 @@ export default {
 
   &-Icon {
     position: absolute;
-    top: 16px;
-    left: 20px;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    fill: var(--color-main2);
+
+    @media(max-width: $screen-s) {
+      left: 20px;
+      fill: var(--color-text-ghost);
+    }
   }
 
   &-Input {
     width: 100%;
-    padding: 16px 16px 17px 53px;
+    height: 100%;
     font-size: 14px;
     line-height: 1.18;
     color: var(--color-text-main);
@@ -38,8 +43,16 @@ export default {
     border: none;
     border-radius: 8px;
 
+    @media(max-width: $screen-s) {
+      padding: 16px 16px 17px 53px;
+    }
+
     &::placeholder {
-      color: var(--color-text-ghost);
+      color: transparent;
+
+      @media(max-width: $screen-s) {
+        color: var(--color-text-ghost);
+      }
     }
   }
 }
