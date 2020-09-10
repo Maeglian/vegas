@@ -22,7 +22,7 @@
           <input type="password" class="Form-Input">
           </label>
         </div>
-        <a href="#" class="Form-Link Login-ForgotPassword">
+        <a href="#" class="Form-Link Form-Link--color Login-ForgotPassword">
           Forgot password?
         </a>
         <a href="#" class="Form-Link Login-HaveAccount">

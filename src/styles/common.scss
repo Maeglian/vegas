@@ -160,11 +160,15 @@ a {
 
   &-Input {
     width: 100%;
-    padding: 10px;
+    padding: 18px 16px 19px;
     color: var(--color-text-main);
     background-color: rgba(255, 255, 255, 0.05);
     border: none;
     border-radius: 4px;
+
+    &::placeholder {
+      color: var(--color-text-ghost);
+    }
   }
 
   &-Container {
@@ -239,6 +243,10 @@ a {
     text-decoration: none;
     color: var(--color-text-main);
 
+    &--color {
+      color: var(--color-main2);
+    }
+
     &:hover {
       color: var(--color-main2);
     }
@@ -247,4 +255,8 @@ a {
 
 .v_slider__list {
   margin-bottom: 0;
+}
+
+.vm--overlay {
+  background: rgba(9, 5, 2, 0.8) !important;
 }

@@ -1,5 +1,5 @@
 <template>
-  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
+  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled, 'MainNav--overlay': navIsOpen}">
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
@@ -23,11 +23,35 @@
       </div>
     </div>
     <transition name="slide-left">
-      <div v-if="navIsOpen" class="MainNav-Aside">
-        <ul class="MainNav-List">
+      <div v-if="navIsOpen" class="AsideMenu MainNav-Aside">
+        <div class="AsideMenu-Header">
+          <div class="AsideMenu-Close" @click="navIsOpen = !navIsOpen"></div>
+          <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
+        </div>
+        <div class="AsideMenu-Form">
+          <form class="Form">
+            <div class="Form-Field">
+              <input type="text" class="Form-Input" placeholder="Username or email" />
+            </div>
+            <div class="Form-Field">
+              <input type="password" class="Form-Input" placeholder="Password" />
+            </div>
+            <div class="AsideMenu-Buttons">
+              <div class="Btn Btn--outline Btn--outline2 AsideMenu-Btn">
+                Login
+              </div>
+              <div class="Btn Btn--color AsideMenu-Btn">
+                Register
+              </div>
+            </div>
+            <a href="#" class="AsideMenu-Link Form-Link Form-Link--color">
+              Forgot password?
+            </a>
+          </form>
+        </div>
+        <ul class="AsideMenu-List">
           <NavItem :items="navItems" />
         </ul>
-        <div class="MainNav-Close" @click="navIsOpen = !navIsOpen"></div>
       </div>
     </transition>
     <modal name="login" classes="Modal" :width="380" :height="'auto'" adaptive>
@@ -58,95 +82,34 @@ export default {
       topBarIsScrolled: false,
       navItems: [
         {
-          name: 'home',
-          icon: 'home',
-          iconDimensions: [24, 20],
-        },
-        {
           name: 'games',
-          icon: 'menu-games',
-          iconDimensions: [24, 24],
-          children: [
-            {
-              name: 'favourites',
-            },
-            {
-              name: 'slots',
-              children: [
-                {
-                  name: 'new games',
-                },
-                {
-                  name: 'most popular',
-                },
-                {
-                  name: 'jackpot games',
-                },
-              ],
-            },
-            {
-              name: 'jackpot games',
-            },
-            {
-              name: 'roulette',
-            },
-            {
-              name: 'blackjack',
-            },
-            {
-              name: 'live casino',
-            },
-            {
-              name: 'others',
-            },
-            {
-              name: 'show all',
-            },
-          ],
+          icon: 'cards',
+          iconDimensions: [20, 22],
         },
         {
-          name: 'cashier',
-          icon: 'cashier',
-          iconDimensions: [24, 18],
+          name: 'promotion',
+          icon: 'gift',
+          iconDimensions: [19, 20],
         },
         {
-          name: 'daily picks',
-          icon: 'daily',
-          iconDimensions: [25, 24],
-          highlighted: true,
+          name: 'vip rewards',
+          icon: 'jewel',
+          iconDimensions: [19, 18],
         },
         {
-          name: 'tournaments',
-          icon: 'tournaments',
-          iconDimensions: [20, 27],
-          highlighted: true,
+          name: 'about us',
+          icon: 'about',
+          iconDimensions: [19, 19],
         },
         {
-          name: 'rewards',
-          icon: 'rewards',
-          iconDimensions: [22, 28],
-          highlighted: true,
-          badge: true,
+          name: 'payment methods',
+          icon: 'payment',
+          iconDimensions: [19, 16],
         },
         {
-          name: 'personal area',
-          icon: 'personal',
-          iconDimensions: [20, 21],
-        },
-        {
-          name: 'sound',
-          icon: 'sound',
-          iconDimensions: [24, 23],
-        },
-        {
-          name: 'support',
-          icon: 'support',
-          iconDimensions: [24, 25],
-        },
-        {
-          name: 'logout',
-          icon: 'logout',
-          iconDimensions: [23, 26],
+          name: 'faq',
+          icon: 'faq',
+          iconDimensions: [19, 19],
         },
       ],
     };
@@ -182,6 +145,19 @@ export default {
   position: sticky;
   top: 0;
   z-index: 1;
+
+  &--overlay {
+    &:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(6, 8, 30, 0.9);
+      z-index: 2;
+    }
+  }
 
   &--bg {
     background: rgba(39, 43, 95, 0.7);
@@ -282,46 +258,37 @@ export default {
       margin-right: 0;
     }
   }
+}
 
-  &-Aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 2;
+.AsideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  min-width: 308px;
+  padding: 30px 0;
+  background-color: var(--color-bg-nav);
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  &-Header {
     display: flex;
-    justify-content: space-between;
-    min-width: $screen-xs;
-    padding-right: 40px;
-    background: linear-gradient(to left, #c8c8c8 40px, var(--color-bg-nav) 40px);
-  }
-
-  &-List {
-    width: 100%;
-    overflow-y: auto;
-    scrollbar-width: thin;
-  }
-
-  &-CloseBar {
-    width: 40px;
-    height: 100%;
-    background-color: #c8c8c8;
+    margin-bottom: 26px;
+    padding: 0 16px;
   }
 
   &-Close {
-    position: absolute;
-    top: 16px;
-    right: 10px;
     width: 20px;
     height: 20px;
+    margin-right: 16px;
     cursor: pointer;
-    z-index: 1;
 
     &:before, &:after {
       content: '';
       position: absolute;
-      left: 10px;
-      width: 2px;
+      left: 20px;
+      width: 3px;
       height: 20px;
       background-color: var(--color-text-main);
     }
@@ -333,6 +300,33 @@ export default {
     &:after {
       transform: rotate(-45deg);
     }
+  }
+
+  &-Form {
+    padding: 16px;
+    border-top: 1px solid rgba(39, 43, 95, 0.5);
+    border-bottom: 1px solid rgba(39, 43, 95, 0.5);
+  }
+
+  &-Buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &-Btn {
+    width: calc(50% - 5px);
+    padding: 14px;
+  }
+
+  &-Link {
+    display: block;
+    text-align: right;
+  }
+
+  &-List {
+    width: 100%;
+    padding-top: 18px;
   }
 }
 </style>

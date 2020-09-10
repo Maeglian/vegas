@@ -7,16 +7,13 @@
       :class="[item.highlighted || (listIsOpen && item.children) ? 'Nav-Item--highlighted' : '' ]"
     >
       <div class="Nav-Name">
-        <div class="Nav-BadgeContainer" v-if="item.badge">
-          <div class="Badge Nav-Badge" v-if="item.badge">6</div>
-          <svg
-            v-if="item.icon"
-            class="Icon Nav-Icon"
-            :width="item.iconDimensions[0]"
-            :height="item.iconDimensions[1]">
-            <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${item.icon}`"></use>
-          </svg>
-        </div>
+        <svg
+          v-if="item.icon"
+          class="Icon Nav-Icon"
+          :width="item.iconDimensions[0]"
+          :height="item.iconDimensions[1]">
+          <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${item.icon}`"></use>
+        </svg>
         {{ item.name }}
         <i
           class="Nav-Arrow Arrow"
@@ -24,12 +21,12 @@
           v-if="item.children"
           @click="listIsOpen = !listIsOpen"
         ></i>
+        <transition name="slide-up">
+          <ul v-if="item.children" v-show="listIsOpen" class="Nav-List">
+            <NavItem v-if="item.children" :items="item.children" />
+          </ul>
+        </transition>
       </div>
-      <transition name="slide-up">
-        <ul v-if="item.children" v-show="listIsOpen" class="Nav-List">
-          <NavItem v-if="item.children" :items="item.children" />
-        </ul>
-      </transition>
     </li>
   </fragment>
 </template>
@@ -57,34 +54,32 @@ export default {
     background-color: #1D2047;
   }
 
-  &-Item {
-    color: var(--color-text-main);
-
-    &--highlighted {
-      background-color: #1D2047;
-    }
-
-    .Nav-Item .Nav-Name {
-      padding: 8px 0 8px 66px;
-    }
-
-    .Nav-Item .Nav-Item .Nav-Name {
-      padding: 8px 0 9px 85px;
-    }
+  &-Icon {
+    margin-right: 16px;
+    stroke: var(--color-text-ghost);
+    fill: var(--color-text-ghost);
   }
 
-  &-Icon {
-    margin-right: 20px;
+  &-Item {
+    cursor: pointer;
+  }
+
+  &-Item:hover {
+    .Nav-Icon {
+      stroke: var(--color-main1);
+      fill: var(--color-main1);
+    }
   }
 
   &-Name {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 16px 0 16px 21px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
+    padding: 8px 0 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
     text-transform: uppercase;
+    color: var(--color-text-ghost);
 
     &:hover {
       color: var(--color-main1);
@@ -96,18 +91,6 @@ export default {
     position: absolute;
     top: 50%;
     right: 10px;
-  }
-
-  &-BadgeContainer {
-    position: relative;
-  }
-
-  &-Badge {
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    color: #1D2047;
-    background-color: var(--color-main1);
   }
 }
 </style>

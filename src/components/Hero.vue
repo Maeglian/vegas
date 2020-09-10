@@ -168,7 +168,6 @@ export default {
   .v_slider__dots {
     position: relative;
     margin-top: -80px;
-    z-index: 1;
 
     @media(max-width: $screen-l) {
       display: none;

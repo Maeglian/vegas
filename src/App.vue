@@ -73,6 +73,6 @@ export default {
   --color-text-ghost: #9DA3B4;
   --color-border-ghost: #272B5F;
   --color-bg: rgba(39, 43, 95, 0.2);
-  --color-bg-nav: #10133A;
+  --color-bg-nav: #151841;
 }
 </style>
