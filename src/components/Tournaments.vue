@@ -9,14 +9,29 @@
       <VueSlider v-bind="options">
         <div v-for="item in slides" :key="item.title" class="Tournaments-Item">
             <picture class="Tournaments-Image">
-              <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${item.imageMobile}`)">
+              <source
+                v-if="item.imageMobile"
+                media="(max-width: 460px)" :srcset="require(`@/assets/img/${item.imageMobile}`)"
+              >
+              <source
+                v-if="item.image768"
+                media="(max-width: 768px)" :srcset="require(`@/assets/img/${item.image768}`)"
+              >
+              <source
+                v-if="item.image960"
+                media="(max-width: 960px)" :srcset="require(`@/assets/img/${item.image960}`)"
+              >
               <img :src="require(`@/assets/img/${item.image}`)" :alt="item.title">
             </picture>
             <div class="Tournaments-Content">
-              <div class="Title Title--type-h3 Tournaments-Name">
+              <div class="Title Tournaments-Name">
                 {{ item.title }}
               </div>
-              <div v-if="item.bonus" class="Tournaments-Bonus">
+              <div
+                v-if="item.bonus"
+                class="Tournaments-Bonus"
+                :class="{'Tournaments-Bonus--noMargin' : !item.timeLeft}"
+              >
                 <span v-html="item.bonus"></span>
               </div>
               <div class="Tournaments-Text">
@@ -58,7 +73,7 @@ export default {
           0: {
             items: 1,
           },
-          768: {
+          698: {
             items: 2,
           },
         },
@@ -66,13 +81,17 @@ export default {
       slides: [
         {
           image: 'tournaments.png',
-          imageMobile: 'tournaments.png',
+          image768: 'tournaments_768.png',
+          image960: 'tournaments_960.png',
+          imageMobile: 'tournaments_320.png',
           title: 'Weekly in a New Race Tournament',
           bonus: '€280 000 every day',
           timeLeft: [16, 48, 36, 15],
         },
         {
           image: 'bonus.png',
+          image768: 'bonus_768.png',
+          image960: 'bonus_960.png',
           imageMobile: 'bonus.png',
           title: '55% Of The Deposit Amount',
           bonus: '<span class="TextMain">Up to</span> € 150<br/> + 100 Free  Spins',
@@ -86,7 +105,15 @@ export default {
 
 <style lang="scss">
 .Tournaments {
-  margin-bottom: 94px;
+  margin-bottom: 98px;
+
+  @media(max-width: $screen-l) {
+    margin-bottom: 75px;
+  }
+
+  @media(max-width: $screen-s) {
+    margin-bottom: 69px;
+  }
 
   &-Title {
     margin-bottom: 50px;
@@ -104,6 +131,11 @@ export default {
     max-width: 60%;
     text-align: left;
 
+    @media(max-width: $screen-l) {
+      top: 24px;
+      left: 30px;
+    }
+
     @media(max-width: $screen-m) {
       max-width: 80%;
     }
@@ -116,14 +148,25 @@ export default {
       flex-direction: column;
       align-items: center;
       max-width: 100%;
-      margin-top: -120px;
+      margin-top: 193px;
       text-align: center;
+    }
+  }
+
+  &-Image {
+    @media(max-width: $screen-s) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
     }
   }
 
   &-Name {
     margin-bottom: 10px;
     font-size: 28px;
+    font-weight: 800;
 
     @media(max-width: $screen-l) {
       margin-bottom: 8px;
@@ -147,6 +190,12 @@ export default {
       margin-bottom: 12px;
       font-size: 14px;
     }
+
+    &--noMargin {
+      @media(max-width: $screen-l) {
+        margin-bottom: 3px;
+      }
+    }
   }
 
   //&-Image {
@@ -167,6 +216,10 @@ export default {
 
   &-Counter {
     margin-bottom: 22px;
+
+    @media(max-width: $screen-l) {
+      margin-bottom: 14px;
+    }
   }
 
   &-Text {
@@ -175,6 +228,10 @@ export default {
     font-weight: 300;
     line-height: 1.66;
     color: var(--color-faded);
+
+    @media(max-width: $screen-l) {
+      margin-bottom: 14px;
+    }
   }
 
   &-Footer {
@@ -184,6 +241,11 @@ export default {
 
   &-Btn {
     margin-right: 22px;
+    padding: 17px 30px;
+
+    @media(max-width: $screen-m) {
+      padding: 14px 20px;
+    }
   }
 
   &-Link {
