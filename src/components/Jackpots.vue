@@ -194,22 +194,34 @@ export default {
   padding-left: 0;
   padding-right: 0;
 
+  @media(max-width: $screen-m) {
+    margin-bottom: 68px;
+  }
+
+  @media(max-width: $screen-s) {
+    margin-bottom: 58px;
+  }
+
   &-Header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 73px;
+    margin-bottom: 43px;
     padding-left: 16px;
     padding-right: 16px;
 
+    @media(max-width: $screen-m) {
+      margin-bottom: 34px;
+    }
+
     @media(max-width: $screen-s) {
       display: block;
-      margin-bottom: 33px;
+      margin-bottom: 17px;
     }
   }
 
   &-Title {
     @media(max-width: $screen-s) {
-      margin-bottom: 44px;
+      margin-bottom: 40px;
       font-size: 24px;
       text-align: center;
     }
