@@ -50,7 +50,11 @@ export default {
 
 <style lang="scss">
 .Questions {
-  margin-bottom: 87px;
+  margin-bottom: 72px;
+
+  @media(max-width: $screen-m) {
+    margin-bottom: 63px;
+  }
 
   @media(max-width: $screen-s) {
     padding-left: 0;

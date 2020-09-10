@@ -465,6 +465,7 @@ export default {
   width: 100%;
   float: left;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
