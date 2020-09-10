@@ -1,5 +1,5 @@
 <template>
-  <nav class="MainNav">
+  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
@@ -53,7 +53,9 @@ export default {
   },
   data() {
     return {
+      documentIsScrolled: false,
       navIsOpen: false,
+      topBarIsScrolled: false,
       navItems: [
         {
           name: 'home',
@@ -149,6 +151,12 @@ export default {
       ],
     };
   },
+  created() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
   methods: {
     showLoginDialog() {
       this.$modal.show('login');
@@ -162,6 +170,9 @@ export default {
     hideRegistrationDialog() {
       this.$modal.hide('registration');
     },
+    onScroll() {
+      this.documentIsScrolled = window.scrollY > 0;
+    },
   },
 };
 </script>
@@ -171,6 +182,10 @@ export default {
   position: sticky;
   top: 0;
   z-index: 1;
+
+  &--bg {
+    background: rgba(39, 43, 95, 0.7);
+  }
 
   &-TopBar {
     position: relative;
@@ -183,7 +198,6 @@ export default {
     margin-left: auto;
     margin-right: auto;
     padding: 15px 31px;
-    background: rgba(39, 43, 95, 0.5);
 
     @media(max-width: $screen-xl) {
       padding-left: 16px;
