@@ -1,13 +1,17 @@
 <template>
+  <!-- eslint-disable max-len -->
   <section class="Hero">
     <div class="Hero-Slider">
       <VueSlider v-bind="options">
         <div class="Hero-Item">
-          <div class="Hero-Image">
+          <picture class="Hero-Image">
+            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
+            <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
+            <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
             <img src="@/assets/img/hero-bg-joker.jpg" alt="">
-          </div>
-          <div class="Hero-Title">
-            <div class="Title Title--type-h1">
+          </picture>
+          <div class="Hero-Content">
+            <div class="Title Title--type-h1 Hero-Title">
               Number one place to have fun!
             </div>
             <p class="Hero-Text">
@@ -23,8 +27,8 @@
           <div class="Hero-Image">
             <img src="@/assets/img/hero-bg.jpg" alt="">
           </div>
-          <div class="Hero-Title">
-            <div class="Title Title--type-h1">
+          <div class="Hero-Content">
+            <div class="Title Title--type-h1 Hero-Title">
               Number one place to have fun!
             </div>
             <p class="Hero-Text">
@@ -80,91 +84,75 @@ export default {
 <style lang="scss">
 .Hero {
   margin-top: -75px;
+  margin-bottom: 30px;
   padding-left: 0;
   padding-right: 0;
 
-  @media(max-width: $screen-l) {
-    margin-bottom: 40px;
-  }
-
-  @media(max-width: $screen-m) {
-    margin-bottom: 30px;
-  }
-
   @media(max-width: $screen-s) {
-    margin-bottom: 0;
+    margin-bottom: 55px;
   }
 
   &-Item {
     position: relative;
   }
 
-  &-Image {
+  &-Content {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + 16px);
-    height: 100%;
-
-    @media(max-width: $screen-l) {
-      object-position: top right;
-    }
-
-    @media(max-width: $screen-s) {
-      width: 100%;
-      height: 85%;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top right;
-
-      @media(max-width: $screen-l) {
-        object-position: top right;
-      }
-    }
-  }
-
-  &-Title {
-    position: relative;
+    top: 183px;
+    left: 16px;
     max-width: 40%;
-    margin-top: 183px;
-    margin-bottom: 174px;
-    padding-left: 16px;
-    padding-right: 16px;
     text-align: left;
 
     @media(max-width: $screen-l) {
       max-width: 50%;
-      margin-top: 174px;
+      top: 159px;
     }
 
     @media(max-width: $screen-m) {
-      max-width: 50%;
-      margin-top: 107px;
-      margin-bottom: 121px;
+      max-width: 70%;
+      top: 124px;
     }
 
     @media(max-width: $screen-s) {
       max-width: 100%;
-      margin-top: 332px;
-      margin-bottom: 55px;
+      position: relative;
+      top: initial;
+      left: initial;
+      margin-top: -130px;
       text-align: center;
     }
   }
 
+  &-Image {
+    display: inline-block;
+
+    @media(max-width: $screen-s) {
+      height: 454px;
+      overflow: hidden;
+    }
+  }
+
+  &-Title {
+    margin-bottom: 36px;
+
+    @media(max-width: $screen-m) {
+      margin-bottom: 26px;
+    }
+
+    @media(max-width: $screen-s) {
+      margin-bottom: 19px;
+    }
+  }
+
   &-Text {
-    margin-top: 26px;
-    margin-bottom: 60px;
-    font-size: 18px;
-    line-height: 27px;
+    margin-bottom: 53px;
+    font-size: 22px;
+    line-height: 1.37;
     color: var(--color-text-main);
 
     @media(max-width: $screen-l) {
-      margin-top: 20px;
-      margin-bottom: 38px;
+      margin-bottom: 35px;
+      font-size: 18px;
     }
 
     @media(max-width: $screen-m) {
@@ -172,9 +160,18 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      margin-top: 4px;
       font-size: 14px;
-      line-height: 21px;
+      line-height: 20px;
+    }
+  }
+
+  .v_slider__dots {
+    position: relative;
+    margin-top: -120px;
+    z-index: 1;
+
+    @media(max-width: $screen-l) {
+      display: none;
     }
   }
 }

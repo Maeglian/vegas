@@ -436,7 +436,6 @@ export default {
   float: left;
   display: block;
   position: relative;
-  margin-bottom: 40px;
 }
 
 .v_slider__track {

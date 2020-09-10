@@ -9,7 +9,7 @@
       </div>
       <div class="MainNav-Login">
         <button
-          class="Btn Btn--outline Btn--outline1 MainNav-Btn"
+          class="Btn MainNav-Btn"
           @click="showLoginDialog()"
         >
           Login
