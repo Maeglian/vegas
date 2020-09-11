@@ -6,19 +6,37 @@
     </div>
     <div class="Promotions-Slider">
       <VueSlider v-bind="options">
-        <div
-          v-for="promotion in promotions"
-          :key="promotion.title"
-          class="Promotions-Item"
-        >
-         <img class="Promotions-Image" :src="require(`@/assets/img/${promotion.image}`)"/>
-          <div class="Promotions-Name">
-            {{ promotion.title }}
+        <div class="Promotions-SliderItem">
+          <div
+            v-for="(promotion, i) in [1, 2, 3]"
+            :key="promotions[i].title"
+            class="Promotions-Item"
+          >
+            <img class="Promotions-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
+            <div class="Promotions-Name">
+              {{ promotions[i].title }}
+            </div>
+            <div class="Promotions-Text" v-html="promotions[i].text"></div>
+            <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
+              Read more
+            </button>
           </div>
-          <div class="Promotions-Text" v-html="promotion.text"></div>
-          <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
-            Read more
-          </button>
+        </div>
+        <div class="Promotions-SliderItem">
+          <div
+            v-for="(promotion, i) in [4, 5, 6]"
+            :key="promotion.title"
+            class="Promotions-Item"
+          >
+            <img class="Promotions-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
+            <div class="Promotions-Name">
+              {{ promotions[i].title }}
+            </div>
+            <div class="Promotions-Text" v-html="promotions[i].text"></div>
+            <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
+              Read more
+            </button>
+          </div>
         </div>
       </VueSlider>
     </div>
@@ -37,21 +55,10 @@ export default {
   data() {
     return {
       options: {
-        items: 3,
+        items: 1,
         loop: true,
         margin: 10,
         dots: true,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          460: {
-            items: 2,
-          },
-          768: {
-            items: 3,
-          },
-        },
       },
     };
   },
@@ -67,15 +74,42 @@ export default {
 
   &-Title {
     margin-bottom: 40px;
+
+    @media(max-width: $screen-s) {
+      text-align: center;
+    }
+  }
+
+  &-SliderItem {
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: $screen-s) {
+      display: block;
+    }
   }
 
   &-Item {
+    flex-grow: 1;
+    margin-right: 10px;
     padding: 50px 10px;
     background-color: var(--color-bg);
     border-radius: 8px;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     @media(max-width: $screen-l) {
       padding: 40px 10px;
+    }
+
+    @media(max-width: $screen-s) {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
