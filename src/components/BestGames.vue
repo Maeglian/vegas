@@ -181,11 +181,14 @@ export default {
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 28px;
-    color: var(--color-text-main);
+    color: var(--color-text-ghost);
 
-    @media(max-width: $screen-m) {
+    @media(max-width: $screen-l) {
       width: 50%;
       margin-bottom: 20px;
+    }
+
+    @media(max-width: $screen-m) {
       font-size: 14px;
     }
 
@@ -198,6 +201,10 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: 31px;
+
+    @media(max-width: $screen-l) {
+      margin-bottom: 15px;
+    }
 
     @media(max-width: $screen-m) {
       margin-bottom: 20px;
@@ -224,7 +231,7 @@ export default {
     white-space: nowrap;
 
     @media(max-width: $screen-l) {
-      padding: 20px 15px;
+      padding: 20px 13px;
     }
 
     @media(max-width: $screen-m) {
@@ -377,6 +384,10 @@ export default {
   &-Thumb {
     height: 194px;
     overflow: hidden;
+
+    @media(max-width: $screen-l) {
+      height: 148px;
+    }
 
     @media(max-width: $screen-m) {
       height: 117px;

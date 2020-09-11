@@ -70,6 +70,11 @@ export default {
       margin-right: 0;
     }
 
+    @media(max-width: $screen-l) {
+      margin-right: 28px;
+      font-size: 13px;
+    }
+
     @media(max-width: $screen-m) {
       margin-right: 28px;
       font-size: 10px;

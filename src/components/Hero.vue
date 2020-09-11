@@ -88,7 +88,7 @@ export default {
   padding-left: 0;
   padding-right: 0;
 
-  @media(max-width: $screen-m) {
+  @media(max-width: $screen-l) {
     margin-bottom: 45px;
   }
 

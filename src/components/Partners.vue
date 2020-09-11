@@ -39,13 +39,20 @@ export default {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   border-bottom: 1px solid rgba(110, 88, 131, 0.3);
+
+  @media(max-width: $screen-l) {
+    padding-bottom: 25px;
+  }
+
+  @media(max-width: $screen-m) {
+    padding-bottom: 20px;
+  }
 
   &-Partner {
     flex-shrink: 2;
     margin-right: 37px;
-    margin-bottom: 32px;
     opacity: 0.25;
 
     @media(max-width: $screen-m) {

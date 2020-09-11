@@ -91,11 +91,12 @@ export default {
     max-width: 40%;
 
     @media(max-width: $screen-l) {
+      top: 60px;
+      left: 46px;
       max-width: 50%;
     }
 
     @media(max-width: $screen-m) {
-      top: 60px;
       left: 16px;
     }
 

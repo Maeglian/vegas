@@ -254,7 +254,7 @@ export default {
     text-transform: uppercase;
     color: #FFA41D;
 
-    @media (max-width: $screen-s) {
+    @media (max-width: $screen-l) {
       font-size: 16px;
     }
   }
@@ -265,7 +265,7 @@ export default {
     line-height: 1.18;
     color: var(--color-text-main);
 
-    @media (max-width: $screen-m) {
+    @media (max-width: $screen-l) {
       font-size: 30px;
     }
 
@@ -292,6 +292,11 @@ export default {
     margin-bottom: 19px;
     border-radius: 8px;
     overflow: hidden;
+
+    @media (max-width: $screen-l) {
+      height: 92px;
+      margin-bottom: 14px;
+    }
 
     @media (max-width: $screen-m) {
       height: 72px;
@@ -341,14 +346,27 @@ export default {
     font-weight: 500;
     color: rgba(255, 255, 255, 0.3);
 
+    @media (max-width: $screen-l) {
+      font-size: 11px;
+      margin-right: 8px;
+    }
+
     @media (max-width: $screen-m) {
       font-size: 12px;
+    }
+
+    @media (max-width: $screen-s) {
+      margin-right: 13px;
     }
   }
 
   &-Price {
     font-weight: 700;
     color: var(--color-main2);
+
+    @media (max-width: $screen-l) {
+      font-size: 11px;
+    }
 
     @media (max-width: $screen-m) {
       font-size: 12px;
