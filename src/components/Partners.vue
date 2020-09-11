@@ -55,6 +55,10 @@ export default {
     margin-right: 37px;
     opacity: 0.25;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     @media(max-width: $screen-m) {
       margin-right: 25px;
       margin-bottom: 15px;
