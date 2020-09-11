@@ -9,7 +9,7 @@
       </div>
       <div class="MainNav-Login">
         <button
-          class="Btn MainNav-Btn"
+          class="Btn Btn--text MainNav-Btn MainNav-Btn--text"
           @click="showLoginDialog()"
         >
           Login
@@ -203,11 +203,11 @@ export default {
     span {
       font-size: 0;
       width: 100%;
-      height: 2.6px;
+      height: 3px;
       background: var(--color-text-main);
 
       @media(max-width: $screen-s) {
-        height: 1.6px;
+        height: 2px;
       }
     }
 
@@ -216,20 +216,28 @@ export default {
       position: absolute;
       left: 0;
       width: 100%;
-      height: 2.6px;
+      height: 3px;
       background: var(--color-text-main);
 
       @media(max-width: $screen-s) {
-        height: 1.6px;
+        height: 2px;
       }
     }
 
     &:before {
       top: 0;
+
+      @media(max-width: $screen-s) {
+        top: -1px;
+      }
     }
 
     &:after {
-      bottom: 0;
+      bottom: -1px;
+
+      @media(max-width: $screen-s) {
+        bottom: 0;
+      }
     }
   }
 
@@ -251,10 +259,11 @@ export default {
   }
 
   &-Btn {
-    margin-right: 10px;
+    margin-right: 30px;
     padding: 13px 30px;
 
     @media(max-width: $screen-s) {
+      margin-right: 10px;
       font-size: 10px;
       font-weight: 500;
       padding: 9px 14px;
@@ -262,6 +271,10 @@ export default {
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &--text {
+      padding: 0;
     }
   }
 }
