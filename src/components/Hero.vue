@@ -169,6 +169,11 @@ export default {
     padding: 25px 40px;
     font-size: 18px;
     font-weight: 600;
+
+    @media(max-width: $screen-s) {
+      padding: 20px 30px;
+      font-size: 16px;
+    }
   }
 
   .v_slider__dots {

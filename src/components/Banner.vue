@@ -67,6 +67,7 @@ export default {
 
   @media(max-width: $screen-s) {
     text-align: center;
+    margin-bottom: 73px;
   }
 
   &-Image {
@@ -94,7 +95,7 @@ export default {
       top: initial;
       left: initial;
       max-width: 100%;
-      margin-top: -120px;
+      margin-top: -150px;
       padding-left: 16px;
       padding-right: 16px;
     }
@@ -162,6 +163,11 @@ export default {
 
     @media(max-width: $screen-m) {
       padding: 18px 22px;
+    }
+
+    @media(max-width: $screen-s) {
+      padding: 18px 40px;
+      font-size: 16px;
     }
   }
 }

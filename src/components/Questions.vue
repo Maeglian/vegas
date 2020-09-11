@@ -57,6 +57,7 @@ export default {
   }
 
   @media(max-width: $screen-s) {
+    margin-bottom: 40px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -67,6 +68,7 @@ export default {
     @media(max-width: $screen-s) {
       margin-left: 16px;
       margin-right: 16px;
+      text-align: center;
     }
   }
 
@@ -89,7 +91,7 @@ export default {
     @media(max-width: $screen-s) {
       width: 100%;
       margin-bottom: 20px;
-      padding: 25px 16px;
+      padding: 25px 16px 10px;
     }
   }
 
@@ -100,12 +102,21 @@ export default {
     line-height: 1.26;
     color: var(--color-text-main);
     border-bottom: 1px solid rgba(39, 43, 95, 0.5);
+
+    @media(max-width: $screen-s) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 
   &-Answer {
     font-size: 16px;
     line-height: 1.61;
     color: rgba(255, 255, 255, 0.4);
+
+    @media(max-width: $screen-s) {
+      font-size: 14px;
+    }
   }
 }
 </style>

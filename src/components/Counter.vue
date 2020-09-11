@@ -53,6 +53,10 @@ export default {
     font-weight: 300;
     line-height: 1.66;
     color: var(--color-faded);
+
+    @media(max-width: $screen-s) {
+      text-align: left;
+    }
   }
 
   &-Content {

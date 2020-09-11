@@ -218,8 +218,11 @@ export default {
     }
 
     @media(max-width: $screen-s) {
+      display: none;
+      justify-content: flex-start;
       order: 2;
       width: 100%;
+      padding: 20px;
     }
 
     &:last-child {
@@ -360,9 +363,15 @@ export default {
     height: 194px;
     overflow: hidden;
 
+    @media(max-width: $screen-s) {
+      height: 138px;
+    }
+
     img {
+      width: 100%;
+      height: 100%;
       border-radius: 8px;
-      object-fit: fill;
+      object-fit: cover;
     }
 
     &--wide {
@@ -376,6 +385,13 @@ export default {
 
   &-Btn {
     text-align: center;
+
+    .Btn {
+      @media(max-width: $screen-s) {
+        padding: 17px 20px;
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>

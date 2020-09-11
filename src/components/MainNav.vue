@@ -254,6 +254,12 @@ export default {
     margin-right: 10px;
     padding: 13px 30px;
 
+    @media(max-width: $screen-s) {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 9px 14px;
+    }
+
     &:last-child {
       margin-right: 0;
     }

@@ -34,7 +34,7 @@
               >
                 <span v-html="item.bonus"></span>
               </div>
-              <div class="Tournaments-Text">
+              <div class="Tournaments-Text" v-if="item.text">
                 {{ item.text }}
               </div>
               <Counter v-if="item.timeLeft" class="Tournaments-Counter"/>
@@ -112,11 +112,16 @@ export default {
   }
 
   @media(max-width: $screen-s) {
-    margin-bottom: 69px;
+    margin-bottom: 25px;
   }
 
   &-Title {
     margin-bottom: 50px;
+
+    @media(max-width: $screen-s) {
+      margin-bottom: 10px;
+      text-align: center;
+    }
   }
 
   &-Item {
@@ -148,7 +153,7 @@ export default {
       flex-direction: column;
       align-items: center;
       max-width: 100%;
-      margin-top: 193px;
+      margin-top: 185px;
       text-align: center;
     }
   }
@@ -191,6 +196,10 @@ export default {
       font-size: 14px;
     }
 
+    @media(max-width: $screen-s) {
+      margin-bottom: 16px;
+    }
+
     &--noMargin {
       @media(max-width: $screen-l) {
         margin-bottom: 3px;
@@ -203,6 +212,10 @@ export default {
 
     @media(max-width: $screen-l) {
       margin-bottom: 14px;
+    }
+
+    @media(max-width: $screen-s) {
+      margin-bottom: 22px;
     }
   }
 

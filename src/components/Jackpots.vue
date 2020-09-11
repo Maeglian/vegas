@@ -216,7 +216,7 @@ export default {
 
     @media(max-width: $screen-s) {
       display: block;
-      margin-bottom: 17px;
+      margin-bottom: 30px;
     }
   }
 
@@ -239,6 +239,7 @@ export default {
     @media (max-width: $screen-s) {
       width: 54px;
       height: 56px;
+      margin-right: 23px;
     }
   }
 

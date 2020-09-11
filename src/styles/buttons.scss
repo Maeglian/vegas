@@ -35,6 +35,11 @@ button {
       font-size: 11px;
     }
 
+    @media(max-width: $screen-s) {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
     .Icon {
       margin-right: 12px;
       stroke: var(--color-text-ghost);

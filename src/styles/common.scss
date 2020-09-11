@@ -255,6 +255,10 @@ a {
 
 .Euro {
   font-size: 30px;
+
+  @media(max-width: $screen-s) {
+    font-size: 18px;
+  }
 }
 
 .v_slider__list {

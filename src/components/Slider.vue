@@ -426,7 +426,7 @@ export default {
 
 <style lang="scss">
 .v_slider {
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
 }
 
