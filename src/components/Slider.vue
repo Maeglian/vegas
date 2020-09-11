@@ -496,9 +496,10 @@ export default {
 .v_slider__prev,
 .v_slider__next {
   position: absolute;
-  top: 51px;
+  top: 50%;
   width: 7px;
   height: 16px;
+  transform: translateY(-50%);
 
   &:focus {
     outline: none;

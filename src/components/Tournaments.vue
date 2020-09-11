@@ -111,12 +111,20 @@ export default {
     margin-bottom: 75px;
   }
 
+  @media(max-width: $screen-m) {
+    margin-bottom: 45px;
+  }
+
   @media(max-width: $screen-s) {
     margin-bottom: 25px;
   }
 
   &-Title {
     margin-bottom: 50px;
+
+    @media(max-width: $screen-m) {
+      margin-bottom: 30px;
+    }
 
     @media(max-width: $screen-s) {
       margin-bottom: 10px;
@@ -140,6 +148,10 @@ export default {
     @media(max-width: $screen-l) {
       top: 24px;
       left: 30px;
+    }
+
+    @media(max-width: $screen-m) {
+      left: 16px;
     }
 
     @media(max-width: $screen-m) {

@@ -159,9 +159,17 @@ export default {
     margin-bottom: 71px;
   }
 
+  @media(max-width: $screen-m) {
+    margin-bottom: 90px;
+  }
+
   &-Title {
     max-width: 60%;
     margin-bottom: 30px;
+
+    @media(max-width: $screen-m) {
+      margin-bottom: 20px;
+    }
 
     @media(max-width: $screen-s) {
       display: none;
@@ -176,6 +184,8 @@ export default {
     color: var(--color-text-main);
 
     @media(max-width: $screen-m) {
+      width: 50%;
+      margin-bottom: 20px;
       font-size: 14px;
     }
 
@@ -188,6 +198,10 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-bottom: 31px;
+
+    @media(max-width: $screen-m) {
+      margin-bottom: 20px;
+    }
 
     @media(max-width: $screen-s) {
       flex-direction: column;
@@ -214,6 +228,7 @@ export default {
     }
 
     @media(max-width: $screen-m) {
+      margin-right: 7px;
       padding: 13px 11px;
     }
 
@@ -363,6 +378,10 @@ export default {
     height: 194px;
     overflow: hidden;
 
+    @media(max-width: $screen-m) {
+      height: 117px;
+    }
+
     @media(max-width: $screen-s) {
       height: 138px;
     }
@@ -387,7 +406,7 @@ export default {
     text-align: center;
 
     .Btn {
-      @media(max-width: $screen-s) {
+      @media(max-width: $screen-m) {
         padding: 17px 20px;
         font-size: 12px;
       }

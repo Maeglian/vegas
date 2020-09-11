@@ -144,6 +144,10 @@ export default {
 
   &-Btn {
     padding: 20px 50px;
+
+    @media(max-width: $screen-m) {
+      padding: 14px 30px;
+    }
   }
 }
 

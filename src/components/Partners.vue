@@ -1,13 +1,29 @@
 <template>
   <section class="Partners">
-    <img class="Partners-Partner Partners-Partner--visa" src="@/assets/img/visa.svg" />
-    <img class="Partners-Partner Partners-Partner--maestro" src="@/assets/img/maestro.svg" />
-    <img class="Partners-Partner" src="@/assets/img/skrill.svg" />
-    <img class="Partners-Partner Partners-Partner--paysafe" src="@/assets/img/paysafe.svg" />
-    <img class="Partners-Partner" src="@/assets/img/wirecard.svg" />
-    <img class="Partners-Partner" src="@/assets/img/webmoney.svg" />
-    <img class="Partners-Partner Partners-Partner--sofort" src="@/assets/img/sofort.svg" />
-    <img class="Partners-Partner" src="@/assets/img/microgaming.svg" />
+    <div class="Partners-Partner Partners-Partner--visa">
+      <img class="Partners-Image" src="@/assets/img/visa.svg" />
+    </div>
+    <div class="Partners-Partner Partners-Partner--maestro">
+      <img class="Partners-Image" src="@/assets/img/maestro.svg" />
+    </div>
+    <div class="Partners-Partner">
+      <img class="Partners-Image" src="@/assets/img/skrill.svg" />
+    </div>
+    <div class="Partners-Partner Partners-Partner--paysafe">
+      <img class="Partners-Image" src="@/assets/img/paysafe.svg" />
+    </div>
+    <div class="Partners-Partner">
+      <img class="Partners-Image" src="@/assets/img/wirecard.svg" />
+    </div>
+    <div class="Partners-Partner">
+      <img class="Partners-Image" src="@/assets/img/webmoney.svg" />
+    </div>
+    <div class="Partners-Partner Partners-Partner--sofort">
+      <img class="Partners-Image" src="@/assets/img/sofort.svg" />
+    </div>
+    <div class="Partners-Partner">
+      <img class="Partners-Image" src="@/assets/img/microgaming.svg" />
+    </div>
   </section>
 </template>
 
@@ -20,20 +36,22 @@ export default {
 <style lang="scss">
 .Partners {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(110, 88, 131, 0.3);
 
-  @media(max-width: $screen-s) {
-    flex-wrap: nowrap;
-  }
-
   &-Partner {
+    flex-shrink: 2;
     margin-right: 37px;
     margin-bottom: 32px;
     opacity: 0.25;
+
+    @media(max-width: $screen-m) {
+      margin-right: 25px;
+      margin-bottom: 15px;
+    }
 
     @media(max-width: $screen-s) {
       display: none;
@@ -42,22 +60,18 @@ export default {
 
       &--visa {
         display: block;
-        width: 50px;
       }
 
       &--maestro {
         display: block;
-        width: 30px;
       }
 
       &--paysafe {
         display: block;
-        width: 97px;
       }
 
       &--sofort {
         display: block;
-        width: 54px;
       }
     }
   }

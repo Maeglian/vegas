@@ -236,6 +236,10 @@ export default {
   &-Icon {
     margin-right: 32px;
 
+    @media (max-width: $screen-m) {
+      margin-right: 20px;
+    }
+
     @media (max-width: $screen-s) {
       width: 54px;
       height: 56px;
@@ -261,6 +265,10 @@ export default {
     line-height: 1.18;
     color: var(--color-text-main);
 
+    @media (max-width: $screen-m) {
+      font-size: 30px;
+    }
+
     @media (max-width: $screen-s) {
       font-size: 36px;
     }
@@ -284,6 +292,15 @@ export default {
     margin-bottom: 19px;
     border-radius: 8px;
     overflow: hidden;
+
+    @media (max-width: $screen-m) {
+      height: 72px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: $screen-s) {
+      height: 120px;
+    }
 
     &:after {
       content: "";
@@ -309,17 +326,41 @@ export default {
     justify-content: center;
     font-size: 14px;
     line-height: 1.18;
+
+    @media (max-width: $screen-m) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $screen-s) {
+      flex-direction: row;
+    }
   }
 
   &-Game {
     margin-right: 13px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.3);
+
+    @media (max-width: $screen-m) {
+      font-size: 12px;
+    }
   }
 
   &-Price {
     font-weight: 700;
     color: var(--color-main2);
+
+    @media (max-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  .v_slider__prev, .v_slider__next {
+    top: 51px;
+
+    @media (max-width: $screen-m) {
+      top: 30px;
+    }
   }
 }
 </style>

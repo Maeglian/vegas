@@ -12,7 +12,7 @@
           </picture>
           <div class="Hero-Content">
             <div class="Title Title--type-h1 Hero-Title">
-              Number one place to have fun!
+              Number one place<br/> to have fun!
             </div>
             <p class="Hero-Text">
               Make first deposit now and get 100%<br/>
@@ -88,6 +88,10 @@ export default {
   padding-left: 0;
   padding-right: 0;
 
+  @media(max-width: $screen-m) {
+    margin-bottom: 45px;
+  }
+
   @media(max-width: $screen-s) {
     margin-bottom: 55px;
   }
@@ -109,7 +113,7 @@ export default {
     }
 
     @media(max-width: $screen-m) {
-      max-width: 70%;
+      max-width: 60%;
       top: 124px;
     }
 
@@ -170,7 +174,7 @@ export default {
     font-size: 18px;
     font-weight: 600;
 
-    @media(max-width: $screen-s) {
+    @media(max-width: $screen-m) {
       padding: 20px 30px;
       font-size: 16px;
     }

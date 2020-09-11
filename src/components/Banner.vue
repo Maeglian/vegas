@@ -65,6 +65,10 @@ export default {
     margin-bottom: 80px;
   }
 
+  @media(max-width: $screen-m) {
+    margin-bottom: 70px;
+  }
+
   @media(max-width: $screen-s) {
     text-align: center;
     margin-bottom: 73px;
@@ -88,6 +92,11 @@ export default {
 
     @media(max-width: $screen-l) {
       max-width: 50%;
+    }
+
+    @media(max-width: $screen-m) {
+      top: 60px;
+      left: 16px;
     }
 
     @media(max-width: $screen-s) {

@@ -55,6 +55,10 @@ export default {
   padding-top: 40px;
   padding-bottom: 54px;
 
+  @media(max-width: $screen-m) {
+    padding-top: 20px;
+  }
+
   &-Nav {
     margin-bottom: 46px;
   }
@@ -64,6 +68,11 @@ export default {
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @media(max-width: $screen-m) {
+      margin-right: 28px;
+      font-size: 10px;
     }
 
     @media(max-width: $screen-s) {
