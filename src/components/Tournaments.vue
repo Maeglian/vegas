@@ -105,7 +105,7 @@ export default {
 
 <style lang="scss">
 .Tournaments {
-  margin-bottom: 98px;
+  margin-bottom: 60px;
 
   @media(max-width: $screen-l) {
     margin-bottom: 75px;
@@ -198,22 +198,6 @@ export default {
     }
   }
 
-  //&-Image {
-  //  height: 450px;
-  //
-  //  @media(max-width: $screen-l) {
-  //    height: 420px;
-  //  }
-  //
-  //  @media(max-width: $screen-m) {
-  //    height: 340px;
-  //  }
-  //
-  //  @media(max-width: $screen-s) {
-  //    height: 360px;
-  //  }
-  //}
-
   &-Counter {
     margin-bottom: 22px;
 
@@ -241,7 +225,7 @@ export default {
 
   &-Btn {
     margin-right: 22px;
-    padding: 17px 30px;
+    padding: 17px 40px;
 
     @media(max-width: $screen-m) {
       padding: 14px 20px;

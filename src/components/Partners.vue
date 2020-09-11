@@ -23,6 +23,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(110, 88, 131, 0.3);
 
   &-Partner {

@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div class="Banner">
+  <section class="Banner">
     <picture class="Banner-Image">
       <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
       <img :src="require(`@/assets/img/${image}`)" :alt="title">
@@ -19,7 +19,7 @@
         {{ btnText }}
       </button>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -57,9 +57,13 @@ export default {
 <style lang="scss">
 .Banner {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   padding-left: 0;
   padding-right: 0;
+
+  &--bottom {
+    margin-bottom: 80px;
+  }
 
   @media(max-width: $screen-s) {
     text-align: center;
@@ -153,7 +157,8 @@ export default {
   }
 
   &-Btn {
-    padding: 20px 32px;
+    padding: 20px 55px;
+    font-size: 18px;
 
     @media(max-width: $screen-m) {
       padding: 18px 22px;

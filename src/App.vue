@@ -8,7 +8,7 @@
     <Tournaments />
     <Promotions />
     <Questions />
-    <Banner v-bind="banner2" />
+    <Banner class="Banner--bottom" v-bind="banner2" />
     <Partners />
     <Footer />
   </div>
@@ -45,7 +45,7 @@ export default {
       banner1: {
         image: 'banner1.png',
         imageMobile: 'banner1_mobile.png',
-        title: 'Live Games in <span class="Colored">Vegaswinner Casino</span>',
+        title: 'Live Games<br/> in <span class="Colored">Vegaswinner Casino</span>',
         text: 'Hit the tables and play your cards on the felt in our state-of-the-art live casino. Get all the casino action from the comfort of your own home.',
         btnText: 'Play now',
       },

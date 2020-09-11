@@ -84,7 +84,7 @@ export default {
 <style lang="scss">
 .Hero {
   margin-top: -75px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding-left: 0;
   padding-right: 0;
 
@@ -165,9 +165,15 @@ export default {
     }
   }
 
+  &-Btn {
+    padding: 25px 40px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
   .v_slider__dots {
     position: relative;
-    margin-top: -80px;
+    margin-top: -85px;
 
     @media(max-width: $screen-l) {
       display: none;

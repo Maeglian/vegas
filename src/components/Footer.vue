@@ -12,6 +12,9 @@
         Terms&nbsp;and&nbsp;conditions
       </a>
       <a class="Link Footer-Link" href="#">
+        Bonus&nbsp;policy
+      </a>
+      <a class="Link Footer-Link" href="#">
         Privacy&nbsp;policy
       </a>
       <a class="Link Footer-Link" href="#">
@@ -49,7 +52,7 @@ export default {
 
 <style lang="scss">
 .Footer {
-  padding-top: 46px;
+  padding-top: 40px;
   padding-bottom: 54px;
 
   &-Nav {
@@ -57,7 +60,7 @@ export default {
   }
 
   &-Link {
-    margin-right: 64px;
+    margin-right: 31px;
 
     &:last-child {
       margin-right: 0;

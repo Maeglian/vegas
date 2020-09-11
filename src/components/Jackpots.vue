@@ -14,7 +14,7 @@
             Total jackpot
           </div>
           <div class="Jackpots-Sum">
-            €&nbsp;11,574.600
+            <span class="Euro">€</span>&nbsp;11,574.600
           </div>
         </div>
       </div>
@@ -205,6 +205,7 @@ export default {
   &-Header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 43px;
     padding-left: 16px;
     padding-right: 16px;
@@ -254,8 +255,9 @@ export default {
   }
 
   &-Sum {
-    font-size: 30px;
+    font-size: 48px;
     font-weight: 800;
+    line-height: 1.18;
     color: var(--color-text-main);
 
     @media (max-width: $screen-s) {

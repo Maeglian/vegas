@@ -173,7 +173,7 @@ export default {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 31px;
+    padding: 15px 16px;
 
     @media(max-width: $screen-xl) {
       padding-left: 16px;

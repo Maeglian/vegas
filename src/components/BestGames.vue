@@ -4,10 +4,8 @@
     <div class="Title Title--type-h2 BestGames-Title">
       The best Games <br/>in <span class="Colored">Vegawinner Casino</span>
     </div>
-    <div class="BestGames-Panel">
-      <div class="BestGames-Text">
-        We have the latest games from all the top providers, including Microgaming, NetEnt and WMS.
-      </div>
+    <div class="BestGames-Text">
+      We have the latest games from all the top providers, including Microgaming, NetEnt and WMS.
     </div>
     <div class="BestGames-Tabs">
       <button
@@ -37,20 +35,20 @@
     <template>
       <div class="BestGames-Thumbs">
         <div
-          v-for="(game, i) in games"
+          v-for="(game, i) in gamesShowed"
           class="Thumb BestGames-Thumb"
           :class="{'BestGames-Thumb--wide': defineRectImages(i)}"
-          :key="game.internal_game_id"
+          :key="games[i].internal_game_id"
         >
           <img
             v-if="defineRectImages(i)"
-            :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${game.item_title}.jpg`"
-            :alt="`${game.application_name}`
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${games[i].item_title}.jpg`"
+            :alt="`${games[i].application_name}`
           ">
           <img
             v-else
-            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
-            :alt="`${game.application_name}`
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${games[i].item_title}.jpg`"
+            :alt="`${games[i].application_name}`
           ">
         </div>
       </div>
@@ -186,13 +184,6 @@ export default {
     }
   }
 
-  &-Panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-
   &-Tabs {
     display: flex;
     justify-content: space-between;
@@ -208,7 +199,6 @@ export default {
       order: 0;
       margin-bottom: 14px;
     }
-
   }
 
   &-Tab {
@@ -216,7 +206,7 @@ export default {
     justify-content: center;
     flex-grow: 1;
     margin-right: 10px;
-    padding: 20px 29px;
+    padding: 20px 27px;
     white-space: nowrap;
 
     @media(max-width: $screen-l) {
@@ -355,7 +345,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    margin-bottom: 37px;
+    margin-bottom: 45px;
 
     @media(max-width: $screen-m) {
       margin-bottom: 26px;
@@ -367,19 +357,20 @@ export default {
   }
 
   &-Thumb {
+    height: 194px;
+    overflow: hidden;
+
+    img {
+      border-radius: 8px;
+      object-fit: fill;
+    }
+
     &--wide {
       grid-column: span 2;
 
       @media(max-width: $screen-s) {
         grid-column: span 1;
       }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
     }
   }
 

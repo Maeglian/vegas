@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss">
 .Promotions {
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   &-Title {
     margin-bottom: 40px;
@@ -80,7 +80,7 @@ export default {
   }
 
   &-Image {
-    margin-bottom: 32px;
+    margin-bottom: 25px;
     height: 140px;
   }
 
@@ -97,7 +97,7 @@ export default {
   }
 
   &-Text {
-    margin-bottom: 38px;
+    margin-bottom: 40px;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.61;
@@ -106,6 +106,10 @@ export default {
     @media(max-width: $screen-m) {
       font-size: 14px;
     }
+  }
+
+  &-Btn {
+    padding: 20px 50px;
   }
 }
 
