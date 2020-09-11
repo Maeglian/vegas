@@ -127,6 +127,7 @@ export default {
   &-Item {
     position: relative;
     border-radius: 8px;
+    overflow: hidden;
   }
 
   &-Content {
