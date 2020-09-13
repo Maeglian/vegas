@@ -57,6 +57,8 @@ export default {
 <style lang="scss">
 .Banner {
   position: relative;
+  max-width: 100%;
+  width: 100%;
   margin-bottom: 45px;
   padding-left: 0;
   padding-right: 0;
@@ -75,7 +77,13 @@ export default {
   }
 
   &-Image {
+    display: inline-block;
+    width: 100%;
     object-fit: cover;
+
+    img {
+      width: 100%;
+    }
 
     @media(max-width: $screen-s) {
       display: inline-block;
@@ -87,8 +95,12 @@ export default {
   &-Content {
     position: absolute;
     top: 117px;
-    left: 55px;
+    left: calc(50% - 624px + 55px);
     max-width: 40%;
+
+    @media(max-width: $screen-xl) {
+      left: 55px;
+    }
 
     @media(max-width: $screen-l) {
       top: 60px;

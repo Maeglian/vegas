@@ -83,6 +83,8 @@ export default {
 
 <style lang="scss">
 .Hero {
+  max-width: 100%;
+  width: 100%;
   margin-top: -75px;
   margin-bottom: 5px;
   padding-left: 0;
@@ -103,9 +105,13 @@ export default {
   &-Content {
     position: absolute;
     top: 183px;
-    left: 16px;
+    left: calc(50% - 608px);
     max-width: 40%;
     text-align: left;
+
+    @media(max-width: $screen-xl) {
+      left: 16px;
+    }
 
     @media(max-width: $screen-l) {
       max-width: 50%;
@@ -129,6 +135,11 @@ export default {
 
   &-Image {
     display: inline-block;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
 
     @media(max-width: $screen-s) {
       height: 454px;
