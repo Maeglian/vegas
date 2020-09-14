@@ -1,9 +1,24 @@
-<template> <!-- eslint-disable max-len -->
+<template>
+<!-- eslint-disable max-len -->
 <div class="Registration">
-  <div class="Registration-Content Modal-Content">
-    <div class="Modal-Close Registration-Close" @click="$emit('close')">
-    </div>
+  <div class="Registration-Content">
     <div class="Registration-Panel Registration-Form">
+      <div class="Registration-Header">
+        <div class="Registration-Chat">
+          <svg class="Icon Registration-Icon" width="24" height="25">
+            <use xlink:href="@/assets/img/icon-sprite.svg#question"></use>
+          </svg>
+          <div>
+            Need Helps?<br/>
+            Chat to us
+          </div>
+        </div>
+        <a href="#" class="Registration-Members">
+          Members Login
+        </a>
+        <div class="Modal-Close Registration-Close" @click="$emit('close')">
+        </div>
+      </div>
       <form class="Form">
           <div v-if="step === 1" class="Registration-Section">
             <div class="Registration-Hello">
@@ -24,7 +39,25 @@
             <div class="Form-Field">
               <label class="Form-Label">
                 When is your birthday?
-                <input type="month" class="Form-Input">
+                <div class="Form-Row">
+                  <select class="Form-Ceil Form-Input">
+                    <option value="DD">DD</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                  </select>
+                  <select class="Form-Ceil Form-Input">
+                    <option value="MM">MM</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                  </select>
+                  <select class="Form-Ceil Form-Input">
+                    <option value="YYYY">YYYY</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                  </select>
+                </div>
               </label>
             </div>
             <div class="Form-Field">
@@ -263,6 +296,20 @@
       </form>
     </div>
     <div class="Registration-Panel Registration-Promo">
+      <div class="Registration-Title">
+        <span class="Colored">Welcome</span> Package<br/>
+        € 800 + 155 Free Spins
+      </div>
+      <img src="@/assets/img/registration_joker.png" alt="" class="Registration-Image">
+      <div class="Registration-Icons">
+        <img src="@/assets/img/registration_1.svg" alt="" class="Registration-Icon">
+        <img src="@/assets/img/mga.svg" alt="" class="Registration-Icon">
+        <img src="@/assets/img/18.svg" alt="" class="Registration-Icon">
+      </div>
+      <div class="Registration-Comments">
+        First Deposit Only. Min. deposit: €10, max. Bonus €100.
+        Game: Book of Dead, Spin Value: €0.10. Alternative Game: Spinning Wilds; Spin value: €0.10. WR of 60x Bonus amount and Free Spin winnings amount (only Slots count) within 30 days. Max bet is 10% (min €0.10) of the Free Spin winnings and bonus amount or €5 (lowest amount applies). Free Spins must be used before deposited funds. Deposit/Welcome Bonus can only be claimed once every 72 hours across all Casinos.
+      </div>
     </div>
   </div>
   <div class="Registration-Steps">
@@ -302,6 +349,9 @@ export default {
       step: 1,
       firstName: '',
       lastName: '',
+      birthdayDay: '',
+      birthdayMonth: '',
+      birthdayYear: '',
       gender: 'male',
       email: '',
       address: '',
@@ -331,7 +381,61 @@ export default {
 
 <style lang="scss">
 .Registration {
+  position: relative;
+
+  &-Header {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding-left: 25px;
+
+    @media(max-width: 724px) {
+      position: relative;
+      top: initial;
+      right: initial;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &-Icon {
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-Chat {
+    display: flex;
+    margin-right: 58px;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--color-text-ghost);
+    cursor: pointer;
+  }
+
+  &-Members {
+    font-size: 12px;
+    line-height: 1;
+    color: var(--color-main1);
+  }
+
+  &-Close {
+    position: relative;
+    top: initial;
+    right: 16px;
+    margin-left: auto;
+
+    @media(max-width: 724px) {
+      right: 0;
+    }
+  }
+
   &-Text {
+    margin-top: 5px;
     margin-bottom: 15px;
     font-size: 13px;
     line-height: 1.16;
@@ -346,11 +450,48 @@ export default {
   }
 
   &-Content {
+    position: relative;
     display: flex;
+    z-index: 1;
   }
 
   &-Panel {
     width: 50%;
+    padding: 16px 16px 20px;
+
+    @media(max-width: 724px) {
+      width: 100%;
+    }
+  }
+
+  &-Promo {
+    text-align: center;
+
+    @media(max-width: 724px) {
+      display: none;
+    }
+  }
+
+  &-Title {
+    margin-top: 104px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.24;
+    color: var(--color-text-main);
+  }
+
+  &-Icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    fill: rgba(157, 163, 180, 0.5);
+  }
+
+  &-Comments {
+    font-size: 9px;
+    line-height: 1;
+    color: rgba(157, 163, 180, 0.5);
   }
 
   &-Footer {
@@ -415,5 +556,4 @@ export default {
     }
   }
 }
-
 </style>
