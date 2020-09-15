@@ -11,15 +11,15 @@
       <a class="Link Footer-Link" href="#">
         Terms&nbsp;and&nbsp;conditions
       </a>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/bonus-policy">
         Bonus&nbsp;policy
-      </a>
+      </router-link>
       <a class="Link Footer-Link" href="#">
         Privacy&nbsp;policy
       </a>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/about-us">
         About&nbsp;us
-      </a>
+      </router-link>
       <a class="Link Footer-Link" href="#">
         Faq
       </a>

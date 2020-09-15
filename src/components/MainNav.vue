@@ -5,7 +5,9 @@
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
           <span>Меню</span>
         </div>
-        <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
+        <router-link to="/">
+          <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
+        </router-link>
       </div>
       <div class="MainNav-Login">
         <button
@@ -49,9 +51,9 @@
             </a>
           </form>
         </div>
-        <ul class="AsideMenu-List">
+        <div class="AsideMenu-List">
           <NavItem :items="navItems" />
-        </ul>
+        </div>
       </div>
     </transition>
     <modal name="login" classes="Modal" :width="380" :height="'auto'" adaptive>
@@ -83,31 +85,37 @@ export default {
       navItems: [
         {
           name: 'games',
+          url: '/games',
           icon: 'cards',
           iconDimensions: [20, 22],
         },
         {
           name: 'promotion',
+          url: '/promotion',
           icon: 'gift',
           iconDimensions: [19, 20],
         },
         {
           name: 'vip rewards',
+          url: '/vip',
           icon: 'jewel',
           iconDimensions: [19, 18],
         },
         {
           name: 'about us',
+          url: '/about-us',
           icon: 'about',
           iconDimensions: [19, 19],
         },
         {
           name: 'payment methods',
+          url: '/payment-methods',
           icon: 'payment',
           iconDimensions: [19, 16],
         },
         {
           name: 'faq',
+          url: '/faq',
           icon: 'faq',
           iconDimensions: [19, 19],
         },
@@ -242,6 +250,8 @@ export default {
   }
 
   &-Logo {
+    vertical-align: middle;
+
     @media(max-width: $screen-m) {
       width: 152px;
     }

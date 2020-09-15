@@ -1,10 +1,11 @@
 <template>
   <fragment>
-    <li
+    <router-link
       v-for="item in items"
       :key="item.name"
       class="Nav-Item"
       :class="[item.highlighted || (listIsOpen && item.children) ? 'Nav-Item--highlighted' : '' ]"
+      :to="item.url"
     >
       <div class="Nav-Name">
         <svg
@@ -27,7 +28,7 @@
           </ul>
         </transition>
       </div>
-    </li>
+    </router-link>
   </fragment>
 </template>
 
