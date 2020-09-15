@@ -5,6 +5,7 @@ const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePa
 const BonusPolicy = () => import(/* webpackChunkName: "bonusPolicy" */ '@/pages/BonusPolicy.vue');
 const AboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/pages/AboutUs.vue');
 const VIPClub = () => import(/* webpackChunkName: "vipClub" */ '@/pages/VIPClub.vue');
+const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 Vue.use(VueRouter);
 
@@ -31,8 +32,7 @@ const routes = [
   },
   {
     path: '*',
-    name: 'HomePage',
-    component: HomePage,
+    component: page404,
   },
 ];
 
