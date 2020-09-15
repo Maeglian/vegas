@@ -1,0 +1,197 @@
+.Form {
+  &-Field {
+    margin-bottom: 10px;
+  }
+
+  &-Row {
+    display: flex;
+  }
+
+  &-Ceil {
+    flex-grow: 1;
+    margin-right: 8px;
+    background-color: var(--color-form);
+    border-radius: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.vs--open {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &-Radio {
+    padding: 15px 20px;
+  }
+
+  &-Label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 0.96;
+    color: var(--color-text-ghost);
+  }
+
+  &-Input {
+    width: 100%;
+    padding: 18px 16px 19px;
+    color: var(--color-text-main);
+    background-color: var(--color-form);
+    border: none;
+    border-radius: 8px;
+
+    &::placeholder {
+      color: var(--color-text-ghost);
+    }
+  }
+
+  &-Container {
+    position: relative;
+    padding-left: 42px;
+    color: var(--color-text-main);
+    cursor: pointer;
+
+    &--radio {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 0.96;
+    }
+
+    &--checkbox {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      line-height: 1.24;
+    }
+  }
+
+  [type="radio"] {
+    display: none;
+
+    &:checked ~ .Form-Checkmark--radio:before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 10px;
+      background-color: var(--color-main3);
+      border-radius: 50%;
+    }
+  }
+
+  &-Checkbox {
+    display: none;
+
+    &:checked ~ .Form-Checkmark--checkbox:before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 6px);
+      left: calc(50% - 3px);
+      width: 3px;
+      height: 6px;
+      border: solid var(--color-main3);
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg)
+    }
+  }
+
+  &-Checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+
+    &:hover {
+      border: 1px solid var(--color-main3);
+    }
+  }
+
+  &-Link {
+    font-size: 12px;
+    line-height: 1.24;
+    text-decoration: none;
+    color: var(--color-text-main);
+
+    &--color {
+      color: var(--color-main2);
+    }
+
+    &:hover {
+      color: var(--color-main2);
+    }
+  }
+
+  &-Select {
+    .vs__dropdown-toggle {
+      padding: 20px;
+      color: var(--color-text-main);
+      border: none;
+    }
+
+    .vs__search, .vs__search:focus {
+      margin: 0;
+      padding: 0;
+    }
+
+    .vs__selected + .vs__search {
+      display: none;
+    }
+
+    .vs__dropdown-menu {
+      min-width: auto;
+      padding: 0;
+      background-color: var(--color-form);
+      border: none;
+      border-radius: 8px;
+    }
+
+    .vs--open .vs__dropdown-menu {
+      border-radius: 0 0 8px 8px;
+    }
+
+    .vs__selected {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 0.96;
+      color: var(--color-text-main);
+    }
+
+    &.vs--single.vs--open {
+      .vs__selected {
+        opacity: 1;
+      }
+    }
+
+    .vs__search::placeholder {
+      font-size: 14px;
+      line-height: 0.96;
+      color: var(--color-text-main);
+    }
+
+    .vs__open-indicator {
+      width: 4px;
+      height: 8px;
+      fill: var(--color-text-main);
+    }
+
+    .vs__dropdown-option {
+      padding: 20px 20px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 0.96;
+      color: var(--color-text-main);
+    }
+
+    .vs__dropdown-option--highlight {
+      background-color: #27244B;
+    }
+  }
+}
