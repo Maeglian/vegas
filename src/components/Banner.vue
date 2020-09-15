@@ -1,8 +1,9 @@
 <template>
   <!-- eslint-disable max-len -->
   <section class="Banner">
-    <picture class="Banner-Image">
+    <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
       <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
+      <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
       <img :src="require(`@/assets/img/${image}`)" :alt="title">
     </picture>
     <div class="Banner-Content">
@@ -30,9 +31,18 @@ export default {
       type: String,
       required: true,
     },
+    image1248: {
+      type: String,
+      required: true,
+    },
     imageMobile: {
       type: String,
       required: false,
+    },
+    contain: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     title: {
       type: String,
@@ -62,6 +72,7 @@ export default {
   margin-bottom: 45px;
   padding-left: 0;
   padding-right: 0;
+  overflow: hidden;
 
   &--bottom {
     margin-bottom: 80px;
@@ -79,16 +90,29 @@ export default {
   &-Image {
     display: inline-block;
     width: 100%;
-    object-fit: cover;
+    height: 558px;
+    overflow: hidden;
+
+    @media(max-width: $screen-xl) {
+      height: auto;
+    }
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @media(max-width: $screen-s) {
       display: inline-block;
       max-height: 380px;
       overflow: hidden;
+    }
+  }
+
+  &-Image--contain {
+    img {
+      object-fit: contain;
     }
   }
 
