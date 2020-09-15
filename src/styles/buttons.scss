@@ -107,4 +107,9 @@ button {
       background: var(--color-main2);
     }
   }
+
+  &--centered {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }

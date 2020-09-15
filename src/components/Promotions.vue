@@ -1,4 +1,5 @@
 <template>
+<!-- eslint-disable max-len -->
   <section class="Promotions">
     <div class="Title Title--type-h2 Promotions-Title">
       Current promotions<br/>
@@ -10,13 +11,13 @@
           <div
             v-for="(promotion, i) in [1, 2, 3]"
             :key="promotions[i].title"
-            class="Promotions-Item"
+            class="Promotions-Item Card"
           >
-            <img class="Promotions-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
-            <div class="Promotions-Name">
+            <img class="Promotions-Image Card-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
+            <div class="Promotions-Name Card-Name">
               {{ promotions[i].title }}
             </div>
-            <div class="Promotions-Text" v-html="promotions[i].text"></div>
+            <div class="Promotions-Text Card-Text" v-html="promotions[i].text"></div>
             <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
               Read more
             </button>
@@ -26,13 +27,13 @@
           <div
             v-for="(promotion, i) in [4, 5, 6]"
             :key="promotion.title"
-            class="Promotions-Item"
+            class="Promotions-Item Card"
           >
-            <img class="Promotions-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
-            <div class="Promotions-Name">
+            <img class="Promotions-Image Card-Image" :src="require(`@/assets/img/${promotions[i].image}`)"/>
+            <div class="Promotions-Name Card-Name">
               {{ promotions[i].title }}
             </div>
-            <div class="Promotions-Text" v-html="promotions[i].text"></div>
+            <div class="Promotions-Text Card-Text" v-html="promotions[i].text"></div>
             <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
               Read more
             </button>
@@ -89,57 +90,13 @@ export default {
     }
   }
 
-  &-Item {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 50px 10px;
-    background-color: var(--color-bg);
-    border-radius: 8px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @media(max-width: $screen-l) {
-      padding: 40px 10px;
-    }
-
-    @media(max-width: $screen-s) {
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   &-Image {
     margin-bottom: 25px;
     height: 140px;
   }
 
-  &-Name {
-    margin-bottom: 16px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.26;
-    color: var(--color-text-main);
-
-    @media(max-width: $screen-m) {
-      font-size: 16px;
-    }
-  }
-
   &-Text {
     margin-bottom: 40px;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.61;
-    color: var(--color-faded);
-
-    @media(max-width: $screen-m) {
-      font-size: 14px;
-    }
   }
 
   &-Btn {
