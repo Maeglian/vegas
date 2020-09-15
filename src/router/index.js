@@ -29,6 +29,11 @@ const routes = [
     name: 'VIPClub',
     component: VIPClub,
   },
+  {
+    path: '*',
+    name: 'HomePage',
+    component: HomePage,
+  },
 ];
 
 const router = new VueRouter({
