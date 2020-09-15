@@ -8,7 +8,8 @@
             <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
             <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
             <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
-            <img src="@/assets/img/hero-bg-joker.png" alt="">
+            <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.png')">
+            <img src="@/assets/img/joker_1920.png" alt="">
           </picture>
           <div class="Hero-Content">
             <div class="Title Title--type-h1 Hero-Title">
@@ -90,6 +91,10 @@ export default {
   padding-left: 0;
   padding-right: 0;
 
+  @media(max-width: $screen-xl) {
+    height: 640px;
+  }
+
   @media(max-width: $screen-l) {
     margin-bottom: 45px;
   }
@@ -100,6 +105,12 @@ export default {
 
   &-Item {
     position: relative;
+    height: 640px;
+    overflow: hidden;
+
+    @media(max-width: $screen-l) {
+      height: auto;
+    }
   }
 
   &-Content {
@@ -136,9 +147,21 @@ export default {
   &-Image {
     display: inline-block;
     width: 100%;
+    height: 100%;
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media(max-width: $screen-l) {
+        height: auto;
+        object-fit: initial;
+      }
+    }
+
+    @media(max-width: $screen-l) {
+      height: auto;
     }
 
     @media(max-width: $screen-s) {
