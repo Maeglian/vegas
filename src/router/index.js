@@ -7,6 +7,7 @@ const AboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/pages/AboutUs.
 const VIPClub = () => import(/* webpackChunkName: "vipClub" */ '@/pages/VIPClub.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 const Faq = () => import(/* webpackChunkName: "faqPage" */ '@/pages/FaqPage.vue');
+const PaymentMethods = () => import(/* webpackChunkName: "paymentMethods" */ '@/pages/PaymentMethods.vue');
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/vip',
     name: 'VIPClub',
     component: VIPClub,
+  },
+  {
+    path: '/payment-methods',
+    name: 'PaymentMethods',
+    component: PaymentMethods,
   },
   {
     path: '/faq',

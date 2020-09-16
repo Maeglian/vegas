@@ -3,9 +3,9 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/payment-methods">
         Payment&nbsp;methods
-      </a>
+      </router-link>
       <a class="Link Footer-Link" href="#">
         Responsible&nbsp;gaming
       </a>
