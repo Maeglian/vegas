@@ -47,6 +47,8 @@ export default {
   }
 
   &-Title {
+    position: relative;
+    padding-left: 30px;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.26;
@@ -55,7 +57,9 @@ export default {
 
     &:before {
       content: "+";
-      margin-right: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
       color: var(--color-main1);
     }
 
