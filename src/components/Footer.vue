@@ -6,6 +6,9 @@
       <router-link class="Link Footer-Link" to="/payment-methods">
         Payment&nbsp;methods
       </router-link>
+      <router-link class="Link Footer-Link" to="/payment-options">
+        Payment&nbsp;options
+      </router-link>
       <a class="Link Footer-Link" href="#">
         Responsible&nbsp;gaming
       </a>
