@@ -31,6 +31,7 @@ export default {
   --color-text-ghost: #9DA3B4;
   --color-border-ghost: #272B5F;
   --color-bg: rgba(39, 43, 95, 0.2);
+  --color-bg-darker: rgba(39, 43, 95, 0.5);
   --color-bg-nav: #151841;
   --color-form: #1E1A46;
 }

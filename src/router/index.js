@@ -6,6 +6,7 @@ const BonusPolicy = () => import(/* webpackChunkName: "bonusPolicy" */ '@/pages/
 const AboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/pages/AboutUs.vue');
 const VIPClub = () => import(/* webpackChunkName: "vipClub" */ '@/pages/VIPClub.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
+const Faq = () => import(/* webpackChunkName: "faqPage" */ '@/pages/FaqPage.vue');
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/vip',
     name: 'VIPClub',
     component: VIPClub,
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: Faq,
   },
   {
     path: '*',
