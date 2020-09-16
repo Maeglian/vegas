@@ -72,7 +72,7 @@
     counter-reset: num;
   }
 
-  li {
+  ol li {
     position: relative;
     margin-bottom: 24px;
     padding-left: 30px;
@@ -83,11 +83,21 @@
     }
   }
 
-  li:before {
+  ol li:before {
     content: counter(num) '. ';
     counter-increment: num;
     position: absolute;
     left: 0;
     color: var(--color-text-main);
+  }
+
+  ul li:before {
+    content: "•";
+    margin-right: 5px;
+  }
+
+  a {
+    color: var(--color-text-main);
+
   }
 }

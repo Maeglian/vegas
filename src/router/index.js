@@ -10,6 +10,7 @@ const Faq = () => import(/* webpackChunkName: "faqPage" */ '@/pages/FaqPage.vue'
 const PaymentMethods = () => import(/* webpackChunkName: "paymentMethods" */ '@/pages/PaymentMethods.vue');
 const PaymentOptions = () => import(/* webpackChunkName: "paymentOptions" */ '@/pages/PaymentOptions.vue');
 const TermsConditions = () => import(/* webpackChunkName: "termsConditions" */ '@/pages/TermsConditions.vue');
+const ResponsibleGamings = () => import(/* webpackChunkName: "responsibleGamings" */ '@/pages/ResponsibleGamings.vue');
 
 Vue.use(VueRouter);
 
@@ -48,6 +49,11 @@ const routes = [
     path: '/terms-and-conditions',
     name: 'TermsConditions',
     component: TermsConditions,
+  },
+  {
+    path: '/responsible-gamings',
+    name: 'ResponsibleGamings',
+    component: ResponsibleGamings,
   },
   {
     path: '/faq',

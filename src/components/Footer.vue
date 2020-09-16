@@ -9,9 +9,9 @@
       <router-link class="Link Footer-Link" to="/payment-options">
         Payment&nbsp;options
       </router-link>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/responsible-gamings">
         Responsible&nbsp;gaming
-      </a>
+      </router-link>
       <router-link class="Link Footer-Link" to="/terms-and-conditions">
         Terms&nbsp;and&nbsp;conditions
       </router-link>
