@@ -8,7 +8,6 @@
     <Promotions />
     <Questions />
     <Banner class="Banner--bottom" v-bind="banner2" />
-    <Partners />
   </fragment>
 </template>
 
@@ -20,7 +19,6 @@ import Tournaments from '@/components/Tournaments.vue';
 import Promotions from '@/components/Promotions.vue';
 import Questions from '@/components/Questions.vue';
 import Banner from '@/components/Banner.vue';
-import Partners from '@/components/Partners.vue';
 
 export default {
   name: 'HomePage.vue',
@@ -32,7 +30,6 @@ export default {
     Promotions,
     Questions,
     Banner,
-    Partners,
   },
   data() {
     return {

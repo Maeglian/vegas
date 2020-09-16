@@ -1,6 +1,7 @@
 <template>
   <!-- eslint-disable max-len -->
   <section class="Footer">
+    <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
       <a class="Link Footer-Link" href="#">
         Payment&nbsp;methods
@@ -20,9 +21,9 @@
       <router-link class="Link Footer-Link" to="/about-us">
         About&nbsp;us
       </router-link>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/faq">
         Faq
-      </a>
+      </router-link>
     </nav>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
@@ -45,18 +46,26 @@
 </template>
 
 <script>
+import Partners from '@/components/Partners.vue';
+
 export default {
   name: 'Footer.vue',
+  components: {
+    Partners,
+  },
 };
 </script>
 
 <style lang="scss">
 .Footer {
-  padding-top: 40px;
   padding-bottom: 54px;
 
   @media(max-width: $screen-m) {
     padding-top: 20px;
+  }
+
+  &-Partners {
+    margin-bottom: 40px;
   }
 
   &-Nav {
