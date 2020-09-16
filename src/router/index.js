@@ -9,6 +9,7 @@ const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 const Faq = () => import(/* webpackChunkName: "faqPage" */ '@/pages/FaqPage.vue');
 const PaymentMethods = () => import(/* webpackChunkName: "paymentMethods" */ '@/pages/PaymentMethods.vue');
 const PaymentOptions = () => import(/* webpackChunkName: "paymentOptions" */ '@/pages/PaymentOptions.vue');
+const TermsConditions = () => import(/* webpackChunkName: "termsConditions" */ '@/pages/TermsConditions.vue');
 
 Vue.use(VueRouter);
 
@@ -44,6 +45,11 @@ const routes = [
     component: PaymentOptions,
   },
   {
+    path: '/terms-and-conditions',
+    name: 'TermsConditions',
+    component: TermsConditions,
+  },
+  {
     path: '/faq',
     name: 'Faq',
     component: Faq,
@@ -55,7 +61,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   scrollBehavior() {
     return { x: 0, y: 0 };

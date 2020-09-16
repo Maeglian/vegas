@@ -12,9 +12,9 @@
       <a class="Link Footer-Link" href="#">
         Responsible&nbsp;gaming
       </a>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/terms-and-conditions">
         Terms&nbsp;and&nbsp;conditions
-      </a>
+      </router-link>
       <router-link class="Link Footer-Link" to="/bonus-policy">
         Bonus&nbsp;policy
       </router-link>
