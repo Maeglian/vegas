@@ -12,102 +12,102 @@
     </div>
     <div class="Cards PaymentMethods-Cards">
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="110" height="33">
+        <svg class="Icon" width="110" height="33">
           <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="110" height="33">
+        <svg class="Icon" width="110" height="33">
           <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="110" height="33">
+        <svg class="Icon" width="110" height="33">
           <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="110" height="33">
+        <svg class="Icon" width="110" height="33">
           <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="141" height="36">
+        <svg class="Icon" width="141" height="36">
           <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
         </svg>
       </div>
       <div class="PaymentMethods-Card">
-        <svg class="Icon Search-Icon" width="97" height="34">
+        <svg class="Icon" width="97" height="34">
           <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
         </svg>
       </div>
