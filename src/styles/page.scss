@@ -1,20 +1,20 @@
 .Page {
-  padding: 67px 119px 40px;
+  padding: 67px 119px 89px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.61;
   color: var(--color-more-faded);
 
   @media(max-width: $screen-l) {
-    padding: 47px 93px 30px;
+    padding: 47px 93px 79px;
   }
 
   @media(max-width: $screen-m) {
-    padding: 47px 79px 30px;
+    padding: 47px 79px 79px;
   }
 
   @media(max-width: $screen-s) {
-    padding: 30px 16px 20px;
+    padding: 30px 16px 40px;
     font-size: 13px;
   }
 
