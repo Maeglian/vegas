@@ -3,26 +3,32 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
+      <router-link class="Link Footer-Link" to="/promotions">
+        Promotion
+      </router-link>
+      <router-link class="Link Footer-Link" to="/vip">
+        VIP rewards
+      </router-link>
       <router-link class="Link Footer-Link" to="/payment-methods">
-        Payment&nbsp;methods
+        Payment methods
       </router-link>
       <router-link class="Link Footer-Link" to="/payment-options">
-        Payment&nbsp;options
+        Payment options
       </router-link>
       <router-link class="Link Footer-Link" to="/responsible-gamings">
-        Responsible&nbsp;gaming
+        Responsible gaming
       </router-link>
       <router-link class="Link Footer-Link" to="/terms-and-conditions">
-        Terms&nbsp;and&nbsp;conditions
+        Terms and conditions
       </router-link>
       <router-link class="Link Footer-Link" to="/bonus-policy">
-        Bonus&nbsp;policy
+        Bonus policy
       </router-link>
       <router-link class="Link Footer-Link" to="/privacy-policy">
-        Privacy&nbsp;policy
+        Privacy policy
       </router-link>
       <router-link class="Link Footer-Link" to="/about-us">
-        About&nbsp;us
+        About us
       </router-link>
       <router-link class="Link Footer-Link" to="/faq">
         Faq
@@ -72,11 +78,14 @@ export default {
   }
 
   &-Nav {
-    margin-bottom: 46px;
+    margin-bottom: 36px;
   }
 
   &-Link {
+    display: inline-block;
     margin-right: 31px;
+    margin-bottom: 10px;
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
