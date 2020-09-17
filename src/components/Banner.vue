@@ -1,24 +1,26 @@
 <template>
   <!-- eslint-disable max-len -->
   <section class="Banner">
-    <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
-      <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
-      <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
-      <img :src="require(`@/assets/img/${image}`)" :alt="title">
-    </picture>
-    <div class="Banner-Content">
-      <div v-if="title" class="Title Title--type-h3 Banner-Title">
-        <span v-html="title"></span>
+    <div class="Banner-Wrapper">
+      <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
+        <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
+        <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
+        <img :src="require(`@/assets/img/${image}`)" :alt="title">
+      </picture>
+      <div class="Banner-Content">
+        <div v-if="title" class="Title Title--type-h3 Banner-Title">
+          <span v-html="title"></span>
+        </div>
+        <div v-if="bonus" class="Banner-Bonus">
+          {{ bonus }}
+        </div>
+        <div v-if="text" class="Banner-Text">
+          {{ text }}
+        </div>
+        <button v-if="btnText" class="Btn Btn--color Banner-Btn">
+          {{ btnText }}
+        </button>
       </div>
-      <div v-if="bonus" class="Banner-Bonus">
-        {{ bonus }}
-      </div>
-      <div v-if="text" class="Banner-Text">
-        {{ text }}
-      </div>
-      <button v-if="btnText" class="Btn Btn--color Banner-Btn">
-        {{ btnText }}
-      </button>
     </div>
   </section>
 </template>
@@ -87,6 +89,16 @@ export default {
     margin-bottom: 73px;
   }
 
+  &-Wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media(max-width: $screen-s) {
+      padding-bottom: 135%;
+    }
+  }
+
   &-Image {
     display: inline-block;
     width: 100%;
@@ -104,9 +116,11 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      display: inline-block;
-      max-height: 380px;
-      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-height: 500px;
     }
   }
 
@@ -137,11 +151,10 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      position: relative;
       top: initial;
-      left: initial;
+      left: 0;
+      bottom: 0;
       max-width: 100%;
-      margin-top: -150px;
       padding-left: 16px;
       padding-right: 16px;
     }
