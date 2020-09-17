@@ -8,6 +8,7 @@ const AboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/pages/AboutUs.
 const VIPClub = () => import(/* webpackChunkName: "vipClub" */ '@/pages/VIPClub.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 const Faq = () => import(/* webpackChunkName: "faqPage" */ '@/pages/FaqPage.vue');
+const PromotionsPage = () => import(/* webpackChunkName: "promotionsPage" */ '@/pages/PromotionsPage.vue');
 const PaymentMethods = () => import(/* webpackChunkName: "paymentMethods" */ '@/pages/PaymentMethods.vue');
 const PaymentOptions = () => import(/* webpackChunkName: "paymentOptions" */ '@/pages/PaymentOptions.vue');
 const TermsConditions = () => import(/* webpackChunkName: "termsConditions" */ '@/pages/TermsConditions.vue');
@@ -65,6 +66,11 @@ const routes = [
     path: '/faq',
     name: 'Faq',
     component: Faq,
+  },
+  {
+    path: '/promotions',
+    name: 'PromotionsPage',
+    component: PromotionsPage,
   },
   {
     path: '*',

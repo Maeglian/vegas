@@ -91,7 +91,7 @@ export default {
         },
         {
           name: 'promotion',
-          url: '/promotion',
+          url: '/promotions',
           icon: 'gift',
           iconDimensions: [19, 20],
         },
