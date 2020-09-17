@@ -7,7 +7,7 @@
       :class="[item.highlighted || (listIsOpen && item.children) ? 'Nav-Item--highlighted' : '' ]"
       :to="item.url"
     >
-      <div class="Nav-Name">
+      <div class="Nav-Name" @click="$emit('click')">
         <svg
           v-if="item.icon"
           class="Icon Nav-Icon"

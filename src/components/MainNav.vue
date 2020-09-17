@@ -1,5 +1,6 @@
 <template>
-  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled, 'MainNav--overlay': navIsOpen}">
+  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
+    <div class="MainNav-Overlay" v-if="navIsOpen" @click="navIsOpen = !navIsOpen"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
@@ -52,7 +53,7 @@
           </form>
         </div>
         <div class="AsideMenu-List">
-          <NavItem :items="navItems" />
+          <NavItem :items="navItems" @click="navIsOpen = !navIsOpen" />
         </div>
       </div>
     </transition>
@@ -154,17 +155,15 @@ export default {
   top: 0;
   z-index: 1;
 
-  &--overlay {
-    &:after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(6, 8, 30, 0.9);
-      z-index: 2;
-    }
+  &-Overlay {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 8, 30, 0.9);
+    z-index: 2;
   }
 
   &--bg {
