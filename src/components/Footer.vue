@@ -18,9 +18,9 @@
       <router-link class="Link Footer-Link" to="/bonus-policy">
         Bonus&nbsp;policy
       </router-link>
-      <a class="Link Footer-Link" href="#">
+      <router-link class="Link Footer-Link" to="/privacy-policy">
         Privacy&nbsp;policy
-      </a>
+      </router-link>
       <router-link class="Link Footer-Link" to="/about-us">
         About&nbsp;us
       </router-link>

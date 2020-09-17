@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePage.vue');
 const BonusPolicy = () => import(/* webpackChunkName: "bonusPolicy" */ '@/pages/BonusPolicy.vue');
+const PrivacyPolicy = () => import(/* webpackChunkName: "privacyPolicy" */ '@/pages/PrivacyPolicy.vue');
 const AboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/pages/AboutUs.vue');
 const VIPClub = () => import(/* webpackChunkName: "vipClub" */ '@/pages/VIPClub.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
@@ -24,6 +25,11 @@ const routes = [
     path: '/bonus-policy',
     name: 'BonusPolicy',
     component: BonusPolicy,
+  },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy,
   },
   {
     path: '/about-us',
