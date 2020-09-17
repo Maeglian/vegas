@@ -85,12 +85,6 @@ export default {
       topBarIsScrolled: false,
       navItems: [
         {
-          name: 'games',
-          url: '/',
-          icon: 'cards',
-          iconDimensions: [20, 22],
-        },
-        {
           name: 'promotion',
           url: '/promotions',
           icon: 'gift',
