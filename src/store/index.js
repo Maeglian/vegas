@@ -8,36 +8,40 @@ export default new Vuex.Store({
   state: {
     games: [],
     promotions: [
-      {
-        image: 'welcome.svg',
-        title: 'Welcome bonus',
-        text: 'Get New Offers<br/> Every Day You choose<br> You Play, We Pay',
-      },
-      {
-        image: 'tournaments.svg',
-        title: 'Tournaments',
-        text: 'Everybody loves Free Spins<br/> Get More<br/> Now Start off with 50',
-      },
-      {
-        image: 'vip.svg',
-        title: 'Vip lounge',
-        text: 'Get Free Spins for a Year<br/> Only One Deposit Start with 50<br/> Free Spins Instantly',
-      },
-      {
-        image: 'daily-picks.svg',
-        title: 'Daily Picks',
-        text: 'Get New Offers<br/> Every Day You choose<br> You Play, We Pay',
-      },
-      {
-        image: 'spins.svg',
-        title: 'Free spins',
-        text: 'Everybody loves Free Spins<br/> Get More<br/> Now Start off with 50',
-      },
-      {
-        image: 'spins_years.svg',
-        title: 'Free spins for a Year',
-        text: 'Get Free Spins for a Year<br/> Only One Deposit Start with 50<br/> Free Spins Instantly',
-      },
+      [
+        {
+          image: 'welcome.svg',
+          title: 'Welcome bonus',
+          text: 'Get New Offers<br/> Every Day You choose<br> You Play, We Pay',
+        },
+        {
+          image: 'tournaments.svg',
+          title: 'Tournaments',
+          text: 'Everybody loves Free Spins<br/> Get More<br/> Now Start off with 50',
+        },
+        {
+          image: 'vip.svg',
+          title: 'Vip lounge',
+          text: 'Get Free Spins for a Year<br/> Only One Deposit Start with 50<br/> Free Spins Instantly',
+        },
+      ],
+      [
+        {
+          image: 'daily-picks.svg',
+          title: 'Daily Picks',
+          text: 'Get New Offers<br/> Every Day You choose<br> You Play, We Pay',
+        },
+        {
+          image: 'spins.svg',
+          title: 'Free spins',
+          text: 'Everybody loves Free Spins<br/> Get More<br/> Now Start off with 50',
+        },
+        {
+          image: 'spins_years.svg',
+          title: 'Free spins for a Year',
+          text: 'Get Free Spins for a Year<br/> Only One Deposit Start with 50<br/> Free Spins Instantly',
+        },
+      ],
     ],
     gamesAreLoading: false,
     errors: {},
