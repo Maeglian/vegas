@@ -7,28 +7,43 @@
     <div class="BestGames-Text">
       We have the latest games from all the top providers, including Microgaming, NetEnt and WMS.
     </div>
-    <div class="BestGames-Tabs">
+    <div class="BestGames-Header" v-click-outside="onClickOutside">
       <button
-        v-for="tab in tabs"
-        :key="tab.name"
-        class="Btn Btn--tab BestGames-Tab"
-        :class="{'Btn--active BestGames-Tab--active': tabActive === tab.name}"
-        @click="onChooseTab(tab.name)"
+        class="Btn Btn--tab Btn--active BestGames-Tab BestGames-Tab--active BestGames-ChosenTab"
+        :class="{'BestGames-ChosenTab--opened': listIsOpen}"
+        @click="listIsOpen = !listIsOpen"
       >
         <svg
           class="Icon"
-          :class="`BestGames-Icon--${tab.icon}`"
+          :class="`BestGames-Icon--${tabActive.icon}`"
         >
-          <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tab.icon}`"></use>
+          <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tabActive.icon}`"></use>
         </svg>
-        {{tab.name}}
+        {{tabActive.name}}
         <i
-          v-if="tabActive === tab.name"
           class="Arrow Tab-Arrow"
           :class="[ listIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-          @click="listIsOpen = !listIsOpen"
         ></i>
       </button>
+      <div v-if="width > 460 || listIsOpen"
+       class="BestGames-Tabs"
+      >
+        <button
+          v-for="(tab, i) in tabs"
+          :key="tab.name"
+          class="Btn Btn--tab BestGames-Tab"
+          :class="{'Btn--active BestGames-Tab--active': tabActive.name === tab.name}"
+          @click="onChooseTab(i)"
+        >
+          <svg
+            class="Icon"
+            :class="`BestGames-Icon--${tab.icon}`"
+          >
+            <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tab.icon}`"></use>
+          </svg>
+          {{tab.name}}
+        </button>
+      </div>
       <Search class="BestGames-Search" />
     </div>
 <!--    <Loader v-if="gamesAreLoading" />-->
@@ -38,15 +53,15 @@
           v-for="(game, i) in gamesShowed"
           class="Thumb BestGames-Thumb"
           :class="{'BestGames-Thumb--wide': defineRectImages(i)}"
-          :key="games[i].internal_game_id"
+          :key="i"
         >
           <img
-            v-if="defineRectImages(i)"
+            v-if="games[i] && defineRectImages(i)"
             :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${games[i].item_title}.jpg`"
             :alt="`${games[i].application_name}`
           ">
           <img
-            v-else
+            v-else-if="games[i]"
             :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${games[i].item_title}.jpg`"
             :alt="`${games[i].application_name}`
           ">
@@ -76,7 +91,6 @@ export default {
   data() {
     return {
       listIsOpen: false,
-      tabActive: 'Top games',
       tabs: [
         {
           name: 'Top games',
@@ -103,22 +117,43 @@ export default {
           icon: 'slots',
         },
       ],
-      gamesShowed: 20,
+      tabActive: {
+        name: 'Top games',
+        icon: 'top',
+      },
+      vcoConfig: {
+        handler: this.handler,
+        middleware: this.middleware,
+        events: ['dblclick', 'click'],
+        // Note: The default value is true, but in case you want to activate / deactivate
+        //       this directive dynamically use this attribute.
+        isActive: true,
+        // Note: The default value is true. See "Detecting Iframe Clicks" section
+        //       to understand why this behaviour is behind a flag.
+        detectIFrame: true,
+      },
     };
   },
   computed: {
-    ...mapState(['games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading']),
+    gamesShowed() {
+      return this.games.length && this.games.length < 20 ? this.games.length : 20;
+    },
   },
   methods: {
     ...mapActions(['getGames']),
-    onChooseTab(tabName) {
-      this.tabActive = tabName;
+    onChooseTab(i) {
+      this.tabActive = this.tabs[i];
       this.getGames(this.makeQuery(true));
+      if (this.width <= 460) this.listIsOpen = false;
+    },
+    onClickOutside(e) {
+      if (e.target.className !== 'BestGames-ChosenTab') this.listIsOpen = false;
     },
     makeQuery(limit = false) {
       let query = 'appName=VegasWinner&lang=en&platform=desktop';
       if (limit) query += `&limit=${this.gamesShowed}`;
-      switch (this.tabActive) {
+      switch (this.tabActive.name) {
         case 'New games':
           query += '&is_new=true';
           break;
@@ -197,11 +232,11 @@ export default {
     }
   }
 
-  &-Tabs {
+  &-Header {
     position: relative;
     display: flex;
-    justify-content: space-between;
     margin-bottom: 31px;
+    width: 100%;
 
     @media(max-width: $screen-l) {
       margin-bottom: 15px;
@@ -216,7 +251,34 @@ export default {
     }
   }
 
+  &-Tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 0;
+    margin-right: 10px;
+    background-color: var(--color-body);
+
+    @media(max-width: $screen-s) {
+      position: absolute;
+      left: 0;
+      top: 125px;
+      flex-direction: column;
+      order: 2;
+      width: 100%;
+      margin-right: 0;
+      border: 1px solid var(--color-border-ghost);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+
+      .BestGames-Tab--active {
+        display: none;
+      }
+    }
+  }
+
   &-Search {
+    flex-shrink: 0;
+
     @media(max-width: $screen-s) {
       order: 0;
       margin-bottom: 14px;
@@ -226,7 +288,6 @@ export default {
   &-Tab {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
     margin-right: 10px;
     padding: 20px 27px;
     white-space: nowrap;
@@ -241,11 +302,12 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      display: none;
       justify-content: flex-start;
       order: 2;
       width: 100%;
       padding: 20px;
+      border: none;
+      border-radius: 0;
     }
 
     &:last-child {
@@ -254,11 +316,6 @@ export default {
 
     &--active {
       position: relative;
-
-      @media(max-width: $screen-s) {
-        display: flex;
-        order: 1;
-      }
 
       .Arrow {
         display: none;
@@ -272,6 +329,22 @@ export default {
           display: initial;
         }
       }
+    }
+  }
+
+  &-ChosenTab {
+    display: none;
+    border: 1px solid var(--color-border-ghost);
+    border-radius: 8px;
+    z-index: 1;
+
+    @media(max-width: $screen-s) {
+      display: flex;
+      order: 1;
+    }
+
+    &--opened {
+      border-radius: 8px 8px 0 0;
     }
   }
 
