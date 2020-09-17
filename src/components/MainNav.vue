@@ -3,7 +3,7 @@
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
-          <span>Меню</span>
+          <img class="MainNav-Logo" src="@/assets/img/toggle.svg" />
         </div>
         <router-link to="/">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
@@ -195,57 +195,12 @@ export default {
   }
 
   &-Toggle {
-    position: relative;
-    display: flex;
-    align-items: center;
     width: 27px;
-    height: 18px;
     margin-right: 12px;
     cursor: pointer;
 
     @media(max-width: $screen-s) {
       width: 17px;
-      height: 11px;
-    }
-
-    span {
-      font-size: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--color-text-main);
-
-      @media(max-width: $screen-s) {
-        height: 2px;
-      }
-    }
-
-    &:before, &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--color-text-main);
-
-      @media(max-width: $screen-s) {
-        height: 2px;
-      }
-    }
-
-    &:before {
-      top: 0;
-
-      @media(max-width: $screen-s) {
-        top: -1px;
-      }
-    }
-
-    &:after {
-      bottom: -1px;
-
-      @media(max-width: $screen-s) {
-        bottom: 0;
-      }
     }
   }
 
@@ -257,7 +212,7 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      width: 90px;
+      width: 93px;
     }
   }
 
