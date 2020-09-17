@@ -58,7 +58,7 @@
 import Partners from '@/components/Partners.vue';
 
 export default {
-  name: 'Footer.vue',
+  name: 'Footer',
   components: {
     Partners,
   },

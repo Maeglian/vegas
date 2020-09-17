@@ -21,7 +21,7 @@ import Questions from '@/components/Questions.vue';
 import Banner from '@/components/Banner.vue';
 
 export default {
-  name: 'HomePage.vue',
+  name: 'HomePage',
   components: {
     Hero,
     BestGames,
