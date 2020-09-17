@@ -3,6 +3,7 @@ import Vue from 'vue';
 import VModal from 'vue-js-modal';
 import { Plugin } from 'vue-fragment';
 import vSelect from 'vue-select';
+import vClickOutside from 'v-click-outside';
 import App from './App.vue';
 import store from './store';
 import router from './router';
@@ -10,6 +11,7 @@ import router from './router';
 Vue.use(VModal);
 Vue.use(Plugin);
 Vue.use(vSelect);
+Vue.use(vClickOutside);
 
 new Vue({
   router,

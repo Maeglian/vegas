@@ -9,26 +9,26 @@
     </div>
     <div class="BestGames-Tabs">
       <button
-      v-for="tab in tabs"
-      :key="tab.name"
-      class="Btn Btn--tab BestGames-Tab"
-      :class="{'Btn--active BestGames-Tab--active': tabActive === tab.name}"
-      @click="onChooseTab(tab.name)"
-    >
-      <svg
-        class="Icon"
-        :class="`BestGames-Icon--${tab.icon}`"
+        v-for="tab in tabs"
+        :key="tab.name"
+        class="Btn Btn--tab BestGames-Tab"
+        :class="{'Btn--active BestGames-Tab--active': tabActive === tab.name}"
+        @click="onChooseTab(tab.name)"
       >
-        <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tab.icon}`"></use>
-      </svg>
-      {{tab.name}}
-      <i
-        v-if="tabActive === tab.name"
-        class="Arrow Tab-Arrow"
-        :class="[ listIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-        @click="listIsOpen = !listIsOpen"
-      ></i>
-    </button>
+        <svg
+          class="Icon"
+          :class="`BestGames-Icon--${tab.icon}`"
+        >
+          <use :xlink:href="require('@/assets/img/icon-sprite.svg') + `#${tab.icon}`"></use>
+        </svg>
+        {{tab.name}}
+        <i
+          v-if="tabActive === tab.name"
+          class="Arrow Tab-Arrow"
+          :class="[ listIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
+          @click="listIsOpen = !listIsOpen"
+        ></i>
+      </button>
       <Search class="BestGames-Search" />
     </div>
 <!--    <Loader v-if="gamesAreLoading" />-->
@@ -198,6 +198,7 @@ export default {
   }
 
   &-Tabs {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-bottom: 31px;
