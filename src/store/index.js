@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    width: 0,
     games: [],
     promotions: [
       [
@@ -53,6 +54,9 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    setWidth: (state, payload) => {
+      state.width = payload;
+    },
     gamesAreLoading: (state) => {
       state.gamesAreLoading = true;
     },

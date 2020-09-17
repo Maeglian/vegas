@@ -9,12 +9,24 @@
 <script>
 import MainNav from '@/components/MainNav.vue';
 import Footer from '@/components/Footer.vue';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'App',
   components: {
     MainNav,
     Footer,
+  },
+  created() {
+    this.updateWidth();
+    window.addEventListener('resize', this.updateWidth);
+  },
+  methods: {
+    ...mapMutations(['setWidth']),
+    updateWidth() {
+      console.log(window.innerWidth);
+      this.setWidth(window.innerWidth);
+    },
   },
 };
 </script>
@@ -34,5 +46,6 @@ export default {
   --color-bg-darker: rgba(39, 43, 95, 0.5);
   --color-bg-nav: #151841;
   --color-form: #1E1A46;
+  --color-body: #10133A;
 }
 </style>

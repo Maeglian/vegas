@@ -13,22 +13,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Search',
   data() {
     return {
       isOpen: false,
-      width: 0,
     };
   },
-  created() {
-    this.updateWidth();
-    window.addEventListener('resize', this.updateWidth);
+  computed: {
+    ...mapState(['width']),
   },
   methods: {
-    updateWidth() {
-      this.width = window.innerWidth;
-    },
     openSearch() {
       if (this.width > 460) this.isOpen = true;
     },
