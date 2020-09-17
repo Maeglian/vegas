@@ -4,41 +4,45 @@
     <div class="Hero-Slider">
       <VueSlider v-bind="options">
         <div class="Hero-Item">
-          <picture class="Hero-Image">
-            <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
-            <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
-            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
-            <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.png')">
-            <img src="@/assets/img/joker_1920.png" alt="">
-          </picture>
-          <div class="Hero-Content">
-            <div class="Title Title--type-h1 Hero-Title">
-              Number one place<br/> to have fun!
+          <div class="Hero-Wrapper">
+            <picture class="Hero-Image">
+              <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
+              <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
+              <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
+              <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.png')">
+              <img src="@/assets/img/joker_1920.png" alt="">
+            </picture>
+            <div class="Hero-Content">
+              <div class="Title Title--type-h1 Hero-Title">
+                Number one place<br/> to have fun!
+              </div>
+              <p class="Hero-Text">
+                Make first deposit now and get 100%<br/>
+                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+              </p>
+              <button class="Btn Btn--color Hero-Btn">
+                Deposit now
+              </button>
             </div>
-            <p class="Hero-Text">
-              Make first deposit now and get 100%<br/>
-              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
-            </p>
-            <button class="Btn Btn--color Hero-Btn">
-              Deposit now
-            </button>
           </div>
         </div>
         <div class="Hero-Item">
-          <div class="Hero-Image">
-            <img src="@/assets/img/hero-bg.jpg" alt="">
-          </div>
-          <div class="Hero-Content">
-            <div class="Title Title--type-h1 Hero-Title">
-              Number one place to have fun!
+          <div class="Hero-Wrapper">
+            <div class="Hero-Image">
+              <img src="@/assets/img/hero-bg.jpg" alt="">
             </div>
-            <p class="Hero-Text">
-              Make first deposit now and get 100%<br/>
-              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
-            </p>
-            <button class="Btn Btn--color Hero-Btn">
-              Deposit now
-            </button>
+            <div class="Hero-Content">
+              <div class="Title Title--type-h1 Hero-Title">
+                Number one place to have fun!
+              </div>
+              <p class="Hero-Text">
+                Make first deposit now and get 100%<br/>
+                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+              </p>
+              <button class="Btn Btn--color Hero-Btn">
+                Deposit now
+              </button>
+            </div>
           </div>
         </div>
       </VueSlider>
@@ -114,6 +118,20 @@ export default {
     }
   }
 
+  &-Wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media(max-width: $screen-s) {
+      padding-bottom: 145%;
+    }
+
+    @media(max-width: $screen-xs) {
+      padding-bottom: 155%;
+    }
+  }
+
   &-Content {
     position: absolute;
     top: 183px;
@@ -137,10 +155,10 @@ export default {
 
     @media(max-width: $screen-s) {
       max-width: 100%;
-      position: relative;
       top: initial;
-      left: initial;
-      margin-top: -130px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       text-align: center;
     }
   }
@@ -166,8 +184,10 @@ export default {
     }
 
     @media(max-width: $screen-s) {
-      height: 454px;
-      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
   }
 
