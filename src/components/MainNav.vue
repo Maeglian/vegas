@@ -86,7 +86,7 @@ export default {
       navItems: [
         {
           name: 'games',
-          url: '/games',
+          url: '/',
           icon: 'cards',
           iconDimensions: [20, 22],
         },
