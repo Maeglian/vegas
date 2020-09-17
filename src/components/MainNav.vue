@@ -6,8 +6,16 @@
         <div class="MainNav-Toggle" @click="navIsOpen = !navIsOpen">
           <img class="MainNav-Logo" src="@/assets/img/toggle.svg" />
         </div>
-        <router-link to="/">
+        <router-link class="MainNav-Logo" to="/">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
+        </router-link>
+      </div>
+      <div class="Nav MainNav-Links">
+        <router-link class="Nav-Name MainNav-Link" to="/promotions">
+          Promotion
+        </router-link>
+        <router-link class="Nav-Name MainNav-Link" to="/vip">
+          VIP rewards
         </router-link>
       </div>
       <div class="MainNav-Login">
@@ -185,6 +193,7 @@ export default {
   &-Nav {
     display: flex;
     align-items: center;
+    margin-right: 30px;
   }
 
   &-Toggle {
@@ -199,6 +208,7 @@ export default {
   }
 
   &-Logo {
+    flex-shrink: 0;
     vertical-align: middle;
 
     @media(max-width: $screen-m) {
@@ -210,9 +220,39 @@ export default {
     }
   }
 
+  &-Links {
+    display: flex;
+    margin-right: 20px;
+
+    @media(max-width: $screen-l) {
+      display: none;
+    }
+  }
+
+  &-Link {
+    margin-right: 20px;
+    padding: 0;
+    color: var(--color-text-main);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media(max-width: $screen-l) {
+      margin-right: 15px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
   &-Login {
     display: flex;
     align-items: center;
+    margin-left: auto;
     font-size: 14px;
     line-height: 1.24;
   }
