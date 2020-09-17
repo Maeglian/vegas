@@ -69,6 +69,7 @@ button {
   }
 
   &--color {
+    font-weight: 600;
     color: var(--color-text-main);
     background: linear-gradient(87.21deg, #FFA41D 1.01%, #FF8F22 48.07%, #FF7B27 99.21%);
     border: none;

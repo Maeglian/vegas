@@ -227,7 +227,6 @@ export default {
   &-Btn {
     padding: 25px 40px;
     font-size: 18px;
-    font-weight: 600;
 
     @media(max-width: $screen-m) {
       padding: 20px 30px;
