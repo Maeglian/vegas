@@ -189,11 +189,12 @@ export default {
 
   &-Toggle {
     width: 27px;
-    margin-right: 12px;
+    margin-right: 20px;
     cursor: pointer;
 
     @media(max-width: $screen-s) {
       width: 17px;
+      margin-right: 15px;
     }
   }
 
