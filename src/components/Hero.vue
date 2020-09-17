@@ -86,13 +86,14 @@ export default {
 .Hero {
   max-width: 100%;
   width: 100%;
+  height: 640px;
   margin-top: -75px;
   margin-bottom: 5px;
   padding-left: 0;
   padding-right: 0;
 
   @media(max-width: $screen-xl) {
-    height: 640px;
+    height: auto;
   }
 
   @media(max-width: $screen-l) {
