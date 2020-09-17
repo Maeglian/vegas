@@ -216,6 +216,10 @@ export default {
     }
 
     @media(max-width: $screen-s) {
+      width: 130px;
+    }
+
+    @media(max-width: $screen-xs) {
       width: 93px;
     }
   }
