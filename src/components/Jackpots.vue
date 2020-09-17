@@ -379,6 +379,10 @@ export default {
     @media (max-width: $screen-m) {
       top: 30px;
     }
+
+    @media (max-width: $screen-s) {
+      top: 60px;
+    }
   }
 }
 </style>
