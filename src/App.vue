@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss">
 :root {
-  --color-main1: #F68741;
+  --color-main1: #FE863A;
   --color-main2: #8C75FA;
   --color-main3: #FFA11D;
   --color-faded: rgba(255, 255, 255, 0.5);

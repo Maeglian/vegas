@@ -252,7 +252,7 @@ export default {
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #FFA41D;
+    color: var(--color-main1);
 
     @media (max-width: $screen-l) {
       font-size: 16px;
