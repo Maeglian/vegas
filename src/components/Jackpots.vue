@@ -376,8 +376,12 @@ export default {
   .v_slider__prev, .v_slider__next {
     top: 51px;
 
+    @media (max-width: $screen-l) {
+      top: 45px;
+    }
+
     @media (max-width: $screen-m) {
-      top: 30px;
+      top: 35px;
     }
 
     @media (max-width: $screen-s) {
