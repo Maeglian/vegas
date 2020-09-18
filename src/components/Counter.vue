@@ -6,7 +6,7 @@
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">
-          16
+          {{currentTime.days}}
         </div>
         <div class="Counter-Desc">
           Days
@@ -14,7 +14,7 @@
       </div>
       <div class="Counter-Item Counter-Hours">
         <div class="Counter-Count">
-          48
+          {{currentTime.hours}}
         </div>
         <div class="Counter-Desc">
           Hours
@@ -22,7 +22,7 @@
       </div>
       <div class="Counter-Item Counter-Minutes">
         <div class="Counter-Count">
-          36
+          {{currentTime.minutes}}
         </div>
         <div class="Counter-Desc">
           Minutes
@@ -30,7 +30,7 @@
       </div>
       <div class="Counter-Item Counter-Seconds">
         <div class="Counter-Count">
-          05
+          {{currentTime.seconds}}
         </div>
         <div class="Counter-Desc">
           Seconds
@@ -43,6 +43,45 @@
 <script>
 export default {
   name: 'Counter',
+  props: {
+    enddate: {
+      type: String,
+      required: true,
+    },
+    speed: {
+      type: Number,
+      default: 1000,
+    },
+  },
+  data() {
+    return {
+      currentTime: null,
+    };
+  },
+  mounted() {
+    setTimeout(this.countdown, 1);
+  },
+  methods: {
+    countdown() {
+      const t = Date.parse(this.enddate) - Date.parse(new Date());
+      const seconds = Math.floor((t / 1000) % 60);
+      const minutes = Math.floor((t / 1000 / 60) % 60);
+      const hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(t / (1000 * 60 * 60 * 24));
+      if (t > 0) {
+        this.currentTime = {
+          total: t,
+          days,
+          hours,
+          minutes,
+          seconds,
+        };
+        setTimeout(this.countdown, this.speed);
+      } else {
+        this.currentTime = null;
+      }
+    },
+  },
 };
 </script>
 
