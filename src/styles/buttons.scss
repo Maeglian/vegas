@@ -84,7 +84,7 @@ button {
   }
 
   &--outline {
-    border: 1px solid #8C75FA;
+    border: 1px solid var(--color-main2);
 
     &:hover {
       color: var(--color-bg-nav);

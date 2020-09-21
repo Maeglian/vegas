@@ -34,31 +34,13 @@
       </div>
     </div>
     <transition name="slide-left">
-      <div v-if="navIsOpen" class="AsideMenu MainNav-Aside">
+      <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
           <div class="AsideMenu-Close" @click="navIsOpen = !navIsOpen"></div>
           <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
         </div>
         <div class="AsideMenu-Form">
-          <form class="Form">
-            <div class="Form-Field">
-              <input type="text" class="Form-Input" placeholder="Username or email" />
-            </div>
-            <div class="Form-Field">
-              <input type="password" class="Form-Input" placeholder="Password" />
-            </div>
-            <div class="AsideMenu-Buttons">
-              <div class="Btn Btn--outline Btn--outline2 AsideMenu-Btn" @click="openLogin()">
-                Login
-              </div>
-              <div class="Btn Btn--color AsideMenu-Btn" @click="openRegistration()">
-                Register
-              </div>
-            </div>
-            <a href="#" class="AsideMenu-Link Form-Link Form-Link--color">
-              Forgot password?
-            </a>
-          </form>
+          <div id="son_embeded"></div>
         </div>
         <div class="AsideMenu-List">
           <NavItem :items="navItems" @click="navIsOpen = !navIsOpen" />
@@ -127,6 +109,9 @@ export default {
     },
     openRegistration() {
       window.openRegistration();
+    },
+    openForgotPassword() {
+      window.openForgotPassword();
     },
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
@@ -314,25 +299,48 @@ export default {
     border-bottom: 1px solid rgba(39, 43, 95, 0.5);
   }
 
-  &-Buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  &-Btn {
-    width: calc(50% - 5px);
-    padding: 14px;
-  }
-
-  &-Link {
-    display: block;
-    text-align: right;
-  }
-
   &-List {
     width: 100%;
     padding-top: 18px;
+  }
+
+  .a-son-container .a-login-embeded {
+    width: auto !important;
+  }
+
+  .a-control {
+    height: auto !important;
+    padding: 18px 16px 19px !important;
+    color: var(--color-text-main) !important;
+    background-color: var(--color-form) !important;
+    border-radius: 8px !important;
+
+    &::placeholder {
+      color: var(--color-text-ghost) !important;
+    }
+  }
+
+  .a-btn {
+    padding: 14px !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.24;
+    border-radius: 8px !important;
+  }
+
+  .a-btn-login {
+    color: var(--color-main2) !important;
+    background: transparent !important;
+    border: 1px solid var(--color-main2) !important;
+
+    &:hover {
+      background: var(--color-main2) !important;
+      color: var(--color-bg-nav) !important;
+    }
+  }
+
+  .a-son-container .text-center {
+    text-align: right !important;
   }
 }
 </style>
