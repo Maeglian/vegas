@@ -55,7 +55,12 @@ export default {
   },
   data() {
     return {
-      currentTime: null,
+      currentTime: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      },
     };
   },
   mounted() {
@@ -78,7 +83,12 @@ export default {
         };
         setTimeout(this.countdown, this.speed);
       } else {
-        this.currentTime = null;
+        this.currentTime = {
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        };
       }
     },
   },
