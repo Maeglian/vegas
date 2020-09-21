@@ -21,13 +21,13 @@
       <div class="MainNav-Login">
         <button
           class="Btn Btn--text MainNav-Btn MainNav-Btn--text"
-          @click="showLoginDialog()"
+          @click="openLogin()"
         >
           Login
         </button>
         <button
           class="Btn Btn--outline Btn--outline1 MainNav-Btn"
-          @click="showRegistrationDialog()"
+          @click="openRegistration()"
         >
           Register
         </button>
@@ -48,10 +48,10 @@
               <input type="password" class="Form-Input" placeholder="Password" />
             </div>
             <div class="AsideMenu-Buttons">
-              <div class="Btn Btn--outline Btn--outline2 AsideMenu-Btn">
+              <div class="Btn Btn--outline Btn--outline2 AsideMenu-Btn" @click="openLogin()">
                 Login
               </div>
-              <div class="Btn Btn--color AsideMenu-Btn">
+              <div class="Btn Btn--color AsideMenu-Btn" @click="openRegistration()">
                 Register
               </div>
             </div>
@@ -65,25 +65,15 @@
         </div>
       </div>
     </transition>
-    <modal name="login" classes="Modal" :width="380" :height="'auto'" adaptive>
-      <LoginDialog @close="hideLoginDialog()" />
-    </modal>
-    <modal name="registration" classes="Modal" :width="724" :height="'auto'" adaptive>
-      <RegistrationDialog @close="hideRegistrationDialog()" />
-    </modal>
   </nav>
 </template>
 
 <script>
-import LoginDialog from '@/components/LoginDialog.vue';
-import RegistrationDialog from '@/components/RegistrationDialog.vue';
 import NavItem from '@/components/NavItem.vue';
 
 export default {
   name: 'MainNav',
   components: {
-    LoginDialog,
-    RegistrationDialog,
     NavItem,
   },
   data() {
@@ -132,17 +122,11 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    showLoginDialog() {
-      this.$modal.show('login');
+    openLogin() {
+      window.openLogin();
     },
-    hideLoginDialog() {
-      this.$modal.hide('login');
-    },
-    showRegistrationDialog() {
-      this.$modal.show('registration');
-    },
-    hideRegistrationDialog() {
-      this.$modal.hide('registration');
+    openRegistration() {
+      window.openRegistration();
     },
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;

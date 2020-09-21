@@ -14,6 +14,33 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <div id="son_modal"></div>
+    <script>
+      var SON_API = {
+        modules: [
+          {
+            element: 'son_modal', //id of an element where modules will render
+            modules: ['login', 'registration', 'forgot-password'],
+            type: 'modal'
+          }
+        ],
+        affiliate: 'AFFILIATE_NAME',
+        dynid: 'DYN_ID',
+        zoneid: 'ZONE_ID',
+        display_name: 'DISPLAY_NAME', //ex: DrueckGlueck
+        email: 'SUPPORT_EMAIL' //ex: support@drueckglueck.com
+      };
+
+      (function(){
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://auth.netdnstrace1.com/00c77e63-5e92-4a74-8e05-4154e24e0834/default.js?lang=en'; //ex: LANG_CODE = en, TOKEN - provided by SkillOnNet
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>

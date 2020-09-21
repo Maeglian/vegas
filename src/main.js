@@ -8,6 +8,8 @@ import App from './App.vue';
 import store from './store';
 import router from './router';
 
+Vue.prototype.$skin = 'VegasWinner';
+
 Vue.use(VModal);
 Vue.use(Plugin);
 Vue.use(vSelect);
@@ -18,5 +20,3 @@ new Vue({
   store,
   render: (h) => h(App),
 }).$mount('#app');
-
-Vue.prototype.$skin = 'VegasWinner';
