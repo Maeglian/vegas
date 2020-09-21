@@ -24,7 +24,6 @@ export default {
   methods: {
     ...mapMutations(['setWidth']),
     updateWidth() {
-      console.log(window.innerWidth);
       this.setWidth(window.innerWidth);
     },
   },
