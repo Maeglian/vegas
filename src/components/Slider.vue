@@ -81,7 +81,6 @@ export default {
     // Адаптивность
     responsive: {
       type: Object,
-      default: {},
     },
   },
   data() {
