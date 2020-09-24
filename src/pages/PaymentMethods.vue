@@ -10,114 +10,50 @@
         and MasterCards. For Bank Transfers you can pay via Trustly, or Soft.
       </p>
     </div>
-    <div class="Cards PaymentMethods-Cards">
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="110" height="33">
-          <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="110" height="33">
-          <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="110" height="33">
-          <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="110" height="33">
-          <use xlink:href="@/assets/img/icon-sprite.svg#visa"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="141" height="36">
-          <use xlink:href="@/assets/img/icon-sprite.svg#paypal"></use>
-        </svg>
-      </div>
-      <div class="PaymentMethods-Card">
-        <svg class="Icon" width="97" height="34">
-          <use xlink:href="@/assets/img/icon-sprite.svg#skrill"></use>
-        </svg>
+    <Loader v-if="isLoading" />
+    <div v-else-if="isError">
+      Sorry, we have some problems, data could not be loaded.
+    </div>
+    <div v-else class="Cards PaymentMethods-Cards">
+      <div v-for="item in content" :key="item.name" class="PaymentMethods-Card">
+        <img :src="item.images.medium" alt="">
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import axios from 'axios';
+import Loader from '@/components/Loader.vue';
+
 export default {
   name: 'PaymentMethods',
+  components: {
+    Loader,
+  },
+  data() {
+    return {
+      isLoading: false,
+      content: '',
+      isError: false,
+    };
+  },
+  methods: {
+    async getData() {
+      this.isLoading = true;
+      try {
+        const res = await axios.get(`https://service.safe-communication.com/feeds/payments/single?skin=${this.$skin}&lang=en`);
+        this.content = res.data;
+      } catch {
+        this.isError = true;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+  },
+  mounted() {
+    this.getData();
+  },
 };
 </script>
 
@@ -149,22 +85,25 @@ export default {
   }
 
   &-Card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 50px;
+    min-height: 135px;
+    padding: 0 15px;
     background-color: var(--color-bg);
     border-radius: 8px;
-    text-align: center;
 
     @media(max-width: $screen-l) {
-      padding: 40px;
+      min-height: 105px;
     }
 
     @media(max-width: $screen-m) {
-      padding: 30px;
+      min-height: 79px;
     }
 
-    svg {
-      max-width: 100%;
+    @media(max-width: $screen-s) {
+      min-height: 82px;
     }
   }
 }
