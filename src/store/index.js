@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     width: 0,
     games: [],
+    jackpots: [],
     promotions: [
       [
         {
@@ -49,8 +50,7 @@ export default new Vuex.Store({
   },
 
   getters: {
-    games: (state) => state.games,
-    errors: (state) => state.errors,
+    gamesLimited: (state) => (limit) => state.games.slice(0, limit),
   },
 
   mutations: {
@@ -66,28 +66,34 @@ export default new Vuex.Store({
     setGames: (state, payload) => {
       state.games = payload;
     },
-    setAllGames: (state, payload) => {
-      state.games = [...state.games, ...payload];
-    },
     pushErrors: (state, payload) => {
       state.errors = { ...state.errors, payload };
+    },
+    setJackpots: (state, payload) => {
+      state.jackpots = payload;
     },
   },
 
   actions: {
-    async getGames({ commit }, query, sliceItems = 0) {
+    async getGames({ commit }, query) {
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get(`https://games.netdnstrace1.com/?${query}`);
-        if (sliceItems) {
-          const data = res.data.slice(sliceItems);
-          commit('setAllGames', data);
-        } else commit('setGames', res.data);
+        commit('setGames', res.data);
       } catch (e) {
         commit('pushErrors', e);
       } finally {
         commit('gamesAreLoaded');
+      }
+    },
+    async getJackpots({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.get('https://games.netdnstrace1.com/?daily_jackpot=true');
+        commit('setJackpots', res.data);
+      } catch (e) {
+        commit('pushErrors', e);
       }
     },
   },

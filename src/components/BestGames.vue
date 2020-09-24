@@ -46,30 +46,23 @@
       </div>
       <Search class="BestGames-Search" />
     </div>
-<!--    <Loader v-if="gamesAreLoading" />-->
-    <template>
+    <Loader v-if="gamesAreLoading" />
+    <template v-else>
       <div class="BestGames-Thumbs">
         <div
-          v-for="(game, i) in gamesShowed"
+          v-for="(game, i) in gamesLimited(gamesShowed)"
           class="Thumb BestGames-Thumb"
-          :class="{'BestGames-Thumb--wide': defineRectImages(i)}"
           :key="i"
         >
           <img
-            v-if="games[i] && defineRectImages(i)"
-            :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/500/${games[i].item_title}.jpg`"
-            :alt="`${games[i].application_name}`
-          ">
-          <img
-            v-else-if="games[i]"
-            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${games[i].item_title}.jpg`"
-            :alt="`${games[i].application_name}`
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
+            :alt="`${game.application_name}`
           ">
         </div>
       </div>
-      <div class="BestGames-Btn">
-        <button class="Btn Btn--outline Btn--outline2" @click="showAllGames()">
-          View all games
+      <div v-if="games.length > gamesShowed" class="BestGames-Btn">
+        <button class="Btn Btn--outline Btn--outline2" @click="showMoreGames()">
+          View more games
         </button>
       </div>
     </template>
@@ -77,16 +70,15 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-import defineRectImages from '@/utils';
+import { mapState, mapGetters, mapActions } from 'vuex';
 import Search from '@/components/Search.vue';
-// import Loader from '@/components/Loader.vue';
+import Loader from '@/components/Loader.vue';
 
 export default {
   name: 'BestGames',
   components: {
     Search,
-    // Loader,
+    Loader,
   },
   data() {
     return {
@@ -132,36 +124,36 @@ export default {
         //       to understand why this behaviour is behind a flag.
         detectIFrame: true,
       },
+      gamesToShow: 24,
+      gamesShowed: 24,
     };
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading']),
-    gamesShowed() {
-      return this.games.length && this.games.length < 20 ? this.games.length : 20;
-    },
+    ...mapGetters(['gamesLimited']),
   },
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
+      this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames(this.makeQuery(true));
+      this.getGames(this.makeQuery());
       if (this.width <= 460) this.listIsOpen = false;
     },
     onClickOutside(e) {
       if (e.target.className !== 'BestGames-ChosenTab') this.listIsOpen = false;
     },
-    makeQuery(limit = false) {
-      let query = 'appName=VegasWinner&lang=en&platform=desktop';
-      if (limit) query += `&limit=${this.gamesShowed}`;
+    makeQuery() {
+      let query = `appName=${this.$skin}&lang=en&platform=desktop`;
       switch (this.tabActive.name) {
         case 'New games':
           query += '&is_new=true';
           break;
         case 'Roulette':
-          query += '&categories=roulette';
+          query += '&categories=Roulette';
           break;
         case 'Card games':
-          query += '&categories=Scratch Cards';
+          query += '&categories=Card Games';
           break;
         case 'Live games':
           query += '&categories=Live Casino';
@@ -175,13 +167,12 @@ export default {
 
       return query;
     },
-    showAllGames() {
-      this.getGames(this.makeQuery(), this.gamesShowed);
+    showMoreGames() {
+      this.gamesShowed += this.gamesToShow;
     },
-    defineRectImages,
   },
-  mounted() {
-    this.getGames(this.makeQuery(true));
+  created() {
+    this.getGames(this.makeQuery());
   },
 };
 </script>

@@ -20,143 +20,30 @@
       </div>
     </div>
     <div class="Jackpots-Slider">
-      <VueSlider v-bind="options">
-        <a href="#" class="Jackpots-Item">
+      <VueSlider v-if="jackpots.length" v-bind="options">
+        <div v-for="(game, i) in jackpots" :key="i" class="Jackpots-Item">
           <div class="Jackpots-Image">
-            <img src="@/assets/img/car1.jpg" alt="" />
+            <img
+              :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/350/${game.item_title}.jpg`"
+              :alt="`${game.application_name}`
+          ">
           </div>
           <div class="Jackpots-Content">
             <div class="Jackpots-Game">
-              Legacy of Dead
+              {{ game.application_name }}
             </div>
             <div class="Jackpots-Price">
-              € 5,804.11
+              {{ game.biggest_win }}
             </div>
           </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car2.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Vikings go Berzerk
-            </div>
-            <div class="Jackpots-Price">
-              € 1,520.65
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car3.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Blinged
-            </div>
-            <div class="Jackpots-Price">
-              € 991.01
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car4.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Wild Streets
-            </div>
-            <div class="Jackpots-Price">
-              € 603.60
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car5.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Tower Quest
-            </div>
-            <div class="Jackpots-Price">
-              € 751.78
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car1.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Legacy of Dead
-            </div>
-            <div class="Jackpots-Price">
-              € 5,804.11
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car2.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Vikings go Berzerk
-            </div>
-            <div class="Jackpots-Price">
-              € 1,520.65
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car3.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Blinged
-            </div>
-            <div class="Jackpots-Price">
-              € 991.01
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car4.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Wild Streets
-            </div>
-            <div class="Jackpots-Price">
-              € 603.60
-            </div>
-          </div>
-        </a>
-        <a href="#" class="Jackpots-Item">
-          <div class="Jackpots-Image">
-            <img src="@/assets/img/car5.jpg" alt="" />
-          </div>
-          <div class="Jackpots-Content">
-            <div class="Jackpots-Game">
-              Tower Quest
-            </div>
-            <div class="Jackpots-Price">
-              € 751.78
-            </div>
-          </div>
-        </a>
+        </div>
       </VueSlider>
     </div>
   </section>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 import VueSlider from '@/components/Slider.vue';
 
 export default {
@@ -184,6 +71,15 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    ...mapState(['jackpots']),
+  },
+  methods: {
+    ...mapActions(['getJackpots']),
+  },
+  created() {
+    this.getJackpots();
   },
 };
 </script>
