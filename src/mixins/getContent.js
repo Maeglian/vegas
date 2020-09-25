@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      isErrored: false,
+      isError: false,
       pageContent: '',
     };
   },

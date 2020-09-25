@@ -52,6 +52,9 @@ const routes = [
     path: '/payment-methods',
     name: 'PaymentMethods',
     component: PaymentMethods,
+    props: {
+      url: 'https://service.safe-communication.com/feeds/payments/single?skin=VegasWinner&lang=en',
+    },
   },
   {
     path: '/payment-options',

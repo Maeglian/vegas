@@ -236,6 +236,9 @@
     <template v-if="isLoading">
       <Loader />
     </template>
+    <div v-else-if="isError">
+      Sorry, we have some problems, data could not be loaded.
+    </div>
     <div v-else v-html="pageContent"></div>
   </section>
 </template>
