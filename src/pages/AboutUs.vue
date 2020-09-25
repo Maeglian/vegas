@@ -9,15 +9,15 @@
       Who We Are
     </h3>
     <div>
-      Here at PlayJoker we are just the same players as you. We ourselves have been playing at different casino sites for many years and therefore have vast playing experience. We’ve seen hundreds of games and visited dozens of casino-sites. We know what you need and expect as a player.
+      Here at VegasWinner we are just the same players as you. We ourselves have been playing at different casino sites for many years and therefore have vast playing experience. We’ve seen hundreds of games and visited dozens of casino-sites. We know what you need and expect as a player.
     </div>
   </div>
   <div class="Page-Section AboutUs-Section">
     <h3>
-      What PlayJoker Is
+      What VegasWinner Is
     </h3>
     <div>
-      PlayJoker casino is run by a team of experienced casino players and enthusiasts with vast experience in both playing at and running online casinos. It is a high-end casino with games provided by the best developers
+      VegasWinner casino is run by a team of experienced casino players and enthusiasts with vast experience in both playing at and running online casinos. It is a high-end casino with games provided by the best developers
       in the industry, support service always ready to assist you
       in any situation, and of course big wins just a couple mouse-clicks away. So don't miss your chance and join us now!
     </div>
@@ -27,7 +27,7 @@
       Our Software
     </h3>
     <div>
-      PlayJoker uses products of best casino software and game providers around. You might have heard of them - Amatic, BetSoft, Endorphina, Ezugi, Microgaming, SoftSwiss. Every true casino player knows these names and trusts them just like we do. We don't want our players to be a part of some sort of experiment. We just want
+      VegasWinner uses products of best casino software and game providers around. You might have heard of them - Amatic, BetSoft, Endorphina, Ezugi, Microgaming, SoftSwiss. Every true casino player knows these names and trusts them just like we do. We don't want our players to be a part of some sort of experiment. We just want
       to give our players a reliable gambling experience that we ourselves would enjoy. And we do!
     </div>
   </div>
