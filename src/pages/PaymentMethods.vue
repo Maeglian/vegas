@@ -15,7 +15,7 @@
       Sorry, we have some problems, data could not be loaded.
     </div>
     <div v-else class="Cards PaymentMethods-Cards">
-      <div v-for="item in content" :key="item.name" class="PaymentMethods-Card">
+      <div v-for="item in pageContent" :key="item.name" class="PaymentMethods-Card">
         <img :src="item.images.medium" alt="">
       </div>
     </div>
@@ -23,37 +23,11 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Loader from '@/components/Loader.vue';
+import getContent from '@/mixins/getContent';
 
 export default {
   name: 'PaymentMethods',
-  components: {
-    Loader,
-  },
-  data() {
-    return {
-      isLoading: false,
-      content: '',
-      isError: false,
-    };
-  },
-  methods: {
-    async getData() {
-      this.isLoading = true;
-      try {
-        const res = await axios.get(`https://service.safe-communication.com/feeds/payments/single?skin=${this.$skin}&lang=en`);
-        this.content = res.data;
-      } catch {
-        this.isError = true;
-      } finally {
-        this.isLoading = false;
-      }
-    },
-  },
-  mounted() {
-    this.getData();
-  },
+  mixins: [getContent],
 };
 </script>
 
