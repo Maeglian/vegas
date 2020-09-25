@@ -54,7 +54,7 @@
 import VueSlider from '@/components/Slider.vue';
 
 export default {
-  name: 'Hero.vue',
+  name: 'Hero',
   components: {
     VueSlider,
   },
