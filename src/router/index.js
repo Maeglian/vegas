@@ -26,11 +26,17 @@ const routes = [
     path: '/bonus-policy',
     name: 'BonusPolicy',
     component: BonusPolicy,
+    props: {
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=bonus_policy&lang=en',
+    },
   },
   {
     path: '/privacy-policy',
     name: 'PrivacyPolicy',
     component: PrivacyPolicy,
+    props: {
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=privacy_policy&lang=en',
+    },
   },
   {
     path: '/about-us',
@@ -56,11 +62,17 @@ const routes = [
     path: '/terms-and-conditions',
     name: 'TermsConditions',
     component: TermsConditions,
+    props: {
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=terms_and_conditions&lang=en',
+    },
   },
   {
     path: '/responsible-gamings',
     name: 'ResponsibleGamings',
     component: ResponsibleGamings,
+    props: {
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=responsible_gaming&lang=en',
+    },
   },
   {
     path: '/faq',

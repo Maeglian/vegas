@@ -56,6 +56,22 @@
     }
   }
 
+  h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.18;
+    color: var(--color-text-main);
+    text-transform: capitalize;
+
+    @media (max-width: $screen-l) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $screen-s) {
+      font-size: 24px;
+    }
+  }
+
   h3 {
     margin-bottom: 17px;
     padding-bottom: 26px;
@@ -91,10 +107,10 @@
     color: var(--color-text-main);
   }
 
-  ul li:before {
-    content: "•";
-    margin-right: 5px;
-  }
+  //ul li:before {
+  //  content: "•";
+  //  margin-right: 5px;
+  //}
 
   a {
     color: var(--color-text-main);
@@ -102,5 +118,13 @@
 
   p {
     margin-bottom: 2em;
+  }
+
+  ul.privacy_list {
+    margin-bottom: 2em !important;
+  }
+
+  strong {
+    color: var(--color-text-main);
   }
 }
