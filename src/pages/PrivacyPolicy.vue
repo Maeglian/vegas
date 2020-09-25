@@ -81,12 +81,26 @@ export default {
 
 <style lang="scss">
 .PrivacyPolicy {
+  h2 {
+    font-size: 30px;
+
+    @media (max-width: $screen-l) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $screen-s) {
+      font-size: 20px;
+    }
+  }
+
   &-Title, style + h2 {
+    font-size: 40px;
     color: var(--color-main1);
     margin-bottom: 58px;
 
     @media (max-width: $screen-l) {
       margin-bottom: 50px;
+      font-size: 30px;
     }
 
     @media (max-width: $screen-m) {
@@ -95,6 +109,7 @@ export default {
 
     @media(max-width: $screen-s) {
       margin-bottom: 30px;
+      font-size: 24px;
     }
   }
 
