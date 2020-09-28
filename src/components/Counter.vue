@@ -56,10 +56,10 @@ export default {
   data() {
     return {
       currentTime: {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        days: '00',
+        hours: '00',
+        minutes: '00',
+        seconds: '00',
       },
     };
   },
@@ -76,18 +76,18 @@ export default {
       if (t > 0) {
         this.currentTime = {
           total: t,
-          days,
-          hours,
-          minutes,
-          seconds,
+          days: String(days).padStart(2, '0'),
+          hours: String(hours).padStart(2, '0'),
+          minutes: String(minutes).padStart(2, '0'),
+          seconds: String(seconds).padStart(2, '0'),
         };
         setTimeout(this.countdown, this.speed);
       } else {
         this.currentTime = {
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
+          days: '00',
+          hours: '00',
+          minutes: '00',
+          seconds: '00',
         };
       }
     },
