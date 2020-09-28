@@ -37,7 +37,7 @@
               <div class="Tournaments-Text" v-if="item.text">
                 {{ item.text }}
               </div>
-              <Counter v-if="item.timeLeft" class="Tournaments-Counter" enddate="2020-10-22T13:00:00"/>
+              <Counter v-if="item.timeLeft" class="Tournaments-Counter" enddate="2020-10-22T13:00:00.000Z"/>
               <div class="Tournaments-Footer">
                 <a class="Btn Btn--color Tournaments-Btn" href="#">
                   Get bonus
