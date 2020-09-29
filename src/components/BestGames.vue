@@ -56,8 +56,9 @@
         >
           <img
             :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
-            :alt="`${game.application_name}`
-          ">
+            :alt="`${game.application_name}`"
+            loading="lazy"
+          />
         </div>
       </div>
       <div v-if="games.length > gamesShowed" class="BestGames-Btn">

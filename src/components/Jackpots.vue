@@ -24,6 +24,7 @@
         <div v-for="(game, i) in jackpots" :key="i" class="Jackpots-Item">
           <div class="Jackpots-Image">
             <img
+              loading="lazy"
               :src="`https://aws-origin.image-tech-storage.com/gameRes/rect/350/${game.item_title}.jpg`"
               :alt="`${game.application_name}`
           ">

@@ -21,7 +21,7 @@
                 v-if="item.image960"
                 media="(max-width: 960px)" :srcset="require(`@/assets/img/${item.image960}`)"
               >
-              <img :src="require(`@/assets/img/${item.image}`)" :alt="item.title">
+              <img :src="require(`@/assets/img/${item.image}`)" :alt="item.title" loading="lazy">
             </picture>
             <div class="Tournaments-Content">
               <div class="Title Tournaments-Name">
