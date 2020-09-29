@@ -98,7 +98,7 @@ export default {
     };
   },
   created() {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
   },
   destroyed() {
     window.removeEventListener('scroll', this.onScroll);
