@@ -10,7 +10,7 @@
               <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
               <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
               <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.png')">
-              <img src="@/assets/img/joker_1920.png" alt="">
+              <img srcset="@/assets/img/joker_1920.png" alt="">
             </picture>
             <div class="Hero-Content">
               <div class="Title Title--type-h1 Hero-Title">

@@ -5,7 +5,7 @@
       <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
         <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
         <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
-        <img :src="require(`@/assets/img/${image}`)" loading="lazy" :alt="title">
+        <img :srcset="require(`@/assets/img/${image}`)" loading="lazy" :alt="title">
       </picture>
       <div class="Banner-Content">
         <div v-if="title" class="Title Title--type-h3 Banner-Title">
