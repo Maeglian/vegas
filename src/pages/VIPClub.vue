@@ -131,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="Btn Btn--color Btn--centered Vip-Btn">
+      <div class="Btn Btn--color Btn--centered Vip-Btn" @click="openLogin()">
         Join the club
       </div>
     </div>
@@ -179,7 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="Btn Btn--color Btn--centered Vip-Btn">
+      <div class="Btn Btn--color Btn--centered Vip-Btn" @click="openLogin()">
         Join the club
       </div>
     </div>
@@ -187,8 +187,11 @@
 </template>
 
 <script>
+import auth from '@/mixins/auth';
+
 export default {
   name: 'VIPClub',
+  mixins: [auth],
 };
 </script>
 

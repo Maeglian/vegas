@@ -20,7 +20,7 @@
                 Make first deposit now and get 100%<br/>
                 up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
               </p>
-              <button class="Btn Btn--color Hero-Btn">
+              <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
                 Deposit now
               </button>
             </div>
@@ -39,7 +39,7 @@
                 Make first deposit now and get 100%<br/>
                 up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
               </p>
-              <button class="Btn Btn--color Hero-Btn">
+              <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
                 Deposit now
               </button>
             </div>
@@ -52,12 +52,14 @@
 
 <script>
 import VueSlider from '@/components/Slider.vue';
+import auth from '@/mixins/auth';
 
 export default {
   name: 'Hero',
   components: {
     VueSlider,
   },
+  mixins: [auth],
   data() {
     return {
       options: {
