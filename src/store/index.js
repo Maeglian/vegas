@@ -79,7 +79,7 @@ export default new Vuex.Store({
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.get(`https://games.netdnstrace1.com/?${query}`);
+        const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
         commit('setGames', res.data);
       } catch (e) {
         commit('pushErrors', e);
