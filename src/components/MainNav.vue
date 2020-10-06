@@ -52,12 +52,14 @@
 
 <script>
 import NavItem from '@/components/NavItem.vue';
+import auth from '@/mixins/auth';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
   },
+  mixins: [auth],
   data() {
     return {
       documentIsScrolled: false,
@@ -104,15 +106,6 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    openLogin() {
-      window.openLogin();
-    },
-    openRegistration() {
-      window.openRegistration();
-    },
-    openForgotPassword() {
-      window.openForgotPassword();
-    },
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
