@@ -67,74 +67,83 @@ export default {
 
 <style lang="scss">
 .Footer {
-  padding-bottom: 54px;
-
-  @media(max-width: $screen-m) {
-    padding-top: 20px;
-  }
+  margin-bottom: 30px;
 
   &-Partners {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 36px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 46px;
+    }
   }
 
   &-Nav {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 36px;
   }
 
   &-Link {
-    display: inline-block;
     margin-right: 31px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    font-size: 12px;
     white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
     }
 
-    @media(max-width: $screen-l) {
-      margin-right: 28px;
-      font-size: 13px;
-    }
-
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       margin-right: 28px;
       font-size: 10px;
     }
 
-    @media(max-width: $screen-s) {
-      margin-bottom: 16px;
+    @media(min-width: $screen-l) {
+      margin-right: 28px;
+      font-size: 13px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 10px;
       font-size: 12px;
     }
   }
 
   &-Disclaimer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
 
-    @media(max-width: $screen-s) {
-      flex-direction: column;
-      align-items: flex-start;
+    @media(min-width: $screen-m) {
+      flex-direction: row;
+      align-items: flex-end;
     }
   }
 
   &-Text {
+    order: 1;
     font-size: 14px;
     line-height: 1.66;
     color: var(--color-more-faded);
 
-    @media(max-width: $screen-s) {
-      order: 1;
+    @media(min-width: $screen-m) {
+      order: 0;
     }
   }
 
   &-Icons {
     display: flex;
-    margin-left: 141px;
+    margin-left: 0;
+    margin-bottom: 20px;
 
-    @media(max-width: $screen-s) {
-      margin-left: 0;
-      margin-bottom: 20px;
+    @media(min-width: $screen-m) {
+      margin-left: 141px;
+      margin-bottom: 0;
     }
   }
 

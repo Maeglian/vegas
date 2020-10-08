@@ -4,45 +4,42 @@
     <div class="Hero-Slider">
       <VueSlider v-bind="options">
         <div class="Hero-Item">
-          <div class="Hero-Wrapper">
-            <picture class="Hero-Image">
-              <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
-              <source media="(max-width: 760px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
-              <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
-              <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.png')">
-              <img srcset="@/assets/img/joker_1920.png" alt="">
-            </picture>
-            <div class="Hero-Content">
-              <div class="Title Title--type-h1 Hero-Title">
-                Number one place<br/> to have fun!
-              </div>
-              <p class="Hero-Text">
-                Make first deposit now and get 100%<br/>
-                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
-              </p>
-              <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
-                Deposit now
-              </button>
+          <picture class="Hero-Image">
+            <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_460.png')">
+            <source media="(max-width: 589px)" :srcset="require('@/assets/img/hero-bg-joker_590.png')">
+            <source media="(max-width: 768px)" :srcset="require('@/assets/img/hero-bg-joker_768.png')">
+            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.png')">
+            <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker_1248.png')">
+            <img srcset="@/assets/img/hero-bg-joker_1920.png" loading="lazy" alt="">
+          </picture>
+          <div class="Hero-Content">
+            <div class="Title Title--type-h1 Hero-Title">
+              Number one place<br/> to have fun!
             </div>
+            <p class="Hero-Text">
+              Make first deposit now and get 100%<br/>
+              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+            </p>
+            <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
+              Deposit now
+            </button>
           </div>
         </div>
         <div class="Hero-Item">
-          <div class="Hero-Wrapper">
-            <div class="Hero-Image">
-              <img src="@/assets/img/hero-bg.jpg" alt="">
+          <div class="Hero-Image">
+            <img src="@/assets/img/hero-bg.jpg" alt="">
+          </div>
+          <div class="Hero-Content">
+            <div class="Title Title--type-h1 Hero-Title">
+              Number one place to have fun!
             </div>
-            <div class="Hero-Content">
-              <div class="Title Title--type-h1 Hero-Title">
-                Number one place to have fun!
-              </div>
-              <p class="Hero-Text">
-                Make first deposit now and get 100%<br/>
-                up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
-              </p>
-              <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
-                Deposit now
-              </button>
-            </div>
+            <p class="Hero-Text">
+              Make first deposit now and get 100%<br/>
+              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+            </p>
+            <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
+              Deposit now
+            </button>
           </div>
         </div>
       </VueSlider>
@@ -92,81 +89,72 @@ export default {
 .Hero {
   max-width: 100%;
   width: 100%;
-  height: 640px;
   margin-top: -75px;
-  margin-bottom: 5px;
+  margin-bottom: 55px;
   padding-left: 0;
   padding-right: 0;
 
-  @media(max-width: $screen-xl) {
-    height: auto;
-  }
-
-  @media(max-width: $screen-l) {
+  @media(min-width: $screen-l) {
     margin-bottom: 45px;
   }
 
-  @media(max-width: $screen-s) {
-    margin-bottom: 55px;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 5px;
   }
 
   &-Item {
     position: relative;
-    height: 640px;
+    height: 100%;
+    padding-bottom: 40px;
     overflow: hidden;
 
-    @media(max-width: $screen-l) {
-      height: auto;
-    }
-  }
-
-  &-Wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    @media(max-width: $screen-s) {
-      padding-bottom: 145%;
+    @media(min-width: $screen-xs) {
+      padding-bottom: 0px;
     }
 
-    @media(max-width: $screen-xs) {
-      padding-bottom: 155%;
+    @media(min-width: $screen-xl) {
+      height: 640px;
     }
   }
 
   &-Content {
     position: absolute;
-    top: 183px;
-    left: calc(50% - 608px);
-    max-width: 40%;
-    text-align: left;
+    max-width: 100%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 
-    @media(max-width: $screen-xl) {
-      left: 16px;
+    @media(min-width: $screen-xs) {
+      bottom: 40px;
     }
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-s) {
+      max-width: 60%;
+      top: 90px;
+      left: 16px;
+      bottom: initial;
+      text-align: left;
+    }
+
+    @media(min-width: $screen-m) {
+      top: 124px;
+    }
+
+    @media(min-width: $screen-l) {
       max-width: 50%;
       top: 159px;
     }
 
-    @media(max-width: $screen-m) {
-      max-width: 60%;
-      top: 124px;
-    }
-
-    @media(max-width: $screen-s) {
-      max-width: 100%;
-      top: initial;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
+    @media(min-width: $screen-xl) {
+      top: 183px;
+      left: calc(50% - 608px);
+      max-width: 40%;
+      text-align: left;
     }
   }
 
   &-Image {
-    display: inline-block;
     width: 100%;
     height: 100%;
 
@@ -174,74 +162,57 @@ export default {
       width: 100%;
       height: 100%;
       object-fit: cover;
-
-      @media(max-width: $screen-l) {
-        height: auto;
-        object-fit: initial;
-      }
-    }
-
-    @media(max-width: $screen-l) {
-      height: auto;
-    }
-
-    @media(max-width: $screen-s) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
     }
   }
 
   &-Title {
-    margin-bottom: 36px;
+    margin-bottom: 19px;
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       margin-bottom: 26px;
     }
 
-    @media(max-width: $screen-s) {
-      margin-bottom: 19px;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 36px;
     }
   }
 
   &-Text {
-    margin-bottom: 53px;
-    font-size: 22px;
+    margin-bottom: 27px;
+    font-size: 14px;
     line-height: 1.37;
     color: var(--color-text-main);
 
-    @media(max-width: $screen-l) {
-      margin-bottom: 35px;
+    @media(min-width: $screen-s) {
       font-size: 18px;
     }
 
-    @media(max-width: $screen-m) {
-      margin-bottom: 28px;
+    @media(min-width: $screen-l) {
+      margin-bottom: 35px;
     }
 
-    @media(max-width: $screen-s) {
-      font-size: 14px;
-      line-height: 20px;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 53px;
+      font-size: 22px;
     }
   }
 
   &-Btn {
-    padding: 25px 40px;
-    font-size: 18px;
+    padding: 20px 30px;
+    font-size: 16px;
 
-    @media(max-width: $screen-m) {
-      padding: 20px 30px;
-      font-size: 16px;
+    @media(min-width: $screen-xl) {
+      padding: 25px 40px;
+      font-size: 18px;
     }
   }
 
   .v_slider__dots {
-    position: relative;
-    margin-top: -85px;
+    display: none;
 
-    @media(max-width: $screen-l) {
-      display: none;
+    @media(min-width: $screen-xl) {
+      position: relative;
+      margin-top: -85px;
     }
   }
 }

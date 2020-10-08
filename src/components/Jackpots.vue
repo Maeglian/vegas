@@ -66,6 +66,9 @@ export default {
           460: {
             items: 2,
           },
+          590: {
+            items: 3,
+          },
           768: {
             items: 5,
           },
@@ -87,41 +90,45 @@ export default {
 
 <style lang="scss">
 .Jackpots {
-  margin-bottom: 89px;
+  margin-bottom: 58px;
   padding-left: 0;
   padding-right: 0;
 
-  @media(max-width: $screen-m) {
+  @media(min-width: $screen-m) {
     margin-bottom: 68px;
   }
 
-  @media(max-width: $screen-s) {
-    margin-bottom: 58px;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 89px;
   }
 
   &-Header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 43px;
+    margin-bottom: 30px;
     padding-left: 16px;
     padding-right: 16px;
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-s) {
+      flex-direction: row;
       margin-bottom: 34px;
     }
 
-    @media(max-width: $screen-s) {
-      display: block;
-      margin-bottom: 30px;
+    @media(min-width: $screen-xl) {
+      flex-direction: row;
+      margin-bottom: 43px;
     }
   }
 
   &-Title {
-    @media(max-width: $screen-s) {
-      margin-bottom: 40px;
-      font-size: 24px;
-      text-align: center;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media(min-width: $screen-s) {
+      margin-bottom: 0;
+      text-align: left;
     }
   }
 
@@ -131,43 +138,50 @@ export default {
   }
 
   &-Icon {
-    margin-right: 32px;
+    margin-right: 23px;
+    width: 54px;
+    height: 56px;
 
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 20px;
+      width: 64px;
+      height: 66px;
     }
 
-    @media (max-width: $screen-s) {
-      width: 54px;
-      height: 56px;
-      margin-right: 23px;
+    @media (min-width: $screen-l) {
+      width: 70px;
+      height: 70px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 32px;
     }
   }
 
   &-Text {
     margin-bottom: 3px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
     color: var(--color-main1);
 
-    @media (max-width: $screen-l) {
-      font-size: 16px;
+    @media (min-width: $screen-l) {
+      font-size: 18px;
     }
   }
 
   &-Sum {
-    font-size: 48px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 1.18;
     color: var(--color-text-main);
 
-    @media (max-width: $screen-l) {
-      font-size: 30px;
+    @media (min-width: $screen-m) {
+      font-size: 38px;
     }
 
-    @media (max-width: $screen-s) {
-      font-size: 36px;
+    @media (min-width: $screen-xl) {
+      font-size: 48px;
     }
   }
 
@@ -190,17 +204,17 @@ export default {
     border-radius: 8px;
     overflow: hidden;
 
-    @media (max-width: $screen-l) {
-      height: 92px;
-      margin-bottom: 14px;
-    }
-
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-m) {
       height: 72px;
       margin-bottom: 12px;
     }
 
-    @media (max-width: $screen-s) {
+    @media (min-width: $screen-l) {
+      height: 92px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: $screen-xl) {
       height: 120px;
     }
 
@@ -229,11 +243,11 @@ export default {
     font-size: 14px;
     line-height: 1.18;
 
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-m) {
       flex-direction: column;
     }
 
-    @media (max-width: $screen-s) {
+    @media (min-width: $screen-l) {
       flex-direction: row;
     }
   }
@@ -243,46 +257,46 @@ export default {
     font-weight: 500;
     color: rgba(255, 255, 255, 0.3);
 
-    @media (max-width: $screen-l) {
-      font-size: 11px;
-      margin-right: 8px;
-    }
-
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-m) {
+      margin-right: 0;
+      margin-bottom: 3px;
       font-size: 12px;
     }
 
-    @media (max-width: $screen-s) {
+    @media (min-width: $screen-l) {
+      font-size: 11px;
+      margin-right: 8px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
       margin-right: 13px;
     }
   }
 
   &-Price {
+    font-size: 12px;
     font-weight: 700;
     color: var(--color-main2);
 
-    @media (max-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 11px;
-    }
-
-    @media (max-width: $screen-m) {
-      font-size: 12px;
     }
   }
 
   .v_slider__prev, .v_slider__next {
-    top: 51px;
+    top: 60px;
 
-    @media (max-width: $screen-l) {
-      top: 45px;
-    }
-
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-m) {
       top: 35px;
     }
 
-    @media (max-width: $screen-s) {
-      top: 60px;
+    @media (min-width: $screen-l) {
+      top: 45px;
+    }
+
+    @media (min-width: $screen-xl) {
+      top: 51px;
     }
   }
 }

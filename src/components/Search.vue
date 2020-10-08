@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     openSearch() {
-      if (this.width > 460) this.isOpen = true;
+      if (this.width > 768) this.isOpen = true;
     },
     onClickOutside() {
       this.isOpen = false;
@@ -39,30 +39,31 @@ export default {
 <style lang="scss">
 .Search {
   position: relative;
-  min-width: 67px;
+  width: 100%;
   background: #151841;
   cursor: pointer;
 
-  @media(max-width: $screen-s) {
-    width: 100%;
+  @media(min-width: $screen-m) {
+    min-width: 67px;
+    width: auto;
   }
 
   &-Icon {
     position: absolute;
     top: calc(50% - 9px);
-    left: calc(50% - 9px);
-    fill: var(--color-main2);
+    left: 20px;
+    fill: var(--color-text-ghost);
 
-    @media(max-width: $screen-s) {
-      left: 20px;
-      fill: var(--color-text-ghost);
+    @media(min-width: $screen-m) {
+      left: calc(50% - 9px);
+      fill: var(--color-main2);
     }
   }
 
   &-Input {
-    display: none;
     width: 100%;
     height: 100%;
+    padding: 16px 16px 17px 53px;
     font-size: 14px;
     line-height: 1.18;
     color: var(--color-text-main);
@@ -70,16 +71,16 @@ export default {
     border: none;
     border-radius: 8px;
 
-    @media(max-width: $screen-s) {
-      display: block;
-      padding: 16px 16px 17px 53px;
+    @media(min-width: $screen-m) {
+      display: none;
+      padding: 0;
     }
 
     &::placeholder {
-      color: transparent;
+      color: var(--color-text-ghost);
 
-      @media(max-width: $screen-s) {
-        color: var(--color-text-ghost);
+      @media(min-width: $screen-m) {
+        color: transparent;
       }
     }
   }

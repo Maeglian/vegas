@@ -34,11 +34,11 @@ export default {
 <style lang="scss">
 .Promotions {
   &-Row {
-    display: flex;
+    display: block;
     justify-content: space-between;
 
-    @media(max-width: $screen-s) {
-      display: block;
+    @media(min-width: $screen-s) {
+      display: flex;
     }
   }
 
@@ -52,12 +52,11 @@ export default {
   }
 
   &-Btn {
-    padding: 20px 50px;
+    padding: 14px 30px;
 
-    @media(max-width: $screen-m) {
-      padding: 14px 30px;
+    @media(min-width: $screen-m) {
+      padding: 20px 50px;
     }
   }
 }
-
 </style>

@@ -50,25 +50,25 @@ export default {
 
 <style lang="scss">
 .Questions {
-  margin-bottom: 52px;
+  margin-bottom: 40px;
+  padding-left: 0;
+  padding-right: 0;
 
-  @media(max-width: $screen-m) {
+  @media(min-width: $screen-m) {
     margin-bottom: 63px;
   }
 
-  @media(max-width: $screen-s) {
-    margin-bottom: 40px;
-    padding-left: 0;
-    padding-right: 0;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 52px;
   }
 
   &-Title {
-    margin-bottom: 35px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
 
-    @media(max-width: $screen-s) {
-      margin-left: 16px;
-      margin-right: 16px;
-      text-align: center;
+    @media(min-width: $screen-s) {
+      margin-bottom: 35px;
     }
   }
 
@@ -79,43 +79,44 @@ export default {
   }
 
   &-Item {
-    width: calc(50% - 5px);
-    margin-bottom: 10px;
-    padding: 40px 40px 34px;
-    background: var(--color-bg);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 25px 16px 10px;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-s) {
+      width: calc(50% - 5px);
+      margin-bottom: 10px;
+      background: var(--color-bg);
+    }
+
+    @media(min-width: $screen-m) {
       padding: 30px;
     }
 
-    @media(max-width: $screen-s) {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 25px 16px 10px;
+    @media(min-width: $screen-xl) {
+      padding: 40px 40px 34px;
     }
   }
 
   &-Question {
-    padding-bottom: 26px;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.26;
     color: var(--color-text-main);
-    border-bottom: 1px solid rgba(39, 43, 95, 0.5);
 
-    @media(max-width: $screen-s) {
-      padding-bottom: 0;
-      border-bottom: none;
+    @media(min-width: $screen-s) {
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(39, 43, 95, 0.5);
     }
   }
 
   &-Answer {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.61;
     color: rgba(255, 255, 255, 0.4);
 
-    @media(max-width: $screen-s) {
-      font-size: 14px;
+    @media(min-width: $screen-s) {
+      font-size: 16px;
     }
   }
 }

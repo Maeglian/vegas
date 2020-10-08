@@ -10,8 +10,12 @@
         <div v-for="item in slides" :key="item.title" class="Tournaments-Item">
             <picture class="Tournaments-Image">
               <source
-                v-if="item.imageMobile"
-                media="(max-width: 460px)" :srcset="require(`@/assets/img/${item.imageMobile}`)"
+                v-if="item.image460"
+                media="(max-width: 459px)" :srcset="require(`@/assets/img/${item.image460}`)"
+              >
+              <source
+                v-if="item.image590"
+                media="(max-width: 590px)" :srcset="require(`@/assets/img/${item.image590}`)"
               >
               <source
                 v-if="item.image768"
@@ -21,7 +25,7 @@
                 v-if="item.image960"
                 media="(max-width: 960px)" :srcset="require(`@/assets/img/${item.image960}`)"
               >
-              <img :srcset="require(`@/assets/img/${item.image}`)" :alt="item.title" loading="lazy">
+              <img :srcset="require(`@/assets/img/${item.image1248}`)" :alt="item.title" loading="lazy">
             </picture>
             <div class="Tournaments-Content">
               <div class="Title Tournaments-Name">
@@ -35,7 +39,7 @@
                 <span v-html="item.bonus"></span>
               </div>
               <div class="Tournaments-Text" v-if="item.text">
-                {{ item.text }}
+                <span v-html="item.text"></span>
               </div>
               <Counter v-if="item.timeLeft" class="Tournaments-Counter" enddate="2020-10-22T13:00:00.000Z"/>
               <div class="Tournaments-Footer">
@@ -73,29 +77,31 @@ export default {
           0: {
             items: 1,
           },
-          698: {
+          768: {
             items: 2,
           },
         },
       },
       slides: [
         {
-          image: 'tournaments.png',
+          image460: 'tournaments_460.png',
+          image590: 'tournaments_590.png',
           image768: 'tournaments_768.png',
           image960: 'tournaments_960.png',
-          imageMobile: 'tournaments_320.png',
+          image1248: 'tournaments_1248.png',
           title: 'Weekly in a New Race Tournament',
           bonus: '€280 000 every day',
           timeLeft: [16, 48, 36, 15],
         },
         {
-          image: 'bonus.png',
+          image460: 'bonus_590.png',
+          image590: 'bonus_590.png',
           image768: 'bonus_768.png',
           image960: 'bonus_960.png',
-          imageMobile: 'bonus.png',
+          image1248: 'bonus_1248.png',
           title: '55% Of The Deposit Amount',
           bonus: '<span class="TextMain">Up to</span> € 150<br/> + 100 Free  Spins',
-          text: 'Make your second deposit of $20 or more, and get up to €150 and 100 free spins.',
+          text: 'Make your second deposit of $20<br/> or more, and get up to €150 and<br/> 100 free spins.',
         },
       ],
     };
@@ -105,138 +111,133 @@ export default {
 
 <style lang="scss">
 .Tournaments {
-  margin-bottom: 60px;
+  margin-bottom: 26px;
 
-  @media(max-width: $screen-l) {
+  @media(min-width: $screen-l) {
     margin-bottom: 45px;
   }
 
-  @media(max-width: $screen-s) {
-    margin-bottom: 25px;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 60px;
   }
 
   &-Title {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    text-align: center;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-s) {
       margin-bottom: 30px;
+      text-align: left;
     }
 
-    @media(max-width: $screen-s) {
-      margin-bottom: 10px;
-      text-align: center;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 50px;
     }
   }
 
   &-Item {
     position: relative;
     border-radius: 8px;
-    overflow: hidden;
   }
 
   &-Content {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    max-width: 60%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin-top: -200px;
+    text-align: center;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-xs) {
+      position: absolute;
+      top: 40px;
+      left: 16px;
+      align-items: flex-start;
+      max-width: 60%;
+      margin-top: 0;
+      text-align: left;
+    }
+
+    @media(min-width: $screen-s) {
+      top: 120px;
+    }
+
+    @media(min-width: $screen-m) {
+      top: 25px;
+    }
+
+    @media(min-width: $screen-l) {
       top: 24px;
       left: 30px;
-    }
-
-    @media(max-width: $screen-m) {
-      left: 16px;
-    }
-
-    @media(max-width: $screen-m) {
-      max-width: 80%;
-    }
-
-    @media(max-width: $screen-s) {
-      position: relative;
-      top: initial;
-      left: initial;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 100%;
-      margin-top: 185px;
-      text-align: center;
     }
   }
 
   &-Image {
-    @media(max-width: $screen-s) {
-      position: absolute;
-      top: 0;
-      left: 50%;
+    display: block;
+
+    img {
       width: 100%;
-      transform: translateX(-50%);
     }
   }
 
   &-Name {
-    margin-bottom: 10px;
-    font-size: 28px;
+    margin-bottom: 8px;
+    font-size: 20px;
     font-weight: 800;
 
-    @media(max-width: $screen-l) {
-      margin-bottom: 8px;
-      font-size: 20px;
+    @media(min-width: $screen-l) {
+      margin-bottom: 10px;
+      font-size: 28px;
     }
   }
 
   &-Bonus {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     font-size: 20px;
     font-weight: 700;
     color: var(--color-main2);
     text-transform: uppercase;
 
-    @media(max-width: $screen-l) {
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       margin-bottom: 12px;
       font-size: 14px;
     }
 
-    @media(max-width: $screen-s) {
-      margin-bottom: 16px;
+    @media(min-width: $screen-l) {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 30px;
     }
 
     &--noMargin {
-      @media(max-width: $screen-l) {
-        margin-bottom: 3px;
-      }
+      margin-bottom: 3px;
     }
   }
 
   &-Counter {
     margin-bottom: 22px;
 
-    @media(max-width: $screen-l) {
-      margin-bottom: 14px;
+    @media(min-width: $screen-m) {
+      margin-bottom: 30px;
     }
 
-    @media(max-width: $screen-s) {
+    @media(min-width: $screen-xl) {
       margin-bottom: 22px;
     }
   }
 
   &-Text {
-    margin-bottom: 22px;
+    margin-bottom: 14px;
     font-size: 12px;
     font-weight: 300;
     line-height: 1.66;
     color: var(--color-faded);
 
-    @media(max-width: $screen-l) {
-      margin-bottom: 14px;
+    @media(min-width: $screen-l) {
+      margin-bottom: 22px;
     }
   }
 
@@ -247,10 +248,10 @@ export default {
 
   &-Btn {
     margin-right: 22px;
-    padding: 17px 40px;
+    padding: 14px 20px;
 
-    @media(max-width: $screen-m) {
-      padding: 14px 20px;
+    @media(min-width: $screen-l) {
+      padding: 17px 30px;
     }
   }
 

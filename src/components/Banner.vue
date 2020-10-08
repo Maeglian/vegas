@@ -1,26 +1,27 @@
 <template>
   <!-- eslint-disable max-len -->
   <section class="Banner">
-    <div class="Banner-Wrapper">
-      <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
-        <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${imageMobile}`)">
-        <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
-        <img :srcset="require(`@/assets/img/${image}`)" loading="lazy" :alt="title">
-      </picture>
-      <div class="Banner-Content">
-        <div v-if="title" class="Title Title--type-h3 Banner-Title">
-          <span v-html="title"></span>
-        </div>
-        <div v-if="bonus" class="Banner-Bonus">
-          {{ bonus }}
-        </div>
-        <div v-if="text" class="Banner-Text">
-          {{ text }}
-        </div>
-        <button v-if="btnText" class="Btn Btn--color Banner-Btn">
-          {{ btnText }}
-        </button>
+    <picture class="Banner-Image" :class="{'Banner-Image--contain': contain}">
+      <source media="(max-width: 460px)" :srcset="require(`@/assets/img/${image460}`)">
+      <source media="(max-width: 589px)" :srcset="require(`@/assets/img/${image590}`)">
+      <source media="(max-width: 768px)" :srcset="require(`@/assets/img/${image768}`)">
+      <source media="(max-width: 960px)" :srcset="require(`@/assets/img/${image960}`)">
+      <source media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
+      <img :srcset="require(`@/assets/img/${image}`)" loading="lazy" :alt="title">
+    </picture>
+    <div class="Banner-Content">
+      <div v-if="title" class="Title Title--type-h3 Banner-Title">
+        <span v-html="title"></span>
       </div>
+      <div v-if="bonus" class="Banner-Bonus">
+        {{ bonus }}
+      </div>
+      <div v-if="text" class="Banner-Text">
+        {{ text }}
+      </div>
+      <button v-if="btnText" class="Btn Btn--color Banner-Btn">
+        {{ btnText }}
+      </button>
     </div>
   </section>
 </template>
@@ -33,11 +34,23 @@ export default {
       type: String,
       required: true,
     },
-    image1248: {
+    image460: {
       type: String,
-      required: true,
+      required: false,
     },
-    imageMobile: {
+    image590: {
+      type: String,
+      required: false,
+    },
+    image768: {
+      type: String,
+      required: false,
+    },
+    image960: {
+      type: String,
+      required: false,
+    },
+    image1248: {
       type: String,
       required: false,
     },
@@ -71,56 +84,44 @@ export default {
   position: relative;
   max-width: 100%;
   width: 100%;
-  margin-bottom: 45px;
+  margin-bottom: 73px;
   padding-left: 0;
   padding-right: 0;
-  overflow: hidden;
 
-  &--bottom {
-    margin-bottom: 80px;
-  }
-
-  @media(max-width: $screen-m) {
+  @media(min-width: $screen-m) {
     margin-bottom: 70px;
   }
 
-  @media(max-width: $screen-s) {
-    text-align: center;
-    margin-bottom: 73px;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 50px;
   }
 
-  &-Wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  &--bottom {
+    .Banner-Content {
+      margin-top: -290px;
 
-    @media(max-width: $screen-s) {
-      padding-bottom: 135%;
+      @media(min-width: $screen-xs) {
+        margin-top: -400px;
+      }
+
+      @media(min-width: $screen-s) {
+        margin-top: 0;
+      }
     }
   }
 
   &-Image {
-    display: inline-block;
+    display: block;
     width: 100%;
-    height: 558px;
-    overflow: hidden;
 
-    @media(max-width: $screen-xl) {
-      height: auto;
+    @media(min-width: $screen-xl) {
+      height: 558px;
     }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    @media(max-width: $screen-s) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      max-height: 500px;
     }
   }
 
@@ -131,102 +132,107 @@ export default {
   }
 
   &-Content {
-    position: absolute;
-    top: 117px;
-    left: calc(50% - 624px + 55px);
-    max-width: 40%;
+    margin-top: -150px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
 
-    @media(max-width: $screen-xl) {
-      left: 55px;
+    @media(min-width: $screen-xs) {
+      margin-top: -250px;
     }
 
-    @media(max-width: $screen-l) {
-      top: 60px;
-      left: 46px;
+    @media(min-width: $screen-s) {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      max-width: 60%;
+      margin-top: 0;
+      text-align: left;
+    }
+
+    @media(min-width: $screen-m) {
+      top: 40px;
       max-width: 50%;
     }
 
-    @media(max-width: $screen-m) {
-      left: 16px;
+    @media(min-width: $screen-l) {
+      top: 60px;
+      left: 46px;
     }
 
-    @media(max-width: $screen-s) {
-      top: initial;
-      left: 0;
-      bottom: 0;
-      max-width: 100%;
-      padding-left: 16px;
-      padding-right: 16px;
+    @media(min-width: $screen-xl) {
+      top: 150px;
+      left: calc(50% - 624px + 55px);
+      max-width: 40%;
     }
   }
 
   &-Title {
-    margin-bottom: 42px;
-    font-size: 36px;
+    margin-bottom: 18px;
+    font-size: 22px;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-m) {
+      margin-bottom: 24px;
+    }
+
+    @media(min-width: $screen-l) {
       margin-bottom: 28px;
       font-size: 26px;
     }
 
-    @media(max-width: $screen-m) {
-      margin-bottom: 24px;
-    }
-
-    @media(max-width: $screen-s) {
-      margin-bottom: 18px;
-      font-size: 22px;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 42px;
+      font-size: 36px;
     }
   }
 
   &-Bonus {
-    margin-bottom: 22px;
-    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 126.5%;
     text-transform: uppercase;
     color: var(--color-main1);
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-l) {
       margin-bottom: 13px;
       font-size: 20px;
     }
 
-    @media(max-width: $screen-s) {
-      margin-bottom: 20px;
-      font-size: 14px;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 22px;
+      font-size: 24px;
     }
   }
 
   &-Text {
-    margin-bottom: 34px;
-    font-size: 16px;
+    margin-bottom: 23px;
+    font-size: 13px;
     font-weight: 300;
     line-height: 24px;
     color: var(--color-text-ghost);
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       font-size: 14px;
     }
 
-    @media(max-width: $screen-m) {
-      margin-bottom: 23px;
-      font-size: 13px;
-      color: var(--color-text-main);
+    @media(min-width: $screen-xl) {
+      margin-bottom: 34px;
+      font-size: 16px;
     }
   }
 
   &-Btn {
-    padding: 20px 55px;
-    font-size: 18px;
+    padding: 18px 40px;
+    font-size: 16px;
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       padding: 18px 22px;
     }
 
-    @media(max-width: $screen-s) {
-      padding: 18px 40px;
-      font-size: 16px;
+    @media(min-width: $screen-xl) {
+      padding: 20px 55px;
+      font-size: 18px;
     }
   }
 }

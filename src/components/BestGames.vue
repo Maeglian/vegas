@@ -25,7 +25,7 @@
           :class="[ listIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
         ></i>
       </button>
-      <div v-if="width > 460 || listIsOpen"
+      <div v-if="width >= 768 || listIsOpen"
        class="BestGames-Tabs"
       >
         <button
@@ -55,7 +55,7 @@
           :key="i"
         >
           <img
-            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
+            :src="`https://aws-origin.image-tech-storage.com/gameRes/sq/${imageWidth}/${game.item_title}.jpg`"
             :alt="`${game.application_name}`"
             loading="lazy"
           />
@@ -132,6 +132,11 @@ export default {
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading']),
     ...mapGetters(['gamesLimited']),
+    imageWidth() {
+      if (this.width > 460 && this.width < 590) return 250;
+      if (this.width > 960) return 200;
+      return 150;
+    },
   },
   methods: {
     ...mapActions(['getGames']),
@@ -139,7 +144,7 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.getGames(this.makeQuery());
-      if (this.width <= 460) this.listIsOpen = false;
+      if (this.width < 768) this.listIsOpen = false;
     },
     onClickOutside(e) {
       if (e.target.className !== 'BestGames-ChosenTab') this.listIsOpen = false;
@@ -180,126 +185,142 @@ export default {
 
 <style lang="scss">
 .BestGames {
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 
-  @media(max-width: $screen-l) {
+  @media(min-width: $screen-l) {
     margin-bottom: 71px;
   }
 
-  @media(max-width: $screen-m) {
-    margin-bottom: 90px;
+  @media(min-width: $screen-xl) {
+    margin-bottom: 100px;
   }
 
   &-Title {
-    max-width: 60%;
-    margin-bottom: 30px;
+    display: none;
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
+      display: block;
       margin-bottom: 20px;
     }
 
-    @media(max-width: $screen-s) {
-      display: none;
+    @media(min-width: $screen-s) {
+      max-width: 60%;
+      margin-bottom: 30px;
     }
   }
 
   &-Text {
-    width: 41%;
+    display: none;
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 28px;
     color: var(--color-text-ghost);
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-m) {
+      display: block;
       width: 50%;
-      margin-bottom: 20px;
-    }
-
-    @media(max-width: $screen-m) {
       font-size: 14px;
     }
 
-    @media(max-width: $screen-s) {
-      display: none;
+    @media(min-width: $screen-l) {
+      margin-bottom: 20px;
+    }
+
+    @media(min-width: $screen-xl) {
+      width: 41%;
     }
   }
 
   &-Header {
     position: relative;
     display: flex;
-    margin-bottom: 31px;
+    flex-direction: column;
+    margin-bottom: 20px;
     width: 100%;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-m) {
+      flex-direction: row;
+    }
+
+    @media(min-width: $screen-l) {
       margin-bottom: 15px;
     }
 
-    @media(max-width: $screen-m) {
-      margin-bottom: 20px;
-    }
-
-    @media(max-width: $screen-s) {
-      flex-direction: column;
+    @media(min-width: $screen-s) {
+      margin-bottom: 31px;
     }
   }
 
   &-Tabs {
+    position: absolute;
+    left: 0;
+    top: 125px;
     display: flex;
+    flex-direction: column;
+    order: 2;
     justify-content: space-between;
-    flex-grow: 0;
-    margin-right: 10px;
+    width: 100%;
     background-color: var(--color-body);
+    border: 1px solid var(--color-border-ghost);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
 
-    @media(max-width: $screen-s) {
-      position: absolute;
-      left: 0;
-      top: 125px;
-      flex-direction: column;
-      order: 2;
-      width: 100%;
-      margin-right: 0;
-      border: 1px solid var(--color-border-ghost);
-      border-top: none;
-      border-radius: 0 0 8px 8px;
+    .BestGames-Tab--active {
+      display: none;
+    }
+
+    @media(min-width: $screen-m) {
+      position: relative;
+      top: initial;
+      left: initial;
+      flex-direction: row;
+      flex-grow: 0;
+      order: 0;
+      margin-right: 10px;
+      border: none;
 
       .BestGames-Tab--active {
-        display: none;
+        display: inline-flex;
       }
     }
   }
 
   &-Search {
-    flex-shrink: 0;
+    order: 0;
+    margin-bottom: 14px;
 
-    @media(max-width: $screen-s) {
-      order: 0;
-      margin-bottom: 14px;
+    @media(min-width: $screen-m) {
+      flex-shrink: 0;
+      margin-bottom: 0;
     }
   }
 
   &-Tab {
     display: flex;
-    justify-content: center;
-    margin-right: 10px;
-    padding: 20px 27px;
-    white-space: nowrap;
+    justify-content: flex-start;
+    order: 2;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 0;
 
-    @media(max-width: $screen-l) {
+    @media(min-width: $screen-m) {
+      margin-right: 7px;
+      padding: 13px 11px;
+      border: 1px solid var(--color-border-ghost);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    @media(min-width: $screen-l) {
       padding: 20px 13px;
     }
 
-    @media(max-width: $screen-m) {
-      margin-right: 7px;
-      padding: 13px 11px;
-    }
-
-    @media(max-width: $screen-s) {
-      justify-content: flex-start;
-      order: 2;
-      width: 100%;
-      padding: 20px;
-      border: none;
-      border-radius: 0;
+    @media(min-width: $screen-xl) {
+      justify-content: center;
+      margin-right: 10px;
+      padding: 20px 27px;
+      white-space: nowrap;
     }
 
     &:last-child {
@@ -310,29 +331,28 @@ export default {
       position: relative;
 
       .Arrow {
-        display: none;
         position: absolute;
         top: 26px;
         right: 14px;
         padding: 3px;
         border-color: var(--color-text-ghost);
 
-        @media(max-width: $screen-s) {
-          display: initial;
+        @media(min-width: $screen-m) {
+          display: none;
         }
       }
     }
   }
 
   &-ChosenTab {
-    display: none;
+    display: flex;
+    order: 1;
     border: 1px solid var(--color-border-ghost);
     border-radius: 8px;
     z-index: 1;
 
-    @media(max-width: $screen-s) {
-      display: flex;
-      order: 1;
+    @media(min-width: $screen-m) {
+      display: none;
     }
 
     &--opened {
@@ -345,12 +365,12 @@ export default {
       width: 22px;
       height: 22px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 17px;
         height: 17px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -360,12 +380,12 @@ export default {
       width: 20px;
       height: 18px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 16px;
         height: 14px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 20px;
         height: 18px;
       }
@@ -375,12 +395,12 @@ export default {
       width: 20px;
       height: 20px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 16px;
         height: 16px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -390,12 +410,12 @@ export default {
       width: 19px;
       height: 20px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 15px;
         height: 16px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 19px;
         height: 20px;
       }
@@ -405,12 +425,12 @@ export default {
       width: 26px;
       height: 20px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 19px;
         height: 15px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 26px;
         height: 20px;
       }
@@ -420,12 +440,12 @@ export default {
       width: 31px;
       height: 20px;
 
-      @media(max-width: $screen-m) {
+      @media(min-width: $screen-m) {
         width: 23px;
         height: 15px;
       }
 
-      @media(max-width: $screen-s) {
+      @media(min-width: $screen-xl) {
         width: 31px;
         height: 20px;
       }
@@ -434,48 +454,25 @@ export default {
 
   &-Thumbs {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    margin-bottom: 45px;
+    margin-bottom: 26px;
 
-    @media(max-width: $screen-m) {
-      margin-bottom: 26px;
+    @media(min-width: $screen-s) {
+      grid-template-columns: repeat(6, 1fr);
     }
 
-    @media(max-width: $screen-s) {
-      grid-template-columns: 1fr 1fr;
+    @media(min-width: $screen-xl) {
+      margin-bottom: 45px;
     }
   }
 
   &-Thumb {
-    height: 194px;
-    overflow: hidden;
-
-    @media(max-width: $screen-l) {
-      height: 148px;
-    }
-
-    @media(max-width: $screen-m) {
-      height: 117px;
-    }
-
-    @media(max-width: $screen-s) {
-      height: 138px;
-    }
-
     img {
       width: 100%;
       height: 100%;
       border-radius: 8px;
       object-fit: cover;
-    }
-
-    &--wide {
-      grid-column: span 2;
-
-      @media(max-width: $screen-s) {
-        grid-column: span 1;
-      }
     }
   }
 
@@ -483,9 +480,17 @@ export default {
     text-align: center;
 
     .Btn {
-      @media(max-width: $screen-m) {
-        padding: 17px 20px;
-        font-size: 12px;
+      padding: 17px 20px;
+      font-size: 12px;
+
+      @media(min-width: $screen-l) {
+        padding: 21px 27px;
+        font-size: 14px;
+      }
+
+      @media(min-width: $screen-xl) {
+        padding: 21px 35px;
+        font-size: 14px;
       }
     }
   }

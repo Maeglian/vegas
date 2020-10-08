@@ -46,9 +46,10 @@ export default {
 
   &-Title {
     margin-bottom: 40px;
+    text-align: center;
 
-    @media(max-width: $screen-s) {
-      text-align: center;
+    @media(min-width: $screen-m) {
+      text-align: left;
     }
   }
 }

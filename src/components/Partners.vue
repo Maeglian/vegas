@@ -1,17 +1,17 @@
 <template>
-  <section class="Partners">
+  <div class="Partners">
     <marquee-text :duration="60">
       <div class="Partners-Wrapper">
-        <div class="Partners-Partner Partners-Partner--visa">
+        <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/visa.svg" />
         </div>
-        <div class="Partners-Partner Partners-Partner--maestro">
+        <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/maestro.svg" />
         </div>
         <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/skrill.svg" />
         </div>
-        <div class="Partners-Partner Partners-Partner--paysafe">
+        <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/paysafe.svg" />
         </div>
         <div class="Partners-Partner">
@@ -20,7 +20,7 @@
         <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/webmoney.svg" />
         </div>
-        <div class="Partners-Partner Partners-Partner--sofort">
+        <div class="Partners-Partner">
           <img class="Partners-Image" src="@/assets/img/sofort.svg" />
         </div>
         <div class="Partners-Partner">
@@ -28,7 +28,7 @@
         </div>
       </div>
     </marquee-text>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -44,15 +44,15 @@ export default {
 
 <style lang="scss">
 .Partners {
-  padding-bottom: 40px;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(110, 88, 131, 0.3);
 
-  @media(max-width: $screen-l) {
-    padding-bottom: 25px;
+  @media(min-width: $screen-m) {
+    padding-bottom: 40px;
   }
 
-  @media(max-width: $screen-m) {
-    padding-bottom: 20px;
+  @media(min-width: $screen-l) {
+    padding-bottom: 25px;
   }
 
   &-Wrapper {
@@ -64,37 +64,21 @@ export default {
 
   &-Partner {
     flex-shrink: 2;
-    margin-right: 37px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     opacity: 0.25;
 
     &:last-child {
       margin-right: 0;
     }
 
-    @media(max-width: $screen-m) {
+    @media(min-width: $screen-m) {
       margin-right: 25px;
       margin-bottom: 15px;
     }
 
-    @media(max-width: $screen-s) {
-      margin-right: 10px;
-      margin-bottom: 10px;
-
-      &--visa {
-        display: block;
-      }
-
-      &--maestro {
-        display: block;
-      }
-
-      &--paysafe {
-        display: block;
-      }
-
-      &--sofort {
-        display: block;
-      }
+    @media(min-width: $screen-xl) {
+      margin-right: 37px;
     }
   }
 }

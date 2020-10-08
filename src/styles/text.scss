@@ -5,32 +5,31 @@
   text-transform: capitalize;
 
   &--type-h1 {
-    font-size: 48px;
+    font-size: 24px;
+    line-height: 1.295;
 
-    @media (max-width: $screen-l) {
-      font-size: 38px;
-    }
-
-    @media (max-width: $screen-m) {
+    @media (min-width: $screen-s) {
       font-size: 36px;
     }
 
-    @media (max-width: $screen-s) {
-      font-size: 24px;
-      line-height: 1.295;
+    @media (min-width: $screen-l) {
+      font-size: 38px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 48px;
     }
   }
 
   &--type-h2 {
-    font-size: 40px;
-    line-height: 118%;
+    font-size: 24px;
 
-    @media (max-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 30px;
     }
 
-    @media (max-width: $screen-s) {
-      font-size: 24px;
+    @media (min-width: $screen-xl) {
+      font-size: 40px;
     }
   }
 
