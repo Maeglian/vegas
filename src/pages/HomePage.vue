@@ -7,7 +7,7 @@
     <Tournaments />
     <Promotions />
     <Questions />
-    <Banner class="Banner--bottom" v-bind="banner2" />
+    <Banner v-bind="banner2" />
   </fragment>
 </template>
 

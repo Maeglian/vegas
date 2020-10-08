@@ -115,42 +115,36 @@ export default {
     @media(min-width: $screen-xl) {
       height: 640px;
     }
+
+    @media(min-width: $screen-xxl) {
+      height: 800px;
+    }
   }
 
   &-Content {
     position: absolute;
     max-width: 100%;
     left: 0;
-    bottom: 0;
+    top: 0;
     width: 100%;
+    padding-top: 318px / 320px * 100%;
     text-align: center;
-
-    @media(min-width: $screen-xs) {
-      bottom: 40px;
-    }
 
     @media(min-width: $screen-s) {
       max-width: 60%;
-      top: 90px;
       left: 16px;
-      bottom: initial;
+      padding-top: 124px / 768px * 100%;
       text-align: left;
-    }
-
-    @media(min-width: $screen-m) {
-      top: 124px;
     }
 
     @media(min-width: $screen-l) {
       max-width: 50%;
-      top: 159px;
     }
 
     @media(min-width: $screen-xl) {
-      top: 183px;
       left: calc(50% - 608px);
       max-width: 40%;
-      text-align: left;
+      padding-top: 183px;
     }
   }
 

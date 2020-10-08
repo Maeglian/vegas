@@ -96,23 +96,17 @@ export default {
     margin-bottom: 50px;
   }
 
-  &--bottom {
-    .Banner-Content {
-      margin-top: -290px;
-
-      @media(min-width: $screen-xs) {
-        margin-top: -400px;
-      }
-
-      @media(min-width: $screen-s) {
-        margin-top: 0;
-      }
-    }
-  }
-
   &-Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: block;
     width: 100%;
+
+    @media(min-width: $screen-s) {
+      position: relative;
+    }
 
     @media(min-width: $screen-xl) {
       height: 558px;
@@ -132,38 +126,41 @@ export default {
   }
 
   &-Content {
-    margin-top: -150px;
+    position: relative;
+    z-index: 1;
+    padding-top: 235px / 320px * 100%;
     padding-left: 16px;
     padding-right: 16px;
+    width: 100%;
     text-align: center;
-
-    @media(min-width: $screen-xs) {
-      margin-top: -250px;
-    }
 
     @media(min-width: $screen-s) {
       position: absolute;
-      left: 0;
-      top: 20px;
+      top: 0;
+      left: 16px;
       max-width: 60%;
-      margin-top: 0;
+      padding-top: 61px / 728px * 100%;
+      padding-left: 0;
+      padding-right: 0;
       text-align: left;
     }
 
     @media(min-width: $screen-m) {
-      top: 40px;
       max-width: 50%;
     }
 
     @media(min-width: $screen-l) {
-      top: 60px;
       left: 46px;
     }
 
     @media(min-width: $screen-xl) {
-      top: 150px;
       left: calc(50% - 624px + 55px);
       max-width: 40%;
+      padding-top: 117px;
+    }
+
+    @media(min-width: $screen-xxl) {
+      max-width: 30%;
     }
   }
 

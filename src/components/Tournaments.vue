@@ -145,35 +145,43 @@ export default {
     flex-direction: column;
     align-items: center;
     max-width: 100%;
-    margin-top: -200px;
+    padding-top: 193px / 320px * 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     text-align: center;
 
     @media(min-width: $screen-xs) {
       position: absolute;
-      top: 40px;
-      left: 16px;
+      top: 0;
+      left: 0;
       align-items: flex-start;
       max-width: 60%;
-      margin-top: 0;
+      padding-top: 130px / 768px * 100%;
+      padding-left: 0;
+      padding-right: 0;
       text-align: left;
     }
 
-    @media(min-width: $screen-s) {
-      top: 120px;
-    }
-
     @media(min-width: $screen-m) {
-      top: 25px;
+      padding-top: 24px / 768px * 100%;
     }
 
     @media(min-width: $screen-l) {
-      top: 24px;
       left: 30px;
+      padding-top: 24px / 960px * 100%;
     }
   }
 
   &-Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: block;
+
+    @media(min-width: $screen-xs) {
+      position: relative;
+    }
 
     img {
       width: 100%;
@@ -187,6 +195,10 @@ export default {
 
     @media(min-width: $screen-l) {
       margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    @media(min-width: $screen-xl) {
       font-size: 28px;
     }
   }
