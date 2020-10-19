@@ -1,6 +1,6 @@
 <template>
 <!-- eslint-disable max-len -->
-  <section class="Promotions">
+  <section id="promotions" class="Promotions">
     <div class="Title Title--type-h2 Promotions-Title">
       Current promotions<br/>
       in <span class="Colored">Vegaswinner Casino</span>

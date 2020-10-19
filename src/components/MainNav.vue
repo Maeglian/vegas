@@ -18,7 +18,7 @@
         </router-link>
       </div>
       <div class="Nav MainNav-Links">
-        <router-link class="Nav-Name MainNav-Link" to="/promotions">
+        <router-link class="Nav-Name MainNav-Link" to="/#promotions">
           Promotion
         </router-link>
         <router-link class="Nav-Name MainNav-Link" to="/vip">
@@ -82,7 +82,7 @@ export default {
       navItems: [
         {
           name: 'promotion',
-          url: '/promotions',
+          url: '/#promotions',
           icon: 'gift',
           iconDimensions: [19, 20],
         },
