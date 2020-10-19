@@ -11,7 +11,7 @@
           {{ promotion.title }}
         </div>
         <div class="Promotions-Text Card-Text" v-html="promotion.text"></div>
-        <button class="Btn Btn--outline Btn--outline2 Promotions-Btn">
+        <button class="Btn Btn--outline Btn--outline2 Promotions-Btn" @click="openLogin()">
           Read more
         </button>
       </div>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import auth from '@/mixins/auth';
+
 export default {
   name: 'PromotionsCards',
   props: {
@@ -28,6 +30,7 @@ export default {
       required: true,
     },
   },
+  mixins: [auth],
 };
 </script>
 

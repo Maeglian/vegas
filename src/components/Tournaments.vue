@@ -43,12 +43,9 @@
               </div>
               <Counter v-if="item.timeLeft" class="Tournaments-Counter" enddate="2020-10-22T13:00:00.000Z"/>
               <div class="Tournaments-Footer">
-                <a class="Btn Btn--color Tournaments-Btn" href="#">
+                <button class="Btn Btn--color Tournaments-Btn" @click="openLogin()">
                   Get bonus
-                </a>
-                <a class="Link Link--color Tournaments-Link" href="#">
-                  More info
-                </a>
+                </button>
               </div>
             </div>
         </div>
@@ -60,6 +57,7 @@
 <script>
 import Counter from '@/components/Counter.vue';
 import VueSlider from '@/components/Slider.vue';
+import auth from '@/mixins/auth';
 
 export default {
   name: 'Tournaments',
@@ -67,6 +65,7 @@ export default {
     Counter,
     VueSlider,
   },
+  mixins: [auth],
   data() {
     return {
       options: {

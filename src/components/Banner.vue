@@ -19,7 +19,7 @@
       <div v-if="text" class="Banner-Text">
         {{ text }}
       </div>
-      <button v-if="btnText" class="Btn Btn--color Banner-Btn">
+      <button v-if="btnText" class="Btn Btn--color Banner-Btn" @click="openLogin()">
         {{ btnText }}
       </button>
     </div>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import auth from '@/mixins/auth';
+
 export default {
   name: 'Banner',
   props: {
@@ -76,6 +78,7 @@ export default {
       required: false,
     },
   },
+  mixins: [auth],
 };
 </script>
 
