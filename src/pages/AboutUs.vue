@@ -6,47 +6,27 @@
   </h2>
   <div class="Page-Section AboutUs-Section">
     <h3>
-      Who We Are
+      About Us
     </h3>
     <div>
-      Here at VegasWinner we are just the same players as you. We ourselves have been playing at different casino sites for many years and therefore have vast playing experience. We’ve seen hundreds of games and visited dozens of casino-sites. We know what you need and expect as a player.
+      VegasWinner provides a selection of the world"s favorite games which you can download for free and play for fun or for real money. You can do all this in a friendly yet professional environment, utilizing the latest, most reliable playing software. We take away all the hassle leaving you free to enjoy the winning!
     </div>
   </div>
   <div class="Page-Section AboutUs-Section">
     <h3>
-      What VegasWinner Is
+      Feel at home. Feel secure.
     </h3>
     <div>
-      VegasWinner casino is run by a team of experienced casino players and enthusiasts with vast experience in both playing at and running online casinos. It is a high-end casino with games provided by the best developers
-      in the industry, support service always ready to assist you
-      in any situation, and of course big wins just a couple mouse-clicks away. So don't miss your chance and join us now!
+      VegasWinner goes to great lengths to guarantee that your personal and financial information remains 100% secure and confidential. We employ industry standard security protocols (128 bit, SSL data encryption technology) to ensure that all transactions including deposits and withdrawals are carried out in a totally secure manner. Rest assured that under no circumstances will we pass on your details to a third party.
     </div>
   </div>
   <div class="Page-Section AboutUs-Section">
     <h3>
-      Our Software
+      Fair Gaming
     </h3>
     <div>
-      VegasWinner uses products of best casino software and game providers around. You might have heard of them - Amatic, BetSoft, Endorphina, Ezugi, Microgaming, SoftSwiss. Every true casino player knows these names and trusts them just like we do. We don't want our players to be a part of some sort of experiment. We just want
-      to give our players a reliable gambling experience that we ourselves would enjoy. And we do!
-    </div>
-  </div>
-  <div class="Page-Section AboutUs-Section">
-    <h3>
-      Our License
-    </h3>
-    <div>
-      Vegaswinner.com is owned and operated by Direx N.V., a company registered and established under the laws of Curacao and its wholly owned subsidiary, Direx Limited, registered address 12 Kolonakiou Street, West Block, 1st Floor, Office/flat 101, Agios Athanasios, Postal Code: 4103, Limassol, Cyprus. Direx N.V. is licensed and regulated by Antillephone N.V.. Direx N.V.’s registration number is 131879 and its registered address is Heelsumstraat 51 E-Commerce Park, Curacao.
-    </div>
-  </div>
-  <div class="Page-Section AboutUs-Section">
-    <h3>
-      Payment options & security
-    </h3>
-    <div>
-      One of the most important things every casino-player needs is maximum predictability when it comes to money. Nobody likes waiting. With us, you can finally make deposits and withdrawals in the blink of an eye. Choose your currency, make a deposit, take a deep breath and here you are – ready for non-stop casino action.<br/>
-      Once you've won, the first thing you want to do is withdraw your winnings. We won’t keep you waiting, as we’ll process all withdrawals as fast as possible so that you can spend the money you won fair and square.
-      And here’s one more thing. We accept Bitcoin. Using this amazing crypto currency definitely has some advantages. In addition to full anonymity and security for all Bitcoin users, all your payments are processed instantly. You can deposit and withdraw in mere seconds.
+      A common concern of many first time players online is the issue of fairness and how we are able to provide truly fair game play. VegasWinner understands the importance of the need to guarantee fair gaming and we are dedicated to providing it at all times.<br/><br/>
+      VegasWinner utilizes a certified and audited Random Number Generator (RNG) to ensure consistently random results. This system, an online gaming industry standard, has been extensively tested by running and analyzing millions of dice rolls, shuffles and spins. To view the testing certificate, <a href="https://aws-origin.image-tech-storage.com/vegaswinner.com/images/RNG_Certificate_SkillOnNet.pdf" target="_blank">click here</a>. VegasWinner also monitors ongoing game play to ensure that this level of fairness is maintained at all times.
     </div>
   </div>
 </section>
