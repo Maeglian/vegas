@@ -71,7 +71,7 @@ export default {
     return {
       options: {
         items: 2,
-        loop: true,
+        loop: false,
         dots: true,
         responsive: {
           0: {
@@ -272,6 +272,12 @@ export default {
     font-weight: 300;
     color: var(--color-main1);
     text-transform: none;
+  }
+
+  .v_slider__dots {
+    @media(min-width: $screen-m) {
+      display: none;
+    }
   }
 }
 </style>
