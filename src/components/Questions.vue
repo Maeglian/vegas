@@ -10,7 +10,7 @@
           <span class="Colored">1.</span> How do you claim the free spins deposit bonus?
         </div>
         <p class="Questions-Answer">
-          To claim the free spins deposit bonus, simply click on the Sign Up icon on the SpinGenie homepage, register your account and make your initial deposit of £10 or more.
+          To claim the free spins deposit bonus, simply click on the Register icon, register your account and make your initial deposit of £10 or more.
         </p>
       </div>
       <div class="Questions-Item">

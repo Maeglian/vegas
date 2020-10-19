@@ -18,7 +18,7 @@
             </div>
             <p class="Hero-Text">
               Make first deposit now and get 100%<br/>
-              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+              up to <span class="Colored Hero--colored">€100 + 100 Free Spins</span>
             </p>
             <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
               Deposit now

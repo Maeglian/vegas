@@ -5,7 +5,7 @@
       The best Games <br/>in <span class="Colored">Vegawinner Casino</span>
     </div>
     <div class="BestGames-Text">
-      We have the latest games from all the top providers, including Microgaming, NetEnt and WMS.
+      We have the latest and most popular games from all the leading game providers.
     </div>
     <div class="BestGames-Header" v-click-outside="onClickOutside">
       <button
