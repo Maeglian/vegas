@@ -34,14 +34,14 @@
               <div
                 v-if="item.bonus"
                 class="Tournaments-Bonus"
-                :class="{'Tournaments-Bonus--noMargin' : !item.timeLeft}"
+                :class="{'Tournaments-Bonus--noMargin': !item.tournament}"
               >
                 <span v-html="item.bonus"></span>
               </div>
               <div class="Tournaments-Text" v-if="item.text">
                 <span v-html="item.text"></span>
               </div>
-              <Counter v-if="item.timeLeft" class="Tournaments-Counter" enddate="2020-10-22T13:00:00.000Z"/>
+              <Counter v-if="item.tournament" class="Tournaments-Counter" :enddate="enddate"/>
               <div class="Tournaments-Footer">
                 <button class="Btn Btn--color Tournaments-Btn" @click="openLogin()">
                   Get bonus
@@ -88,9 +88,9 @@ export default {
           image768: 'tournaments_768.png',
           image960: 'tournaments_960.png',
           image1248: 'tournaments_1248.png',
-          title: 'Weekly in a New Race Tournament',
-          bonus: '€280 000 every day',
-          timeLeft: [16, 48, 36, 15],
+          title: 'Monthly in a New Race Tournament',
+          bonus: '"Catch a car" and drive away!',
+          tournament: true,
         },
         {
           image460: 'bonus_590.png',
@@ -103,7 +103,11 @@ export default {
           text: 'Make your second deposit of $20<br/> or more, and get up to €150 and<br/> 100 free spins.',
         },
       ],
+      enddate: null,
     };
+  },
+  mounted() {
+    this.enddate = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0);
   },
 };
 </script>
