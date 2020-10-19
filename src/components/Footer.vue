@@ -3,12 +3,6 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
-      <router-link class="Link Footer-Link" to="/promotions">
-        Promotion
-      </router-link>
-      <router-link class="Link Footer-Link" to="/vip">
-        VIP rewards
-      </router-link>
       <router-link class="Link Footer-Link" to="/payment-methods">
         Payment methods
       </router-link>
