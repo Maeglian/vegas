@@ -42,6 +42,16 @@ export default {
     }
   }
 
+  &-Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media(min-width: $screen-s) {
+      width: 395px / $screen-xl * 100%;
+    }
+  }
+
   &-Image {
     margin-bottom: 25px;
     height: 140px;
@@ -52,6 +62,7 @@ export default {
   }
 
   &-Btn {
+    margin-top: auto;
     padding: 14px 30px;
 
     @media(min-width: $screen-m) {

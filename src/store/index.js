@@ -19,12 +19,12 @@ export default new Vuex.Store({
         {
           image: 'tournaments.svg',
           title: 'Tournaments',
-          text: 'Everybody loves Free Spins<br/> Get More<br/> Now Start off with 50',
+          text: 'Want more chances to win every day and enjoy a fun challenge while you\'re at it? Enter our rewarding daily Buy-In and Freeroll Tournaments that run all day long!',
         },
         {
           image: 'vip.svg',
           title: 'Vip lounge',
-          text: 'Get Free Spins for a Year<br/> Only One Deposit Start with 50<br/> Free Spins Instantly',
+          text: 'Nothing beats the benefits and luxuries that come from VIP rewards and it couldn\'t be simpler!',
         },
       ],
       [
