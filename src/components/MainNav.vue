@@ -7,7 +7,14 @@
           <img class="MainNav-Logo" src="@/assets/img/toggle.svg" />
         </div>
         <router-link class="MainNav-Logo" to="/">
-          <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
+          <picture>
+            <source media="(max-width: 589px)" :srcset="require('@/assets/img/logo_mobile.svg')">
+            <img
+              class="MainNav-Logo"
+              :src="require('@/assets/img/logo.svg')"
+              loading="lazy"
+              alt="VegasWinner">
+          </picture>
         </router-link>
       </div>
       <div class="Nav MainNav-Links">
@@ -37,7 +44,14 @@
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
           <div class="AsideMenu-Close" @click="navIsOpen = !navIsOpen"></div>
-          <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
+          <picture>
+            <source media="(max-width: 589px)" :srcset="require('@/assets/img/logo_mobile.svg')">
+            <img
+              class="MainNav-Logo"
+              :src="require('@/assets/img/logo.svg')"
+              loading="lazy"
+              alt="VegasWinner">
+          </picture>
         </div>
         <div class="AsideMenu-Form">
           <div id="son_embeded"></div>
@@ -144,11 +158,10 @@ export default {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 16px;
+    padding: 13px 16px;
 
-    @media(max-width: $screen-xl) {
-      padding-left: 16px;
-      padding-right: 16px;
+    @media(min-width: $screen-m) {
+      padding: 18px 16px;
     }
   }
 
@@ -159,55 +172,55 @@ export default {
   }
 
   &-Toggle {
-    width: 27px;
-    margin-right: 20px;
+    width: 17px;
+    margin-right: 15px;
     cursor: pointer;
 
-    @media(max-width: $screen-s) {
-      width: 17px;
-      margin-right: 15px;
+    @media(min-width: $screen-s) {
+      width: 27px;
+      margin-right: 20px;
     }
   }
 
   &-Logo {
     flex-shrink: 0;
+    width: 61px;
     vertical-align: middle;
 
-    @media(max-width: $screen-m) {
-      width: 152px;
+    @media(min-width: $screen-s) {
+      width: 197px;
     }
 
-    @media(max-width: $screen-s) {
-      width: 130px;
+    @media(min-width: $screen-l) {
+      width: 227px;
     }
 
-    @media(max-width: $screen-xs) {
-      width: 93px;
+    @media(min-width: $screen-xl) {
+      width: 258px;
     }
   }
 
   &-Links {
-    display: flex;
-    margin-right: 20px;
+    display: none;
 
-    @media(max-width: $screen-l) {
-      display: none;
+    @media(min-width: $screen-l) {
+      display: flex;
+      margin-right: 20px;
     }
   }
 
   &-Link {
-    margin-right: 20px;
-    padding: 0;
+    margin-right: 15px;
+    font-size: 14px;
     color: var(--color-text-main);
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
     }
 
-    @media(max-width: $screen-l) {
-      margin-right: 15px;
-      font-size: 14px;
-      white-space: nowrap;
+    @media(min-width: $screen-xl) {
+      margin-right: 20px;
     }
 
     &:hover {
@@ -224,14 +237,19 @@ export default {
   }
 
   &-Btn {
-    margin-right: 30px;
-    padding: 13px 30px;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 9px 14px;
 
-    @media(max-width: $screen-s) {
-      margin-right: 10px;
-      font-size: 10px;
-      font-weight: 500;
-      padding: 9px 14px;
+    @media(min-width: $screen-s) {
+      margin-right: 30px;
+      padding: 13px 23px;
+      font-size: 14px;
+    }
+
+    @media(min-width: $screen-l) {
+      padding: 13px 30px;
     }
 
     &:last-child {
@@ -256,8 +274,21 @@ export default {
   overflow-y: auto;
   scrollbar-width: thin;
 
+  &-Logo {
+    width: 61px;
+
+    @media(min-width: $screen-s) {
+      width: 167px;
+    }
+
+    @media(min-width: $screen-xl) {
+      width: 212px;
+    }
+  }
+
   &-Header {
     display: flex;
+    align-items: center;
     margin-bottom: 26px;
     padding: 0 16px;
   }
