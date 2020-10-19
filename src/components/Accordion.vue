@@ -8,8 +8,7 @@
     >
       {{ title }}
     </div>
-    <div v-if="isOpen" class="Accordion-Content">
-      {{ content }}
+    <div v-if="isOpen" class="Accordion-Content" v-html="content">
     </div>
   </div>
 
