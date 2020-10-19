@@ -296,7 +296,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      top: 51px;
+      top: 60px;
     }
   }
 }
