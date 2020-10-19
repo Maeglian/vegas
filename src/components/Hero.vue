@@ -27,15 +27,20 @@
         </div>
         <div class="Hero-Item">
           <div class="Hero-Image">
-            <img src="@/assets/img/hero-bg.jpg" alt="">
+            <picture class="Hero-Image">
+              <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-wolf_460.png')">
+              <source media="(max-width: 589px)" :srcset="require('@/assets/img/hero-bg-wolf_590.png')">
+              <source media="(max-width: 768px)" :srcset="require('@/assets/img/hero-bg-wolf_768.png')">
+              <img srcset="@/assets/img/hero-bg-wolf_1248.png" loading="lazy" alt="">
+            </picture>
           </div>
           <div class="Hero-Content">
             <div class="Title Title--type-h1 Hero-Title">
-              Number one place to have fun!
+              Number one place<br/> to have fun!
             </div>
             <p class="Hero-Text">
               Make first deposit now and get 100%<br/>
-              up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>
+              up to <span class="Colored Hero--colored">€100 + 100 Free  Spins</span>
             </p>
             <button class="Btn Btn--color Hero-Btn" @click="openLogin()">
               Deposit now
@@ -66,14 +71,14 @@ export default {
       },
       slides: [
         {
-          bg: 'hero-bg.jpg',
+          bg: 'hero-bg-wolf_1248.jpg',
           title: 'Number one place to have fun!',
           text: `Make first deposit now and get 100%<br/>
                 up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
           btnText: 'Deposit now',
         },
         {
-          bg: 'hero-bg.jpg',
+          bg: 'hero-bg-wolf_1248.jpg',
           title: 'Number one place to have fun!',
           text: `Make first deposit now and get 100%<br/>
                 up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
@@ -105,7 +110,7 @@ export default {
   &-Item {
     position: relative;
     height: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     overflow: hidden;
 
     @media(min-width: $screen-xs) {

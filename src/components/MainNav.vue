@@ -158,7 +158,7 @@ export default {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 13px 16px;
+    padding: 10px 16px;
 
     @media(min-width: $screen-m) {
       padding: 18px 16px;
