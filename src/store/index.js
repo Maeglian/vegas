@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import searchInGamesRes from '../utils';
 
 Vue.use(Vuex);
 
@@ -81,6 +82,19 @@ export default new Vuex.Store({
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
         commit('setGames', res.data);
+      } catch (e) {
+        commit('pushErrors', e);
+      } finally {
+        commit('gamesAreLoaded');
+      }
+    },
+    async searchGames({ commit }, query) {
+      commit('gamesAreLoading');
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.get('https://games.netdnstrace1.com/?liveCasinoOnly=true');
+        const searched = searchInGamesRes(res.data, query);
+        commit('setGames', searched);
       } catch (e) {
         commit('pushErrors', e);
       } finally {

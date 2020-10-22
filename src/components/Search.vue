@@ -8,7 +8,14 @@
     <svg class="Icon Search-Icon" width="18" height="17">
       <use xlink:href="@/assets/img/icon-sprite.svg#search"></use>
     </svg>
-    <input type="text" class="Search-Input" placeholder="Find game">
+    <input
+      type="text"
+      class="Search-Input"
+      placeholder="Find game"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
+      @keyup.enter="$emit('search')"
+    >
   </div>
 </template>
 
@@ -21,6 +28,12 @@ export default {
     return {
       isOpen: false,
     };
+  },
+  props: {
+    value: {
+      type: String,
+      isRequired: true,
+    },
   },
   computed: {
     ...mapState(['width']),

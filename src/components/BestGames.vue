@@ -44,7 +44,11 @@
           {{tab.name}}
         </button>
       </div>
-      <Search class="BestGames-Search" />
+      <Search
+        class="BestGames-Search"
+        v-model="searchQuery"
+        @search="searchGames(searchQuery)"
+      />
     </div>
     <Loader v-if="gamesAreLoading" />
     <template v-else>
@@ -127,6 +131,7 @@ export default {
       },
       gamesToShow: 24,
       gamesShowed: 24,
+      searchQuery: '',
     };
   },
   computed: {
@@ -139,7 +144,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['getGames']),
+    ...mapActions(['getGames', 'searchGames']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
