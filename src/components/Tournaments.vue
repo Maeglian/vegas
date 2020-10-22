@@ -103,7 +103,7 @@ export default {
           text: 'Make your second deposit of $20<br/> or more, and get up to €150 and<br/> 100 free spins.',
         },
       ],
-      enddate: null,
+      enddate: new Date(),
     };
   },
   mounted() {

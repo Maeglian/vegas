@@ -45,7 +45,7 @@ export default {
   name: 'Counter',
   props: {
     enddate: {
-      type: String,
+      type: Date,
       required: true,
     },
     speed: {
