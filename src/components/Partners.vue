@@ -12,9 +12,6 @@
           <img loading="lazy" class="Partners-Image" src="https://service.image-tech-storage.com/payments/790dc286-044f-478f-9b8d-be53bd925bad_tiny_light.png" />
         </div>
         <div class="Partners-Partner">
-          <img loading="lazy" class="Partners-Image" src="https://service.image-tech-storage.com/payments/dd15ead8-9192-4ac7-88c5-e99e240a8ebe_tiny_light.png" />
-        </div>
-        <div class="Partners-Partner">
           <img loading="lazy" class="Partners-Image" src="https://service.image-tech-storage.com/payments/a5fc4d09-5618-454b-88d2-34aef3923c70_tiny_light.png" />
         </div>
         <div class="Partners-Partner">
