@@ -51,6 +51,9 @@
       />
     </div>
     <Loader v-if="gamesAreLoading" />
+    <div v-else-if="isNothingFound" class="TextMain TextMain--center">
+      Sorry, we didn't find anything.
+    </div>
     <template v-else>
       <div class="BestGames-Thumbs">
         <div
@@ -135,7 +138,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'isNothingFound']),
     ...mapGetters(['gamesLimited']),
     imageWidth() {
       if (this.width > 460 && this.width < 590) return 250;

@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     width: 0,
     games: [],
+    isNothingFound: false,
     jackpots: [],
     promotions: [
       [
@@ -73,10 +74,14 @@ export default new Vuex.Store({
     setJackpots: (state, payload) => {
       state.jackpots = payload;
     },
+    setIsNothingFound: (state, isNothingFound) => {
+      state.isNothingFound = isNothingFound;
+    },
   },
 
   actions: {
     async getGames({ commit }, query) {
+      commit('setIsNothingFound', false);
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
@@ -89,11 +94,13 @@ export default new Vuex.Store({
       }
     },
     async searchGames({ commit }, query) {
+      commit('setIsNothingFound', false);
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get('https://games.netdnstrace1.com/?liveCasinoOnly=true');
         const searched = searchInGamesRes(res.data, query);
+        if (!searched.length) commit('setIsNothingFound', true);
         commit('setGames', searched);
       } catch (e) {
         commit('pushErrors', e);
