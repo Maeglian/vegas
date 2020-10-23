@@ -9,7 +9,7 @@
 <script>
 import MainNav from '@/components/MainNav.vue';
 import Footer from '@/components/Footer.vue';
-import { mapMutations } from 'vuex';
+import { mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'App',
@@ -18,11 +18,13 @@ export default {
     Footer,
   },
   created() {
+    this.getUserCountry();
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);
   },
   methods: {
     ...mapMutations(['setWidth']),
+    ...mapActions(['getUserCountry']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },

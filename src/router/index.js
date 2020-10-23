@@ -26,7 +26,7 @@ const routes = [
     name: 'BonusPolicy',
     component: BonusPolicy,
     props: {
-      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=bonus_policy&lang=en',
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=bonus_policy',
     },
   },
   {
@@ -34,7 +34,7 @@ const routes = [
     name: 'PrivacyPolicy',
     component: PrivacyPolicy,
     props: {
-      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=privacy_policy&lang=en',
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=privacy_policy',
     },
   },
   {
@@ -52,7 +52,7 @@ const routes = [
     name: 'PaymentMethods',
     component: PaymentMethods,
     props: {
-      url: 'https://service.safe-communication.com/feeds/payments/single?skin=VegasWinner&lang=en',
+      url: 'https://service.safe-communication.com/feeds/payments/single?skin=VegasWinner',
     },
   },
   {
@@ -65,7 +65,7 @@ const routes = [
     name: 'TermsConditions',
     component: TermsConditions,
     props: {
-      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=terms_and_conditions&lang=en',
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=terms_and_conditions',
     },
   },
   {
@@ -73,7 +73,7 @@ const routes = [
     name: 'ResponsibleGamings',
     component: ResponsibleGamings,
     props: {
-      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=responsible_gaming&lang=en',
+      url: 'https://www.playeroffers.com/api.php?sid=7f73ab615f196b7f63b49fbdbbee82eb&type=responsible_gaming',
     },
   },
   {

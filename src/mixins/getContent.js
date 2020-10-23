@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Loader from '@/components/Loader.vue';
+import { mapState } from 'vuex';
 
 export default {
   props: {
@@ -17,6 +18,9 @@ export default {
       pageContent: '',
     };
   },
+  computed: {
+    ...mapState(['userCountry']),
+  },
   created() {
     this.getContent();
   },
@@ -24,7 +28,7 @@ export default {
     async getContent() {
       this.isLoading = true;
       try {
-        const res = await axios.get(this.url);
+        const res = await axios.get(`${this.url}&lang=${this.userCountry}`);
         this.pageContent = res.data;
       } catch (e) {
         this.isErrored = true;

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import { apiHost, ipInfoToken } from '@/config';
 import searchInGamesRes from '../utils';
 
 Vue.use(Vuex);
@@ -49,6 +50,7 @@ export default new Vuex.Store({
     ],
     gamesAreLoading: false,
     errors: {},
+    userCountry: 'en',
   },
 
   getters: {
@@ -77,15 +79,27 @@ export default new Vuex.Store({
     setIsNothingFound: (state, isNothingFound) => {
       state.isNothingFound = isNothingFound;
     },
+    setUserCountry: (state, country) => {
+      state.userCountry = country;
+    },
   },
 
   actions: {
+    async getUserCountry({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.get(`http://ipinfo.io/?token=${ipInfoToken}`);
+        if (res.data.country) commit('setUserCountry', res.data.country.toLowerCase());
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
     async getGames({ commit }, query) {
       commit('setIsNothingFound', false);
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
+        const res = await axios.get(`${apiHost}/?liveCasinoOnly=true&${query}`);
         commit('setGames', res.data);
       } catch (e) {
         commit('pushErrors', e);
@@ -98,7 +112,7 @@ export default new Vuex.Store({
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.get('https://games.netdnstrace1.com/?liveCasinoOnly=true');
+        const res = await axios.get(`${apiHost}/?liveCasinoOnly=true`);
         const searched = searchInGamesRes(res.data, query);
         if (!searched.length) commit('setIsNothingFound', true);
         commit('setGames', searched);
@@ -111,7 +125,7 @@ export default new Vuex.Store({
     async getJackpots({ commit }) {
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.get('https://games.netdnstrace1.com/?daily_jackpot=true');
+        const res = await axios.get(`${apiHost}/?daily_jackpot=true`);
         commit('setJackpots', res.data);
       } catch (e) {
         commit('pushErrors', e);
