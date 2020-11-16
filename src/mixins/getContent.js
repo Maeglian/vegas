@@ -18,17 +18,22 @@ export default {
       pageContent: '',
     };
   },
-  computed: {
-    ...mapState(['userCountry']),
+  watch: {
+    activeLanguage: {
+      immediate: true,
+      handler() {
+        this.getContent();
+      },
+    },
   },
-  created() {
-    this.getContent();
+  computed: {
+    ...mapState(['activeLanguage']),
   },
   methods: {
     async getContent() {
       this.isLoading = true;
       try {
-        const res = await axios.get(`${this.url}&lang=${this.userCountry}`);
+        const res = await axios.get(`${this.url}&lang=${this.activeLanguage.code}`);
         this.pageContent = res.data;
       } catch (e) {
         this.isErrored = true;

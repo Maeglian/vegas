@@ -39,6 +39,7 @@
           Register
         </button>
       </div>
+      <LanguageSwitcher class="MainNav-Language" />
     </div>
     <transition name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -66,12 +67,14 @@
 
 <script>
 import NavItem from '@/components/NavItem.vue';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 import auth from '@/mixins/auth';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
+    LanguageSwitcher,
   },
   mixins: [auth],
   data() {
@@ -232,8 +235,13 @@ export default {
     display: flex;
     align-items: center;
     margin-left: auto;
+    margin-right: 10px;
     font-size: 14px;
     line-height: 1.24;
+
+    @media(min-width: $screen-m) {
+      margin-right: 30px;
+    }
   }
 
   &-Btn {
